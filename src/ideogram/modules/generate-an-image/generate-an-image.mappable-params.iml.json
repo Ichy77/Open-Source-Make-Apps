@@ -1,0 +1,425 @@
+[
+	{
+		"name": "prompt",
+		"type": "text",
+		"required": true,
+		"help": "The prompt to use to generate the image.",
+		"label": "Prompt"
+	},
+	{
+		"name": "model",
+		"type": "select",
+		"label": "Model",
+		"options": [
+			{ "value": "V_1",
+				"label": "V_1",
+				"nested": [
+					{
+						"name": "aspect_ratio",
+						"type": "select",
+						"label": "Aspect Ratio",
+						"options": [
+							{ "value": "ASPECT_10_16", "label": "10:16" },
+							{ "value": "ASPECT_16_10", "label": "16:10" },
+							{ "value": "ASPECT_9_16", "label": "9:16" },
+							{ "value": "ASPECT_16_9", "label": "16:9" },
+							{ "value": "ASPECT_3_2", "label": "3:2" },
+							{ "value": "ASPECT_2_3", "label": "2:3" },
+							{ "value": "ASPECT_4_3", "label": "4:3" },
+							{ "value": "ASPECT_3_4", "label": "3:4" },
+							{ "value": "ASPECT_1_1", "label": "1:1" },
+							{ "value": "ASPECT_1_3", "label": "1:3" },
+							{ "value": "ASPECT_3_1", "label": "3:1" }
+						]
+					}
+				]
+			},
+			{ "value": "V_1_TURBO", "label": "V_1_TURBO",
+				"nested": [
+					{
+						"name": "aspect_ratio",
+						"type": "select",
+						"label": "Aspect Ratio",
+						"options": [
+							{ "value": "ASPECT_10_16", "label": "10:16" },
+							{ "value": "ASPECT_16_10", "label": "16:10" },
+							{ "value": "ASPECT_9_16", "label": "9:16" },
+							{ "value": "ASPECT_16_9", "label": "16:9" },
+							{ "value": "ASPECT_3_2", "label": "3:2" },
+							{ "value": "ASPECT_2_3", "label": "2:3" },
+							{ "value": "ASPECT_4_3", "label": "4:3" },
+							{ "value": "ASPECT_3_4", "label": "3:4" },
+							{ "value": "ASPECT_1_1", "label": "1:1" },
+							{ "value": "ASPECT_1_3", "label": "1:3" },
+							{ "value": "ASPECT_3_1", "label": "3:1" }
+						]
+					}
+				] },
+			{ "value": "V_2",
+				"label": "V_2",
+				"nested": [
+					{
+						"name": "resolution",
+						"type": "select",
+						"label": "Resolution",
+						"options": [
+							{ "value": "RESOLUTION_512_1536", "label": "512x1536" },
+							{ "value": "RESOLUTION_576_1408", "label": "576x1408" },
+							{ "value": "RESOLUTION_576_1472", "label": "576x1472" },
+							{ "value": "RESOLUTION_576_1536", "label": "576x1536" },
+							{ "value": "RESOLUTION_640_1024", "label": "640x1024" },
+							{ "value": "RESOLUTION_640_1344", "label": "640x1344" },
+							{ "value": "RESOLUTION_640_1408", "label": "640x1408" },
+							{ "value": "RESOLUTION_640_1472", "label": "640x1472" },
+							{ "value": "RESOLUTION_640_1536", "label": "640x1536" },
+							{ "value": "RESOLUTION_704_1152", "label": "704x1152" },
+							{ "value": "RESOLUTION_704_1216", "label": "704x1216" },
+							{ "value": "RESOLUTION_704_1280", "label": "704x1280" },
+							{ "value": "RESOLUTION_704_1344", "label": "704x1344" },
+							{ "value": "RESOLUTION_704_1408", "label": "704x1408" },
+							{ "value": "RESOLUTION_704_1472", "label": "704x1472" },
+							{ "value": "RESOLUTION_720_1280", "label": "720x1280" },
+							{ "value": "RESOLUTION_736_1312", "label": "736x1312" },
+							{ "value": "RESOLUTION_768_1024", "label": "768x1024" },
+							{ "value": "RESOLUTION_768_1088", "label": "768x1088" },
+							{ "value": "RESOLUTION_768_1152", "label": "768x1152" },
+							{ "value": "RESOLUTION_768_1216", "label": "768x1216" },
+							{ "value": "RESOLUTION_768_1232", "label": "768x1232" },
+							{ "value": "RESOLUTION_768_1280", "label": "768x1280" },
+							{ "value": "RESOLUTION_768_1344", "label": "768x1344" },
+							{ "value": "RESOLUTION_832_960", "label": "832x960" },
+							{ "value": "RESOLUTION_832_1024", "label": "832x1024" },
+							{ "value": "RESOLUTION_832_1088", "label": "832x1088" },
+							{ "value": "RESOLUTION_832_1152", "label": "832x1152" },
+							{ "value": "RESOLUTION_832_1216", "label": "832x1216" },
+							{ "value": "RESOLUTION_832_1248", "label": "832x1248" },
+							{ "value": "RESOLUTION_864_1152", "label": "864x1152" },
+							{ "value": "RESOLUTION_896_960", "label": "896x960" },
+							{ "value": "RESOLUTION_896_1024", "label": "896x1024" },
+							{ "value": "RESOLUTION_896_1088", "label": "896x1088" },
+							{ "value": "RESOLUTION_896_1120", "label": "896x1120" },
+							{ "value": "RESOLUTION_896_1152", "label": "896x1152" },
+							{ "value": "RESOLUTION_960_832", "label": "960x832" },
+							{ "value": "RESOLUTION_960_896", "label": "960x896" },
+							{ "value": "RESOLUTION_960_1024", "label": "960x1024" },
+							{ "value": "RESOLUTION_960_1088", "label": "960x1088" },
+							{ "value": "RESOLUTION_1024_640", "label": "1024x640" },
+							{ "value": "RESOLUTION_1024_768", "label": "1024x768" },
+							{ "value": "RESOLUTION_1024_832", "label": "1024x832" },
+							{ "value": "RESOLUTION_1024_896", "label": "1024x896" },
+							{ "value": "RESOLUTION_1024_960", "label": "1024x960" },
+							{ "value": "RESOLUTION_1024_1024", "label": "1024x1024" },
+							{ "value": "RESOLUTION_1088_768", "label": "1088x768" },
+							{ "value": "RESOLUTION_1088_832", "label": "1088x832" },
+							{ "value": "RESOLUTION_1088_896", "label": "1088x896" },
+							{ "value": "RESOLUTION_1088_960", "label": "1088x960" },
+							{ "value": "RESOLUTION_1120_896", "label": "1120x896" },
+							{ "value": "RESOLUTION_1152_704", "label": "1152x704" },
+							{ "value": "RESOLUTION_1152_768", "label": "1152x768" },
+							{ "value": "RESOLUTION_1152_832", "label": "1152x832" },
+							{ "value": "RESOLUTION_1152_864", "label": "1152x864" },
+							{ "value": "RESOLUTION_1152_896", "label": "1152x896" },
+							{ "value": "RESOLUTION_1216_704", "label": "1216x704" },
+							{ "value": "RESOLUTION_1216_768", "label": "1216x768" },
+							{ "value": "RESOLUTION_1216_832", "label": "1216x832" },
+							{ "value": "RESOLUTION_1232_768", "label": "1232x768" },
+							{ "value": "RESOLUTION_1248_832", "label": "1248x832" },
+							{ "value": "RESOLUTION_1280_704", "label": "1280x704" },
+							{ "value": "RESOLUTION_1280_720", "label": "1280x720" },
+							{ "value": "RESOLUTION_1280_768", "label": "1280x768" },
+							{ "value": "RESOLUTION_1280_800", "label": "1280x800" },
+							{ "value": "RESOLUTION_1312_736", "label": "1312x736" },
+							{ "value": "RESOLUTION_1344_640", "label": "1344x640" },
+							{ "value": "RESOLUTION_1344_704", "label": "1344x704" },
+							{ "value": "RESOLUTION_1344_768", "label": "1344x768" },
+							{ "value": "RESOLUTION_1408_576", "label": "1408x576" },
+							{ "value": "RESOLUTION_1408_640", "label": "1408x640" },
+							{ "value": "RESOLUTION_1408_704", "label": "1408x704" },
+							{ "value": "RESOLUTION_1472_576", "label": "1472x576" },
+							{ "value": "RESOLUTION_1472_640", "label": "1472x640" },
+							{ "value": "RESOLUTION_1472_704", "label": "1472x704" },
+							{ "value": "RESOLUTION_1536_512", "label": "1536x512" },
+							{ "value": "RESOLUTION_1536_576", "label": "1536x576" },
+							{ "value": "RESOLUTION_1536_640", "label": "1536x640" }
+						],
+						"validate": false
+					},
+					{
+						"name": "style_type",
+						"type": "select",
+						"label": "Style Type",
+						"options": [
+							{ "value": "AUTO", "label": "Auto" },
+							{ "value": "GENERAL", "label": "General" },
+							{ "value": "REALISTIC", "label": "Realistic" },
+							{ "value": "DESIGN", "label": "Design" },
+							{ "value": "RENDER_3D", "label": "Render 3D" },
+							{ "value": "ANIME", "label": "Anime" }
+						]
+					},
+					{
+						"name": "color_palette",
+						"type": "collection",
+						"label": "Color Palette",
+						"spec": [
+							{
+								"name": "preSetOrCustom",
+								"type": "select",
+								"label": "PreSetOrCustom",
+								"options": [
+									{
+										"value": "PRESET",
+										"label": "Preset",
+										"nested": [
+											{
+												"name": "name",
+												"type": "select",
+												"label": "Name",
+												"options": [
+													{ "value": "FRESH", "label": "FRESH" },
+													{ "value": "JUNGLE", "label": "JUNGLE" },
+													{ "value": "MAGIC", "label": "MAGIC" },
+													{ "value": "MELON", "label": "MELON" },
+													{ "value": "MOSAIC", "label": "MOSAIC" },
+													{ "value": "PASTEL", "label": "PASTEL" },
+													{ "value": "ULTRAMARINE", "label": "ULTRAMARINE" }
+												]
+
+											}
+										]
+									},
+									{
+										"value": "CUSTOM",
+										"label": "Custom",
+										"nested": [
+											{
+												"name": "members",
+												"type": "array",
+												"help": "It is recommended that these weights descend from highest to lowest for the color hexes provided.",
+												"label": "Color Palette Item",
+												"spec": [
+													{
+														"name": "color_hex",
+														"type": "text",
+														"label": "Color Hex"
+													},
+													{
+														"name": "color_weight",
+														"type": "number",
+														"label": "Color Weight",
+														"validate": {
+															"min": 0.05,
+															"max": 1
+														}
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{ "value": "V_2_TURBO", "label": "V_2_TURBO",
+				"nested": [
+					{
+						"name": "resolution",
+						"type": "select",
+						"label": "Resolution",
+						"options": [
+							{ "value": "RESOLUTION_512_1536", "label": "512x1536" },
+							{ "value": "RESOLUTION_576_1408", "label": "576x1408" },
+							{ "value": "RESOLUTION_576_1472", "label": "576x1472" },
+							{ "value": "RESOLUTION_576_1536", "label": "576x1536" },
+							{ "value": "RESOLUTION_640_1024", "label": "640x1024" },
+							{ "value": "RESOLUTION_640_1344", "label": "640x1344" },
+							{ "value": "RESOLUTION_640_1408", "label": "640x1408" },
+							{ "value": "RESOLUTION_640_1472", "label": "640x1472" },
+							{ "value": "RESOLUTION_640_1536", "label": "640x1536" },
+							{ "value": "RESOLUTION_704_1152", "label": "704x1152" },
+							{ "value": "RESOLUTION_704_1216", "label": "704x1216" },
+							{ "value": "RESOLUTION_704_1280", "label": "704x1280" },
+							{ "value": "RESOLUTION_704_1344", "label": "704x1344" },
+							{ "value": "RESOLUTION_704_1408", "label": "704x1408" },
+							{ "value": "RESOLUTION_704_1472", "label": "704x1472" },
+							{ "value": "RESOLUTION_720_1280", "label": "720x1280" },
+							{ "value": "RESOLUTION_736_1312", "label": "736x1312" },
+							{ "value": "RESOLUTION_768_1024", "label": "768x1024" },
+							{ "value": "RESOLUTION_768_1088", "label": "768x1088" },
+							{ "value": "RESOLUTION_768_1152", "label": "768x1152" },
+							{ "value": "RESOLUTION_768_1216", "label": "768x1216" },
+							{ "value": "RESOLUTION_768_1232", "label": "768x1232" },
+							{ "value": "RESOLUTION_768_1280", "label": "768x1280" },
+							{ "value": "RESOLUTION_768_1344", "label": "768x1344" },
+							{ "value": "RESOLUTION_832_960", "label": "832x960" },
+							{ "value": "RESOLUTION_832_1024", "label": "832x1024" },
+							{ "value": "RESOLUTION_832_1088", "label": "832x1088" },
+							{ "value": "RESOLUTION_832_1152", "label": "832x1152" },
+							{ "value": "RESOLUTION_832_1216", "label": "832x1216" },
+							{ "value": "RESOLUTION_832_1248", "label": "832x1248" },
+							{ "value": "RESOLUTION_864_1152", "label": "864x1152" },
+							{ "value": "RESOLUTION_896_960", "label": "896x960" },
+							{ "value": "RESOLUTION_896_1024", "label": "896x1024" },
+							{ "value": "RESOLUTION_896_1088", "label": "896x1088" },
+							{ "value": "RESOLUTION_896_1120", "label": "896x1120" },
+							{ "value": "RESOLUTION_896_1152", "label": "896x1152" },
+							{ "value": "RESOLUTION_960_832", "label": "960x832" },
+							{ "value": "RESOLUTION_960_896", "label": "960x896" },
+							{ "value": "RESOLUTION_960_1024", "label": "960x1024" },
+							{ "value": "RESOLUTION_960_1088", "label": "960x1088" },
+							{ "value": "RESOLUTION_1024_640", "label": "1024x640" },
+							{ "value": "RESOLUTION_1024_768", "label": "1024x768" },
+							{ "value": "RESOLUTION_1024_832", "label": "1024x832" },
+							{ "value": "RESOLUTION_1024_896", "label": "1024x896" },
+							{ "value": "RESOLUTION_1024_960", "label": "1024x960" },
+							{ "value": "RESOLUTION_1024_1024", "label": "1024x1024" },
+							{ "value": "RESOLUTION_1088_768", "label": "1088x768" },
+							{ "value": "RESOLUTION_1088_832", "label": "1088x832" },
+							{ "value": "RESOLUTION_1088_896", "label": "1088x896" },
+							{ "value": "RESOLUTION_1088_960", "label": "1088x960" },
+							{ "value": "RESOLUTION_1120_896", "label": "1120x896" },
+							{ "value": "RESOLUTION_1152_704", "label": "1152x704" },
+							{ "value": "RESOLUTION_1152_768", "label": "1152x768" },
+							{ "value": "RESOLUTION_1152_832", "label": "1152x832" },
+							{ "value": "RESOLUTION_1152_864", "label": "1152x864" },
+							{ "value": "RESOLUTION_1152_896", "label": "1152x896" },
+							{ "value": "RESOLUTION_1216_704", "label": "1216x704" },
+							{ "value": "RESOLUTION_1216_768", "label": "1216x768" },
+							{ "value": "RESOLUTION_1216_832", "label": "1216x832" },
+							{ "value": "RESOLUTION_1232_768", "label": "1232x768" },
+							{ "value": "RESOLUTION_1248_832", "label": "1248x832" },
+							{ "value": "RESOLUTION_1280_704", "label": "1280x704" },
+							{ "value": "RESOLUTION_1280_720", "label": "1280x720" },
+							{ "value": "RESOLUTION_1280_768", "label": "1280x768" },
+							{ "value": "RESOLUTION_1280_800", "label": "1280x800" },
+							{ "value": "RESOLUTION_1312_736", "label": "1312x736" },
+							{ "value": "RESOLUTION_1344_640", "label": "1344x640" },
+							{ "value": "RESOLUTION_1344_704", "label": "1344x704" },
+							{ "value": "RESOLUTION_1344_768", "label": "1344x768" },
+							{ "value": "RESOLUTION_1408_576", "label": "1408x576" },
+							{ "value": "RESOLUTION_1408_640", "label": "1408x640" },
+							{ "value": "RESOLUTION_1408_704", "label": "1408x704" },
+							{ "value": "RESOLUTION_1472_576", "label": "1472x576" },
+							{ "value": "RESOLUTION_1472_640", "label": "1472x640" },
+							{ "value": "RESOLUTION_1472_704", "label": "1472x704" },
+							{ "value": "RESOLUTION_1536_512", "label": "1536x512" },
+							{ "value": "RESOLUTION_1536_576", "label": "1536x576" },
+							{ "value": "RESOLUTION_1536_640", "label": "1536x640" }
+						],
+						"validate": false
+					},
+					{
+						"name": "style_type",
+						"type": "select",
+						"label": "Style Type",
+						"options": [
+							{ "value": "AUTO", "label": "Auto" },
+							{ "value": "GENERAL", "label": "General" },
+							{ "value": "REALISTIC", "label": "Realistic" },
+							{ "value": "DESIGN", "label": "Design" },
+							{ "value": "RENDER_3D", "label": "Render 3D" },
+							{ "value": "ANIME", "label": "Anime" }
+						]
+					},
+					{
+						"name": "color_palette",
+						"type": "collection",
+						"label": "Color Palette",
+						"spec": [
+							{
+								"name": "preSetOrCustom",
+								"type": "select",
+								"label": "PreSetOrCustom",
+								"options": [
+									{
+										"value": "PRESET",
+										"label": "Preset",
+										"nested": [
+											{
+												"name": "name",
+												"type": "select",
+												"label": "Name",
+												"options": [
+													{ "value": "FRESH", "label": "FRESH" },
+													{ "value": "JUNGLE", "label": "JUNGLE" },
+													{ "value": "MAGIC", "label": "MAGIC" },
+													{ "value": "MELON", "label": "MELON" },
+													{ "value": "MOSAIC", "label": "MOSAIC" },
+													{ "value": "PASTEL", "label": "PASTEL" },
+													{ "value": "ULTRAMARINE", "label": "ULTRAMARINE" }
+												]
+
+											}
+										]
+									},
+									{
+										"value": "CUSTOM",
+										"label": "Custom",
+										"nested": [
+											{
+												"name": "members",
+												"type": "array",
+												"help": "It is recommended that these weights descend from highest to lowest for the color hexes provided.",
+												"label": "Color Palette Item",
+												"spec": [
+													{
+														"name": "color_hex",
+														"type": "text",
+														"label": "Color Hex"
+													},
+													{
+														"name": "color_weight",
+														"type": "number",
+														"label": "Color Weight",
+														"validate": {
+															"min": 0.05,
+															"max": 1
+														}
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		],
+		"required": true
+	},
+	{
+		"name": "magic_prompt_option",
+		"type": "select",
+		"label": "Magic Prompt Option",
+		"options": [
+			{ "value": "AUTO", "label": "Auto" },
+			{ "value": "ON", "label": "On" },
+			{ "value": "OFF", "label": "Off" }
+		],
+		"default": "AUTO"
+	},
+	{
+		"name": "negative_prompt",
+		"type": "text",
+		"label": "Negative Prompt",
+		"help": "Description of what to exclude from an image. Descriptions in the prompt take precedence to descriptions in the negative prompt."
+	},
+	{
+		"name": "seed",
+		"type": "integer",
+		"label": "Seed",
+		"help": "A seed to use for image generation. If not specified, a random seed will be used.",
+		"default": null,
+		"validate": {
+			"min": 0,
+			"max": 2147483647
+		},
+		"advanced": true
+	}
+]
+
+

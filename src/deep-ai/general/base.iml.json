@@ -1,0 +1,16 @@
+{
+    "log": {
+        "sanitize": [
+            "request.headers.api-key"
+        ]
+    },
+    "baseUrl": "https://api.deepai.org/api",
+    "headers": {
+        "api-key": "{{connection.apiKey}}"
+    },
+    "response": {
+        "error": {
+            "message": "[{{statusCode}}] {{body.err}}"
+        }
+    }
+}

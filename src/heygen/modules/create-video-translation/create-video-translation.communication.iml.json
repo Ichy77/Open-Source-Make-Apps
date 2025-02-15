@@ -1,0 +1,20 @@
+{
+    // Request to API endpoint with parameter "id" defined in Mappable parameters.
+    "url": "/v2/video_translate", // Relative to base URL
+    "method": "POST",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": {
+        "video_url": "{{parameters.video_url}}",
+        "title": "{{parameters.title}}",
+        "output_language": "{{parameters.output_language}}",
+        "translate_audio_only": "{{parameters.translate_audio_only}}",
+        "speaker_num": "{{parameters.speaker_num}}",
+        "callback_id": "{{parameters.callback_id}}"
+    }, // Request body omitting the ID that is already being sent in URL.
+
+    // Response handling
+    "response": {
+        "output": "{{body}}" // Returns no output bundle as no API output is expected.
+    }
+}

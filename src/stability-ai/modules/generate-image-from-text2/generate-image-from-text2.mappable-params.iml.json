@@ -1,0 +1,164 @@
+[
+    {
+        "name": "engine_id",
+        "type": "select",
+        "label": "Engine",
+        "options": "rpc://listEngines",
+        "required": true
+    },
+    {
+        "name": "text_prompts",
+        "type": "array",
+        "label": "Text Prompts",
+        "required": true,
+        "spec": [
+            {
+                "name": "text",
+                "type": "text",
+                "label": "Prompt Text",
+                "required": true,
+                "help": "The prompt itself. Less than or equal 2000 characters."
+            },
+            {
+                "name": "weight",
+                "type": "number",
+                "label": "Prompt Weight",
+                "required": true,
+                "help": "Weight of the prompt. Use negative numbers for negative prompts."
+            }
+        ]
+    },
+    {
+        "name": "height",
+        "type": "uinteger",
+        "label": "Image Height",
+        "default": 512,
+        "required": false,
+        "help": "Height of the image to generate, in pixels, in an increment divisible by 64. Engine-specific dimension validation applies.",
+        "validate": {
+            "min": 128
+        }
+    },
+    {
+        "name": "width",
+        "type": "uinteger",
+        "label": "Image Width",
+        "default": 512,
+        "required": false,
+        "help": "Width of the image to generate, in pixels, in an increment divisible by 64. Engine-specific dimension validation applies.",
+        "validate": {
+            "min": 128
+        }
+    },
+    {
+        "name": "samples",
+        "type": "integer",
+        "label": "Number of Samples",
+        "default": 1,
+        "required": false,
+        "help": "Number of images to generate.",
+        "validate": {
+            "min": 1,
+            "max": 10
+        }
+    },
+    {
+        "name": "cfg_scale",
+        "type": "number",
+        "label": "CFG Scale",
+        "default": 7,
+        "required": false,
+        "help": "How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to your prompt).",
+        "validate": {
+            "min": 0,
+            "max": 35
+        },
+        "advanced": true
+    },
+    {
+        "name": "clip_guidance_preset",
+        "type": "select",
+        "label": "CLIP Guidance Preset",
+        "required": false,
+        "options": [
+            { "label": "FAST_BLUE", "value": "FAST_BLUE" },
+            { "label": "FAST_GREEN", "value": "FAST_GREEN" },
+            { "label": "NONE", "value": "NONE" },
+            { "label": "SIMPLE", "value": "SIMPLE" },
+            { "label": "SLOW", "value": "SLOW" },
+            { "label": "SLOWER", "value": "SLOWER" },
+            { "label": "SLOWEST", "value": "SLOWEST" }
+        ],
+        "help": "Preset for CLIP guidance.",
+        "advanced": true
+    },
+    {
+        "name": "sampler",
+        "type": "select",
+        "label": "Sampler",
+        "required": false,
+        "options": [
+            { "label": "DDIM", "value": "DDIM" },
+            { "label": "DDPM", "value": "DDPM" },
+            { "label": "K_DPMPP_2M", "value": "K_DPMPP_2M" },
+            { "label": "K_DPMPP_2S_ANCESTRAL", "value": "K_DPMPP_2S_ANCESTRAL" },
+            { "label": "K_DPM_2", "value": "K_DPM_2" },
+            { "label": "K_DPM_2_ANCESTRAL", "value": "K_DPM_2_ANCESTRAL" },
+            { "label": "K_EULER", "value": "K_EULER" },
+            { "label": "K_EULER_ANCESTRAL", "value": "K_EULER_ANCESTRAL" },
+            { "label": "K_HEUN", "value": "K_HEUN" },
+            { "label": "K_LMS", "value": "K_LMS" }
+        ],
+        "help": "Sampler to use for the diffusion process.",
+        "advanced": true
+    },
+    {
+        "name": "seed",
+        "type": "integer",
+        "label": "Random Seed",
+        "default": 0,
+        "required": false,
+        "help": "Random noise seed (omit this option or use 0 for a random seed).",
+        "advanced": true
+    },
+    {
+        "name": "steps",
+        "type": "integer",
+        "label": "Diffusion Steps",
+        "default": 30,
+        "required": false,
+        "help": "Number of diffusion steps to run.",
+        "validate": {
+            "min": 10,
+            "max": 50
+        },
+        "advanced": true
+    },
+    {
+        "name": "style_preset",
+        "type": "select",
+        "label": "Style Preset",
+        "required": false,
+        "options": [
+            { "label": "3d-model", "value": "3d-model" },
+            { "label": "analog-film", "value": "analog-film" },
+            { "label": "anime", "value": "anime" },
+            { "label": "cinematic", "value": "cinematic" },
+            { "label": "comic-book", "value": "comic-book" },
+            { "label": "digital-art", "value": "digital-art" },
+            { "label": "enhance", "value": "enhance" },
+            { "label": "fantasy-art", "value": "fantasy-art" },
+            { "label": "isometric", "value": "isometric" },
+            { "label": "line-art", "value": "line-art" },
+            { "label": "low-poly", "value": "low-poly" },
+            { "label": "modeling-compound", "value": "modeling-compound" },
+            { "label": "neon-punk", "value": "neon-punk" },
+            { "label": "origami", "value": "origami" },
+            { "label": "photographic", "value": "photographic" },
+            { "label": "pixel-art", "value": "pixel-art" },
+            { "label": "tile-texture", "value": "tile-texture" }
+        ],
+        "help": "Style preset to guide the image model towards a particular style.",
+        "advanced": true
+    }
+]

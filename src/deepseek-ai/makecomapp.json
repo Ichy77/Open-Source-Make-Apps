@@ -1,0 +1,142 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "DeepSeek AI",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "createAChatCompletion": {
+                "label": "Create a Chat Completion",
+                "description": "Creates a model response for the given chat completion.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-achat-completion/create-achat-completion.communication.iml.json",
+                    "staticParams": "modules/create-achat-completion/create-achat-completion.static-params.iml.json",
+                    "mappableParams": "modules/create-achat-completion/create-achat-completion.mappable-params.iml.json",
+                    "interface": "modules/create-achat-completion/create-achat-completion.interface.iml.json",
+                    "samples": "modules/create-achat-completion/create-achat-completion.samples.iml.json",
+                    "scope": "modules/create-achat-completion/create-achat-completion.scope.iml.json"
+                }
+            },
+            "getBalance": {
+                "label": "Get Balance",
+                "description": "Returns the user's balance information.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-balance/get-balance.communication.iml.json",
+                    "staticParams": "modules/get-balance/get-balance.static-params.iml.json",
+                    "mappableParams": "modules/get-balance/get-balance.mappable-params.iml.json",
+                    "interface": "modules/get-balance/get-balance.interface.iml.json",
+                    "samples": "modules/get-balance/get-balance.samples.iml.json",
+                    "scope": "modules/get-balance/get-balance.scope.iml.json"
+                }
+            },
+            "listModels": {
+                "label": "List Models",
+                "description": "Returns a list of models.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-models/list-models.communication.iml.json",
+                    "staticParams": "modules/list-models/list-models.static-params.iml.json",
+                    "mappableParams": "modules/list-models/list-models.mappable-params.iml.json",
+                    "interface": "modules/list-models/list-models.interface.iml.json",
+                    "samples": "modules/list-models/list-models.samples.iml.json",
+                    "scope": "modules/list-models/list-models.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API Call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {
+            "listModels": {
+                "label": "List Models",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-models/list-models.communication.iml.json",
+                    "params": "rpcs/list-models/list-models.params.iml.json"
+                }
+            }
+        },
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "deepseek-ai",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "deepseek-ai"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "createAChatCompletion",
+                        "remote": "createAChatCompletion"
+                    },
+                    {
+                        "local": "getBalance",
+                        "remote": "getBalance"
+                    },
+                    {
+                        "local": "listModels",
+                        "remote": "listModels"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    }
+                ],
+                "function": [],
+                "rpc": [
+                    {
+                        "local": "listModels",
+                        "remote": "listModels"
+                    }
+                ],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey7"
+        }
+    ]
+}

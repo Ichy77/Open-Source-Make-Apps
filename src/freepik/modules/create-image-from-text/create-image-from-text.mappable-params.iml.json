@@ -1,0 +1,191 @@
+[
+	{
+		"name": "prompt", // Makes value accesible via "{{parameters.email}}".
+		"type": "text", // Validates that email is correctly entered.
+		"label": "Prompt", // Sets the user friendly label visible in the module.
+		"required": true,
+		"help": "Text to generate image from."
+	},
+	{
+		"name": "negative_prompt",
+		"type": "text",
+		"label": "Negative Prompt",
+		"required": false,
+		"help": "Attributes to avoid in the generated image."
+	},
+	{
+		"name": "styling",
+		"type": "collection",
+		"label": "Styling",
+		"required": false,
+		"spec": [
+			{
+				"name": "style",
+				"type": "select",
+				"label": "Style",
+				"required": true,
+				"options": [
+					{ "value": "photo", "label": "Photo" },
+					{ "value": "digital-art", "label": "Digital Art" },
+					{ "value": "3d", "label": "3D" },
+					{ "value": "painting", "label": "Painting" },
+					{ "value": "low-poly", "label": "Low Poly" },
+					{ "value": "pixel-art", "label": "Pixel Art" },
+					{ "value": "anime", "label": "Anime" },
+					{ "value": "cyberpunk", "label": "Cyberpunk" },
+					{ "value": "comic", "label": "Comic" },
+					{ "value": "vintage", "label": "Vintage" },
+					{ "value": "cartoon", "label": "Cartoon" },
+					{ "value": "vector", "label": "Vector" },
+					{ "value": "studio-shot", "label": "Studio Shot" },
+					{ "value": "dark", "label": "Dark" },
+					{ "value": "sketch", "label": "Sketch" },
+					{ "value": "mockup", "label": "Mockup" },
+					{ "value": "2000s-pone", "label": "2000s Pone" },
+					{ "value": "70s-vibe", "label": "70s Vibe" },
+					{ "value": "watercolor", "label": "Watercolor" },
+					{ "value": "art-nouveau", "label": "Art Nouveau" },
+					{ "value": "origami", "label": "Origami" },
+					{ "value": "surreal", "label": "Surreal" },
+					{ "value": "fantasy", "label": "Fantasy" },
+					{ "value": "traditional-japan", "label": "Traditional Japan" }
+				],
+				"validate": false
+			},
+			{
+				"name": "color",
+				"type": "select",
+				"label": "Color",
+				"required": false,
+				"options": [
+					{ "value": "b&w", "label": "B&W" },
+					{ "value": "pastel", "label": "Pastel" },
+					{ "value": "sepia", "label": "Sepia" },
+					{ "value": "dramatic", "label": "Dramatic" },
+					{ "value": "vibrant", "label": "Vibrant" },
+					{ "value": "orange&teal", "label": "Orange & Teal" },
+					{ "value": "film-filter", "label": "Film Filter" },
+					{ "value": "split", "label": "Split" },
+					{ "value": "electric", "label": "Electric" },
+					{ "value": "pastel-pink", "label": "Pastel Pink" },
+					{ "value": "gold-glow", "label": "Gold Glow" },
+					{ "value": "autumn", "label": "Autumn" },
+					{ "value": "muted-green", "label": "Muted Green" },
+					{ "value": "deep-teal", "label": "Deep Teal" },
+					{ "value": "duotone", "label": "Duotone" },
+					{ "value": "terracotta&teal", "label": "Terracotta & Teal" },
+					{ "value": "red&blue", "label": "Red & Blue" },
+					{ "value": "cold-neon", "label": "Cold Neon" },
+					{ "value": "burgundy&blue", "label": "Burgundy & Blue" }
+				],
+				"validate": false
+			},
+			{
+				"name": "lightning",
+				"type": "select",
+				"label": "Lightning",
+				"required": false,
+				"options": [
+					{ "value": "studio", "label": "Studio" },
+					{ "value": "warm", "label": "Warm" },
+					{ "value": "cinematic", "label": "Cinematic" },
+					{ "value": "volumetric", "label": "Volumetric" },
+					{ "value": "golden-hour", "label": "Golden Hour" },
+					{ "value": "long-exposure", "label": "Long Exposure" },
+					{ "value": "cold", "label": "Cold" },
+					{ "value": "iridescent", "label": "Iridescent" },
+					{ "value": "dramatic", "label": "Dramatic" },
+					{ "value": "hardlight", "label": "Hardlight" },
+					{ "value": "redscale", "label": "Redscale" },
+					{ "value": "indoor-light", "label": "Indoor Light" }
+				],
+				"validate": false
+			},
+			{
+				"name": "framing",
+				"type": "select",
+				"label": "Framing",
+				"required": false,
+				"options": [
+					{ "value": "portrait", "label": "Portrait" },
+					{ "value": "macro", "label": "Macro" },
+					{ "value": "panoramic", "label": "Panoramic" },
+					{ "value": "aerial-view", "label": "Aerial View" },
+					{ "value": "close-up", "label": "Close Up" },
+					{ "value": "cinematic", "label": "Cinematic" },
+					{ "value": "high-angle", "label": "High Angle" },
+					{ "value": "low-angle", "label": "Low Angle" },
+					{ "value": "symmetry", "label": "Symmetry" },
+					{ "value": "fish-eye", "label": "Fish Eye" },
+					{ "value": "first-person", "label": "First Person" }
+				],
+				"validate": false
+			}
+		]
+	},
+	{
+		"name": "guidance_scale",
+		"type": "number",
+		"label": "Guidance Scale",
+		"required": false,
+		"validate": {
+			"min": 0,
+			"max": 2
+		},
+		"default": 1
+	},
+	{
+		"name": "image",
+		"type": "collection",
+		"label": "Image",
+		"required": false,
+		"spec": [
+			{
+				"name": "size",
+				"type": "select",
+				"label": "Size",
+				"required": false,
+				"options": [
+					{ "value": "square_1_1", "label": "Square 1:1" },
+					{ "value": "classic_4_3", "label": "Classic 4:3" },
+					{ "value": "traditional_3_4", "label": "Traditional 3:4" },
+					{ "value": "widescreen_16_9", "label": "Widescreen 16:9" },
+					{ "value": "social_story_9_16", "label": "Social Story 9:16" },
+					{ "value": "smartphone_horizontal_20_9", "label": "Smartphone Horizontal 20:9" },
+					{ "value": "smartphone_vertical_9_20", "label": "Smartphone Vertical 9:20" },
+					{ "value": "standard_3_2", "label": "Standard 3:2" },
+					{ "value": "portrait_2_3", "label": "Portrait 2:3" },
+					{ "value": "horizontal_2_1", "label": "Horizontal 2:1" },
+					{ "value": "vertical_1_2", "label": "Vertical 1:2" },
+					{ "value": "social_5_4", "label": "Social 5:4" },
+					{ "value": "social_post_4_5", "label": "Social Post 4:5" }
+				],
+				"validate": false,
+				"default": "square_1_1"
+			}
+		]
+	},
+	{
+		"name": "num_images",
+		"type": "number",
+		"label": "Number of Images",
+		"required": false,
+		"validate": {
+			"min": 1,
+			"max": 4
+		},
+		"default": 1
+	},
+	{
+		"name": "seed",
+		"type": "integer",
+		"label": "Seed",
+		"required": false,
+		"validate": {
+			"min": 0,
+			"max": 1000000
+		},
+		"advanced": true
+	}
+
+]

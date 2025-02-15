@@ -1,0 +1,19 @@
+{
+    "qs": {
+        "{{...}}": "{{toCollection(parameters.qs, 'key', 'value')}}"
+    },
+    "url": "https://api.chatpdf.com/v1/{{parameters.url}}",
+    "body": "{{parameters.body}}",
+    "type": "text",
+    "method": "{{parameters.method}}",
+    "headers": {
+        "{{...}}": "{{toCollection(parameters.headers, 'key', 'value')}}"
+    },
+    "response": {
+        "output": {
+            "body": "{{body}}",
+            "headers": "{{headers}}",
+            "statusCode": "{{statusCode}}"
+        }
+    }
+}

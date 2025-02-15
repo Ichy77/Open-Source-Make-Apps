@@ -1,0 +1,10 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"MakeAPICall",
+			"imageeditor",
+			"text2img"
+		]
+	}
+]

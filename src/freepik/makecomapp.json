@@ -1,0 +1,108 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Freepik",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "createImageFromText": {
+                "label": "Create an Image from Text",
+                "description": "Creates an image from a text description.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-image-from-text/create-image-from-text.communication.iml.json",
+                    "staticParams": "modules/create-image-from-text/create-image-from-text.static-params.iml.json",
+                    "mappableParams": "modules/create-image-from-text/create-image-from-text.mappable-params.iml.json",
+                    "interface": "modules/create-image-from-text/create-image-from-text.interface.iml.json",
+                    "samples": "modules/create-image-from-text/create-image-from-text.samples.iml.json",
+                    "scope": "modules/create-image-from-text/create-image-from-text.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API Call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            },
+            "upscaleAnImage": {
+                "label": "Upscale an Image",
+                "description": "Upscales an existing image.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/upscale-an-image/upscale-an-image.communication.iml.json",
+                    "staticParams": "modules/upscale-an-image/upscale-an-image.static-params.iml.json",
+                    "mappableParams": "modules/upscale-an-image/upscale-an-image.mappable-params.iml.json",
+                    "interface": "modules/upscale-an-image/upscale-an-image.interface.iml.json",
+                    "samples": "modules/upscale-an-image/upscale-an-image.samples.iml.json",
+                    "scope": "modules/upscale-an-image/upscale-an-image.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {},
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "freepik",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "freepik"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "createImageFromText",
+                        "remote": "createImageFromText"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    },
+                    {
+                        "local": "upscaleAnImage",
+                        "remote": "upscaleAnImage"
+                    }
+                ],
+                "function": [],
+                "rpc": [],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey8"
+        }
+    ]
+}

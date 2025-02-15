@@ -1,0 +1,14 @@
+{
+    "url": "/v2/sessions-ordered",
+    "method": "GET",
+    "qs": {},
+    "body": {},
+    "headers": {},
+    "response": {
+        "iterate": "{{get(parseJSON(body),'sessions')}}",
+        "output": {
+            "label": "{{item.session_id}}",
+            "value": "{{item.session_id}}"
+        }
+    }
+}

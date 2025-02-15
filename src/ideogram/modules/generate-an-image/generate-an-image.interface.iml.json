@@ -1,0 +1,32 @@
+[
+    {
+        "name": "is_image_safe",
+        "type": "boolean",
+        "label": "Is Image Safe"
+    },
+    {
+        "name": "prompt",
+        "type": "text",
+        "label": "Prompt"
+    },
+    {
+        "name": "resolution",
+        "type": "text",
+        "label": "Resolution"
+    },
+    {
+        "name": "seed",
+        "type": "number",
+        "label": "Seed"
+    },
+    {
+        "name": "style_type",
+        "type": "text",
+        "label": "Style Type"
+    },
+    {
+        "name": "url",
+        "type": "text",
+        "label": "Url"
+    }
+]

@@ -1,0 +1,28 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+    {
+        "name": "model", // Makes value accesible via "{{parameters.email}}".
+        "type": "text", // Validates that email is correctly entered.
+        "label": "Model", // Sets the user friendly label visible in the module.
+        "required": true,
+        "default": "mistral-embed"
+    },
+    {
+        "name": "input",
+        "type": "array",
+        "label": "Inputs",
+        "spec": {
+            "type": "text",
+            "label": "Input"
+        },
+        "required": true,
+        "help": "The list of strings to embed."
+    },
+    {
+        "name": "encoding_format",
+        "type": "text",
+        "label": "Encoding Format",
+        "required": true,
+        "default": "float"
+    }
+]

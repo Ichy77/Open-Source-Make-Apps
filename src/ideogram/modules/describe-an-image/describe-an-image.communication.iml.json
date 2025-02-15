@@ -1,0 +1,23 @@
+{
+	// Request to API endpoint.
+	"url": "/describe", // Relative to base URL
+	"method": "POST",
+	"headers": { },
+	"type": "multipart/form-data",
+	"qs": { }, // Query string
+	"body": {
+		"image_file": [
+			{
+				"value": "{{parameters.file_data}}",
+				"options": {
+					"filename": "{{parameters.file_name}}"
+				}
+			}
+		]
+	},
+
+	// Response handling
+	"response": {
+		"output": "{{body}}" // Returns API response body as an output bundle.
+	}
+}

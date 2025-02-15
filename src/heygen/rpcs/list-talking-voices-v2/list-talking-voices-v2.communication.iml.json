@@ -1,0 +1,14 @@
+{
+	"url": "/v2/avatars",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{body.data.talking_photos}}",
+		"output": {
+			"label": "{{item.talking_photo_name}}",
+			"value": "{{item.talking_photo_id}}"
+		}
+	}
+}

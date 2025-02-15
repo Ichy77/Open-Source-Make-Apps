@@ -1,0 +1,408 @@
+// Defines the mappable parameters for the BLAND AI API custom app.
+[
+	{
+		//check
+		"name": "phone_number",
+		"type": "text",
+		"label": "Phone Number",
+		"required": true,
+		"help": "The phone number to call in E.164 format. Country code defaults to +1 (US) if not specified."
+	},
+	{
+		//check
+		"name": "task",
+		"type": "text",
+		"label": "Task",
+		"required": true,
+		"help": "Provide instructions, relevant information, and examples of the ideal conversation flow."
+	},
+	{
+		//check
+		"name": "voice",
+		"type": "select",
+		"label": "Voice",
+		"options": "rpc://listVoices",
+		"validate": false,
+		"help": "The voice of the AI agent to use. Accepts any form of voice ID, including custom voice clones and voice presets.Default voices can be referenced directly by their name instead of an id."
+	},
+	{
+		//check
+		"name": "first_sentence",
+		"type": "text",
+		"label": "First Sentence",
+		"required": false,
+		"help": "A phrase that your call will start with. Must be less than 200 characters."
+	},
+	{
+		//check
+		"name": "wait_for_greeting",
+		"type": "boolean",
+		"label": "Wait for Greeting",
+		"required": false,
+		"default": false,
+		"help": "Determines if the AI should speak first or wait for someone else to talk."
+	},
+	{
+		"name": "block_interruptions",
+		"type": "boolean",
+		"label": "Block Interruptions",
+		"default": false
+	},
+	{
+		//check
+		"name": "interruption_threshold",
+		"type": "number",
+		"label": "Interruption Threshold",
+		"required": false,
+		"default": 50,
+		"help": "The latency in milliseconds the AI waits before responding. Higher values reduce interruptions."
+	},
+	{
+		//check
+		"name": "pathway_id",
+		"type": "text",
+		"label": "Pathway ID",
+		"help": "This is the pathway ID for the pathway you have created on our dev portal."
+	},
+	{
+		//check
+		"name": "model",
+		"type": "select",
+		"label": "Model",
+		"options": [
+			{ "value": "base", "label": "Base" },
+			{ "value": "turbo", "label": "Turbo" },
+			{ "value": "enhanced", "label": "Enhanced" },
+			{ "value": "gpt4", "label": "GPT4" }
+		],
+		"default": "enhanced",
+		"help": "In nearly all cases, 'enhanced' is the best choice for now."
+	},
+	{
+		"name": "metadata", // Makes value accesible via "{{parameters.id}}".
+		"type": "array", // Sends the value as unsigned integer.
+		"label": "Metadata",
+		"spec": {
+			"type": "collection",
+			"label": "Information",
+			"spec": [
+				{
+					"name": "key",
+					"type": "text"
+				},
+				{
+					"name": "value",
+					"type": "text"
+				}
+			]
+		},
+		"help": "Add any additional information you want to associate with the call. This can be useful for tracking or categorizing calls. Anything that you put here will be returned in your webhook or in the call details under metadata."
+	},
+	{
+		//check
+		"name": "webhook",
+		"type": "text",
+		"label": "Webhook",
+		"required": false,
+		"help": "The webhook URL to send the call_id and transcript after the call completes."
+	},
+	{
+        //check
+		"name": "webhook_events",
+		"type": "select",
+		"label": "Webhook Events",
+		"multiple": true,
+		"options": [
+			{ "value": "queue", "label": "queue" },
+			{ "value": "call", "label": "call" },
+			{ "value": "latency", "label": "latency" },
+			{ "value": "webhook", "label": "webhook" },
+			{ "value": "tool", "label": "tool" },
+			{ "value": "dynamic_data", "label": "dynamic_data" }
+		],
+		"help": "Specify which events you want to stream to the webhook, during the call."
+	},
+	{
+		//check
+		"name": "record",
+		"type": "boolean",
+		"label": "Record Call",
+		"required": false,
+		"default": false,
+		"help": "Set to true to record the call."
+	},
+	{
+		//check
+		"name": "transfer_phone_number",
+		"type": "text",
+		"label": "Transfer Phone Number",
+		"required": false,
+		"help": "A phone number that the agent can transfer to under specific conditions."
+	},
+	{
+		"name": "transfer_list", // Makes value accesible via "{{parameters.id}}".
+		"type": "array", // Sends the value as unsigned integer.
+		"label": "Transfer List",
+		"spec": [
+			{
+				"name": "name",
+				"type": "text",
+				"label": "Name"
+			},
+			{
+				"name": "phone_number",
+				"type": "text",
+				"label": "Phone Number"
+			}
+		],
+		"help": "Give your agent the ability to transfer calls to a set of phone numbers. Overrides transfer_phone_number if a transfer_list.default is specified. Will default to transfer_list.default, or the chosen phone number."
+	},
+	{
+		//check
+		"name": "language",
+		"type": "select",
+		"label": "Language",
+		"required": false,
+		"default": "eng",
+		"help": "Optimizes transcription, speech, and other API aspects.",
+		"options": [
+			{ "value": "eng", "label": "English" },
+			{ "value": "esp", "label": "Spanish" },
+			{ "value": "fre", "label": "French" },
+			{ "value": "pol", "label": "Polish" },
+			{ "value": "GER", "label": "German" }
+		],
+		"validate": false
+	},
+    {
+        //check
+        "name":"calendly",
+        "type":"collection",
+        "label":"Calendly Integration",
+        "spec":[
+            {
+                "name":"url",
+                "type":"text",
+                "label":"Calendly Event URL"
+            },
+            {
+                "name":"timezone",
+                "type":"text",
+                "label":"Timezone"
+            }
+        ],
+        "help":"To use Calendly integration you must provide the timezone to get availability/book in and the event url."
+    },
+	{
+		//check
+		"name": "max_duration",
+		"type": "number",
+		"label": "Max Duration",
+		"required": false,
+		"default": 30,
+		"help": "The longest duration for the call in minutes. Call ends automatically after this duration."
+	},
+	{
+		//check
+		"name": "answered_by_enabled",
+		"type": "boolean",
+		"label": "Answered By Enabled",
+		"required": false,
+		"default": false,
+		"help": "Enables machine detection to determine if the call was answered by a person or voicemail."
+	},
+	{
+		//check
+		"name": "from",
+		"type": "select",
+		"label": "From",
+		"required": false,
+		"options": "rpc://getOutboundNumbers",
+		"help": "Specify a purchased Outbound Number to call from.",
+		"validate": false
+	},
+	{
+		//check
+		"name": "pronunciation_guide",
+		"type": "array",
+		"label": "Pronunciation Guide",
+		"spec": [
+			{
+				"name": "word",
+				"type": "text",
+				"label": "Word",
+				"help": "The word you want to guide the LLM on how to pronounce."
+			},
+			{
+				"name": "pronunciation",
+				"type": "text",
+				"label": "Pronunciation",
+				"help": "The word you want to guide the LLM on how to pronounce."
+			},
+			{
+				"name": "case_sensitive",
+				"type": "boolean",
+				"label": "Case Sensitive",
+				"help": "Whether or not to consider case. Particularly useful with names. EG: ‘Max’ the name versus ‘max’ the word. "
+			},
+			{
+				"name": "spaced",
+				"type": "boolean",
+				"label": "Spaced",
+				"help": "Whether or not to consider spaces. When true the word ‘high’ would be flagged but NOT ‘hightop’."
+			}
+		]
+	},
+	{
+		//check
+		"name": "temperature",
+		"type": "number",
+		"label": "Temperature",
+		"default": 0.7,
+		"required": false,
+		"validate": {
+			"min": 0,
+			"max": 1
+		}
+	},
+    {
+        //check
+        "name":"keywords",
+        "type":"array",
+        "label":"Keywords",
+        "spec":{
+            "type":"text",
+            "label":"Keyword"
+        },
+        "help":"These words will be boosted in the transcription engine - recommended for proper nouns or words that are frequently mis-transcribed. For stronger keyword boosts, you can place a colon then a boost factor after the word ('Reece:3'). The default boost factor is 2. "
+    },
+	{
+        //check
+		"name": "timzeone",
+		"type": "text",
+		"label": "Timezone",
+		"help": "Set the timezone for the call. Handled automatically for calls in the US. Timezone options are here (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) in the TZ identifier column."
+	},
+	{
+		//check
+		"name": "start_time",
+		"type": "date",
+		"label": "Start Time",
+		"required": false,
+		"help": "The time to start the call."
+	},
+	{
+        //check
+		"name": "voicemail_action",
+		"type": "select",
+		"label": "Voicemail Action",
+		"options": [
+			{ "label": "Hang up", "value": "hangup" },
+			{ "label": "Leave Message", "value": "leave_message" },
+			{ "label": "Ignore", "value": "ignore" }
+		],
+		"default": "hangup",
+		"validate": false,
+		"help": "Voicemail action tells the AI what to do when encountering a voicemail. This has 96% accuracy. There is no such thing as a perfect VM detection, but this gets close. The default value is hangup to save money and keep most users in compliance. Leaving voicemails is strongly discouraged."
+	},
+	{
+        //check
+		"name": "voicemail_message",
+		"type": "text",
+		"label": "Voicemail Message",
+		"help": "When the AI encounters a voicemail, it will leave this message after the beep and then immediately end the call."
+	},
+    {
+        //check
+        "name":"retry",
+        "type":"collection",
+        "label":"Retry Settings",
+        "spec":[
+            {
+                "name":"wait",
+                "type":"number",
+                "label":"Wait Time",
+                "help":"The delay in seconds before the call is retried."
+            },
+            {
+                "name":"voicemail_action",
+                "type":"select",
+                "label":"Voicemail Action",
+                "help":"The action to take when the call goes to voicemail",
+                "options":[
+                    {"value":"hangup","label":"hangup"},
+                    {"value":"leave_message","label":"leave_message"},
+                    {"value":"ignore","label":"ignore"}
+                ]
+            },
+            {
+                "name":"voicemail_message",
+                "type":"text",
+                "label":"Voicemail Message",
+                "help":"The message to leave when the call goes to voicemail."
+            }
+        ]
+    },
+	{
+		//check
+		"name": "amd",
+		"type": "boolean",
+		"label": "AMD Mode",
+		"required": false,
+		"default": false,
+		"help": "AMD mode navigates phone trees and IVR systems. Causes increased delay for the first response."
+	},
+	{
+		//check
+		"name": "tools",
+		"type": "any",
+		"label": "Tools",
+		"required": false,
+		"help": "Interact with the real world through API calls. Detailed tutorial here: https://docs.bland.ai/tutorials/custom-tools",
+		"advanced": true
+	},
+	{
+		//check
+		"name": "summary_prompt",
+		"type": "text",
+		"label": "Summary Prompt",
+		"required": false,
+		"help": "At the end of each call, a summary is generated based on the transcript - you can use this field to add extra instructions and context for how it should be summarized.",
+		"advanced": true
+	},
+	{
+		//check
+		"name": "analysis_prompt",
+		"type": "text",
+		"label": "Analysis Prompt",
+		"required": false,
+		"help": "Guides the output and provides additional instructions and clarifications for the analysis_schema.",
+		"advanced": true
+	},
+	{
+		//check
+		"name": "analysis_schema",
+		"type": "any",
+		"label": "Analysis Schema",
+		"required": false,
+		"help": "When the call ends, the transcript and call details will be analyzed by the AI.",
+		"advanced": true
+	},
+	{
+		//check
+		"name": "request_data",
+		"type": "any",
+		"label": "Request Data",
+		"required": false,
+		"help": "Data for the AI to 'know' specific facts like the caller's name or other context.",
+		"advanced": true
+	},
+	{
+		"name": "dynamic_data",
+		"type": "any",
+		"label": "Dynamic Data",
+		"required": false,
+		"help": "Make dynamic requests to external APIs and use the data in AI responses.",
+		"advanced": true
+	}
+]

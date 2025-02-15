@@ -1,0 +1,24 @@
+
+    {
+        "url": "https://openrouter.ai/api/v1/auth/key", // Absolute URL to the API endpoint which validates credentials
+        "headers": { // Default HTTP headers for all modules and RPCs.
+            "Authorization": "Bearer {{parameters.apiKey}}",
+            "HTTP-Referer": "Make.com",
+            "X-Title": "Make.com App",
+            "Content-Type": "application/json" // Authorization by API key, which user will provide in the connection as parameter.
+
+        },
+        "method": "GET",
+        // Response handling
+        "response": {
+            "error": { // Error handling
+                "message": "[{{statusCode}}] {{body.error.message}}" // On error, returns error message as "[statusCode] error text".
+            }
+        },
+
+        "log": {
+            "sanitize": [ // Excludes sensitive parameters from logs.
+                "request.headers.authorization" // Omit HTTP header "Authorization".
+            ]
+        }
+    }

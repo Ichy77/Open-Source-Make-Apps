@@ -1,0 +1,14 @@
+{
+	"url": "/v2/video_translate/target_languages",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{body.data.languages}}",
+		"output": {
+			"label": "{{item}}",
+			"value": "{{item}}"
+		}
+	}
+}

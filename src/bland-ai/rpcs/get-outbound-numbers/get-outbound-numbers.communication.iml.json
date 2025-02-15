@@ -1,0 +1,14 @@
+{
+	"url": "/outbound",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{body.outbound_numbers}}",
+		"output": {
+			"label": "{{item.phone_number}}",
+			"value": "{{item.phone_number}}"
+		}
+	}
+}

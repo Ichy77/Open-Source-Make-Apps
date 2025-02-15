@@ -1,0 +1,16 @@
+{
+	// Request to API endpoint with parameter "id" defined in Mappable parameters.
+	"url": "/calls/{{parameters.call_id}}/analyze",     // Relative to base URL
+	"method": "POST",
+	"headers": {},                         // Additional HTTP headers
+	"qs": {},                              // Query string
+	"body": {
+		"goal":"{{parameters.goal}}",
+		"questions":"{{arrayOfObjects(parameters.questions)}}"
+	},  // Request body omitting the ID that is already being sent in URL.
+
+	// Response handling
+	"response": {
+		"output": "{{body}}"  // Returns no output bundle as no API output is expected.
+	}
+}

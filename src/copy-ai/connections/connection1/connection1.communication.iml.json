@@ -1,0 +1,19 @@
+{
+	"url": "https://api.copy.ai/api/webhook", // Absolute URL to the API endpoint which validates credentials
+	"headers": { // Additional HTTP headers
+		"x-copy-ai-api-key": "{{parameters.apiKey}}" // Authorizes user by API key, provided by user during the connection creation.
+	},
+
+	// Response handling
+	"response": {
+		"error": { // Error handling
+			"message": "[{{statusCode}}] {{body.error}}" // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [ // Excludes sensitive parameters from logs.
+			"request.headers.x-copy-ai-api-key" // Omit HTTP header "Authorization".
+		]
+	}
+}

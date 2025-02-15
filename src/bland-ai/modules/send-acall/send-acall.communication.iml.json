@@ -1,0 +1,51 @@
+{
+    // Request to API endpoint.
+    "url": "/calls", // Relative to base URL
+    "method": "POST",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": {
+        "phone_number": "{{parameters.phone_number}}", //check 
+        "task": "{{parameters.task}}", //check
+        "pathway_id": "{{parameters.pathway_id}}", //check ,
+        //"start_node_id":"{{parameters.start_node_id}}", <- implement
+        "voice": "{{parameters.voice}}", //new
+        "first_sentence": "{{parameters.first_sentence}}", //check
+        "wait_for_greeting": "{{parameters.wait_for_greeting}}", //check
+        "block_interruptions": "{{parameters.block_interruptions}}",
+        "interruption_threshold": "{{parameters.interruption_threshold}}", //check
+        "model": "{{ifempty(parameters.model,'enhanced')}}", //check
+        "temperature": "{{parameters.temperature}}", //check
+        "keywords":"{{parameters.keywords}}", //newly implemented
+        "pronunciation_guide": "{{parameters.pronunciation_guide}}", //check
+        "transfer_phone_number": "{{parameters.transfer_phone_number}}", //check
+        "transfer_list": "{{parameters.transfer_list}}", //check
+        "language": "{{parameters.language}}", //check
+        //"calendly":"{{parameters.calendly}}",//newly implemented <- removeEmpty
+        "timezone": "{{parameters.timezone}}",
+        "request_data": "{{if(parameters.request_data,parseJSON(parameters.request_data),)}}", //check
+        "tools": "{{parameters.tools}}", //newly implemented
+        "dynamic_data": "{{if(parameters.dynamic_data,parseJSON(parameters.dynamic_data),)}}", //check
+        "start_time": "{{formatDate(parameters.start_time,'YYYY-MM-DD HH:MM:SS -HH:MM')}}", //check 
+        "voicemail_message": "{{parameters.voicemail_message}}", //check
+        "voicemail_action": "{{parameters.voicemail_action}}", //new
+        //"retry":"{{parameters.retry}}",//newly implemented <- removeEmpty
+        "max_duration": "{{parameters.max_duration}}", //check
+        "record": "{{parameters.record}}", //check 
+        "from": "{{parameters.from}}", //check
+        "webhook": "{{parameters.webhook}}", //check
+        "webhook_events":"{{parameters.webhook_events}}", //newly implemented
+        //"metadata": "{{toCollection(parameters.metadata,'key','value')}}", //new <- removeEmpty
+        "summary_prompt":"{{parameters.summary_prompt}}",//newly implemented
+        "analysis_prompt":"{{parameters.analysis_prompt}}",//newly implemented
+        "analysis_schema": "{{parameters.analysis_schema}}", //newly implemented
+        "answered_by_enabled": "{{parameters.answered_by_enabled}}", //check
+        "amd": "{{parameters.amd}}", //check
+        "{{...}}": "{{removeEmpty(parameters)}}"
+    },
+
+    // Response handling
+    "response": {
+        "output": "{{body}}" // Returns API response body as an output bundle.
+    }
+}

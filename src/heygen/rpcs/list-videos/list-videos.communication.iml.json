@@ -1,0 +1,14 @@
+{
+	"url": "/v1/video.list",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{body.data.videos}}",
+		"output": {
+			"label": "{{item.video_id}}",
+			"value": "{{item.video_id}}"
+		}
+	}
+}

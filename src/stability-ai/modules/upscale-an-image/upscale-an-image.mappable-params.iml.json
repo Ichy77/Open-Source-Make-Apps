@@ -1,0 +1,70 @@
+[
+    {
+        "name": "fileName",
+        "type": "filename",
+        "label": "File name",
+        "semantic": "file:name"
+    },
+    {
+        "name": "image",
+        "type": "buffer",
+        "label": "Initial Image Data",
+        "semantic": "file:data",
+        "required": true
+    },
+    {
+        "name": "prompt",
+        "type": "text",
+        "label": "Prompt",
+        "required": true,
+        "help": "What you wish to see in the output image. A strong, descriptive prompt that clearly defines elements, colors, and subjects will lead to better results. To control the weight of a given word use the format (word:weight), where word is the word you'd like to control the weight of and weight is a value between 0 and 1."
+    },
+    {
+        "name": "negative_prompt",
+        "type": "text",
+        "label": "Negative Prompt",
+        "help": "A blurb of text describing what you do not wish to see in the output image. This is an advanced feature."
+    },
+    {
+        "name": "seed",
+        "type": "number",
+        "label": "Seed",
+        "help": "A specific value that is used to guide the 'randomness' of the generation. (Omit this parameter or pass 0 to use a random seed.)",
+        "default": 0,
+        "validate": {
+            "min": 0,
+            "max": 4294967294
+        }
+    },
+    {
+        "name": "output_format",
+        "type": "select",
+        "label": "Output Format",
+        "help": "Dictates the content-type of the generated image.",
+        "options": [
+            {
+                "label": "PNG",
+                "value": "png"
+            },
+            {
+                "label": "JPEG",
+                "value": "jpeg"
+            },
+            {
+                "label": "WEBP",
+                "value": "webp"
+            }
+        ]   
+    },
+    {
+        "name": "creativity",
+        "type": "number",
+        "label": "Creativity",
+        "help": "Controls the likelihood of creating additional details not heavily conditioned by the init image.",
+        "default": 0.35,
+        "validate": {
+            "min": 0.2,
+            "max": 0.5
+        }
+    }
+]

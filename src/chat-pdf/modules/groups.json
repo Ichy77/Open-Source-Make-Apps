@@ -1,0 +1,11 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"MakeAPICall",
+			"addUrl",
+			"uploadFile",
+			"chatWithPdf"
+		]
+	}
+]

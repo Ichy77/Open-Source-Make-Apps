@@ -1,0 +1,16 @@
+{
+    "log": {
+        "sanitize": [
+            "request.headers.x-api-key"
+        ]
+    },
+    "baseUrl": "https://api.chatpdf.com/v1",
+    "headers": {
+        "x-api-key": "{{connection.apiKey}}"
+    },
+    "response": {
+        "error": {
+            "message": "[{{statusCode}}] {{ifempty(body.error,body.message)}}"
+        }
+    }
+}

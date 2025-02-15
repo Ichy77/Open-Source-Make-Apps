@@ -1,0 +1,161 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+	{
+		"name": "messages", // Makes value accesible via "{{parameters.email}}".
+		"type": "array", // Validates that email is correctly entered.
+		"label": "Messages", // Sets the user friendly label visible in the module.
+		"required": true,
+		"spec": [
+			{
+				"name": "role",
+				"type": "select",
+				"label": "Role",
+				"required": true,
+				"options": [
+					{ "value": "user", "label": "User" },
+					{ "value": "system", "label": "System" }
+				]
+			},
+			{
+				"name": "content",
+				"type": "text",
+				"label": "Content",
+				"required": true
+			},
+			{
+				"name": "name",
+				"type": "text",
+				"label": "Name",
+				"required": false
+			}
+		]
+	},
+	{
+		"name": "model",
+		"type": "select",
+		"label": "Model",
+		"required": true,
+		"options": "rpc://listModels",
+		"help":"Details about the models can be found [here](https://api.deepseek.com/docs/api-reference/models)."
+	},
+	{
+		"name": "max_tokens",
+		"type": "number",
+		"label": "Max Tokens",
+		"required": false,
+		"default": 4096,
+		"validate": {
+			"min": 1,
+			"max": 8192
+		}
+	},
+	{
+		"name": "temperature",
+		"type": "number",
+		"label": "Temperature",
+		"required": false,
+		"default": 1,
+		"validate": {
+			"min": 0,
+			"max": 2
+		},
+		"help": "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic."
+	},
+	{
+		"name": "response_format",
+		"type": "collection",
+		"label": "Response Format",
+		"required": false,
+		"spec": [
+			{
+				"name": "type",
+				"type": "select",
+				"label": "Type",
+				"options": [
+					{ "value": "text", "label": "Text" },
+					{ "value": "json_object", "label": "JSON Object" }
+				],
+				"default": "text"
+			}
+		]
+	},
+	{
+		"name": "frequency_penalty",
+		"type": "number",
+		"label": "Frequency Penalty",
+		"required": false,
+		"default": 0,
+		"validate": {
+			"min": -2,
+			"max": 2
+		},
+		"advanced": true,
+		"help": "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim."
+	},
+	{
+		"name": "presence_penalty",
+		"type": "number",
+		"label": "Presence Penalty",
+		"required": false,
+		"default": 0,
+		"validate": {
+			"min": -2,
+			"max": 2
+		},
+		"advanced": true,
+		"help": "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics."
+	},
+	{
+		"name": "stop",
+		"type": "array",
+		"label": "Stop",
+		"required": false,
+		"advanced": true,
+		"help": "Up to 16 sequences where the model will stop generating further tokens."
+	},
+	{
+		"name":"top_p",
+		"type":"number",
+		"label":"Top P",
+		"required":false,
+		"default":1,
+		"validate":{
+			"min":0,
+			"max":1
+		},
+		"advanced":true,
+		"help":"An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered."
+	},
+	{
+		"name":"logprobs",
+		"type":"boolean",
+		"label":"Logprobs",
+		"required":false,
+		"advanced":true,
+		"help":"Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the content of message."
+	},
+	{
+		"name":"top_logprobs",
+		"type":"number",
+		"label":"Top Logprobs",
+		"required":false,
+		"advanced":true,
+		"validate":{
+			"min":0,
+			"max":20
+		},
+		"help":"An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. logprobs must be set to true if this parameter is used."
+	},
+	{
+		"name": "tools",
+		"type": "any",
+		"label": "Tools",
+		"advanced": true
+	},
+	{
+		"name": "tool_choice",
+		"type": "any",
+		"label": "Tool Choice",
+		"advanced": true
+	}
+]

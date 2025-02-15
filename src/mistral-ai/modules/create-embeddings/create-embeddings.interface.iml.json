@@ -1,0 +1,67 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "data",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "object",
+                    "type": "text",
+                    "label": "Object"
+                },
+                {
+                    "name": "embedding",
+                    "type": "array",
+                    "spec": {
+                        "type": "number"
+                    },
+                    "label": "Embedding"
+                },
+                {
+                    "name": "index",
+                    "type": "number",
+                    "label": "Index"
+                }
+            ]
+        },
+        "label": "Data"
+    },
+    {
+        "name": "model",
+        "type": "text",
+        "label": "Model"
+    },
+    {
+        "name": "usage",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "prompt_tokens",
+                "type": "number",
+                "label": "Prompt Tokens"
+            },
+            {
+                "name": "total_tokens",
+                "type": "number",
+                "label": "Total Tokens"
+            },
+            {
+                "name": "completion_tokens",
+                "type": "number",
+                "label": "Completion Tokens"
+            }
+        ],
+        "label": "Usage"
+    }
+]

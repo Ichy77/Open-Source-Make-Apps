@@ -1,0 +1,32 @@
+[
+    {
+        "name": "description",
+        "type": "text",
+        "label": "Description"
+    },
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "type",
+        "type": "text",
+        "label": "Type"
+    },
+    {
+        "name": "__IMTLENGTH__",
+        "type": "number",
+        "label": "  IMTLENGTH  "
+    },
+    {
+        "name": "__IMTINDEX__",
+        "type": "number",
+        "label": "  IMTINDEX  "
+    }
+]

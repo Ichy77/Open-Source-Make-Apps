@@ -1,0 +1,12 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "output_url",
+        "type": "text",
+        "label": "Output Url"
+    }
+]

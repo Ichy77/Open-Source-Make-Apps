@@ -1,0 +1,19 @@
+{
+	// Request to API endpoint.
+	"url": "/models",                       // Relative to base URL
+	"method": "GET",
+	"headers": {},                         // Additional HTTP headers
+	"qs": {                                // Query string
+	
+	},
+
+	// Response handling
+	"response": {
+		// Splits array from API response into bundles.
+		// See documentation at: https://docs.integromat.com/apps/app-blocks/api/pagination
+		"iterate": "{{body.data}}",       // Iterates "users" array from API response to split it into individual items.
+
+		"output": "{{item}}",              // Outputs whole each iterated "item" object as separate bundle.
+		"limit": "{{parameters.limit}}"    // Limits number of output bundles as requested by user (even if API returns more items).
+	}
+}

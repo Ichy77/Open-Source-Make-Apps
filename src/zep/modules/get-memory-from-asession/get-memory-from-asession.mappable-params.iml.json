@@ -1,0 +1,24 @@
+// Defines "search" and "limit" as module input parameters.
+[
+    {
+		"name": "session_id",
+		"label": "Session ID",
+		"type": "select",
+		"required": true,
+		"options": "rpc://listSessions"
+	},
+    {
+        "name": "lastN",
+        "label": "Last N",
+        "type": "integer",
+        "help": "The number of most recent memory entries to retrieve.",
+        "advanced": true
+    },
+    {
+        "name": "minRating",
+        "label": "Minimum Rating",
+        "type": "number",
+        "advanced": true,
+        "help": "The minimum rating by which to filter facts"
+    }
+]

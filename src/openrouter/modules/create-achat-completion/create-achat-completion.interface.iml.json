@@ -1,0 +1,49 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "model",
+        "type": "text",
+        "label": "Model"
+    },
+    {
+        "name": "created",
+        "type": "number",
+        "label": "Created"
+    },
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "choices",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "message",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "role",
+                            "type": "text",
+                            "label": "Role"
+                        },
+                        {
+                            "name": "content",
+                            "type": "text",
+                            "label": "Content"
+                        }
+                    ],
+                    "label": "Message"
+                }
+            ]
+        },
+        "label": "Choices"
+    }
+]

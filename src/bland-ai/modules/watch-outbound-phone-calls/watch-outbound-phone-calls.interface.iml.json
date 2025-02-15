@@ -1,0 +1,226 @@
+[
+    {
+        "name": "c_id",
+        "type": "text",
+        "label": "C ID"
+    },
+    {
+        "name": "call_length",
+        "type": "number",
+        "label": "Call Length"
+    },
+    {
+        "name": "batch_id",
+        "type": "text",
+        "label": "Batch ID"
+    },
+    {
+        "name": "to",
+        "type": "text",
+        "label": "To"
+    },
+    {
+        "name": "from",
+        "type": "text",
+        "label": "From"
+    },
+    {
+        "name": "request_data",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "phone_number",
+                "type": "text",
+                "label": "Phone Number"
+            },
+            {
+                "name": "reduce_latency",
+                "type": "boolean",
+                "label": "Reduce Latency"
+            },
+            {
+                "name": "wait",
+                "type": "boolean",
+                "label": "Wait"
+            },
+            {
+                "name": "language",
+                "type": "text",
+                "label": "Language"
+            }
+        ],
+        "label": "Request Data"
+    },
+    {
+        "name": "completed",
+        "type": "boolean",
+        "label": "Completed"
+    },
+    {
+        "name": "created_at",
+        "type": "text",
+        "label": "Created At"
+    },
+    {
+        "name": "inbound",
+        "type": "boolean",
+        "label": "Inbound"
+    },
+    {
+        "name": "queue_status",
+        "type": "text",
+        "label": "Queue Status"
+    },
+    {
+        "name": "endpoint_url",
+        "type": "text",
+        "label": "Endpoint Url"
+    },
+    {
+        "name": "max_duration",
+        "type": "number",
+        "label": "Max Duration"
+    },
+    {
+        "name": "error_message",
+        "type": "text",
+        "label": "Error Message"
+    },
+    {
+        "name": "variables",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "now",
+                "type": "text",
+                "label": "Now"
+            },
+            {
+                "name": "now_utc",
+                "type": "text",
+                "label": "Now Utc"
+            },
+            {
+                "name": "short_from",
+                "type": "text",
+                "label": "Short From"
+            },
+            {
+                "name": "short_to",
+                "type": "text",
+                "label": "Short To"
+            },
+            {
+                "name": "from",
+                "type": "text",
+                "label": "From"
+            },
+            {
+                "name": "to",
+                "type": "text",
+                "label": "To"
+            },
+            {
+                "name": "call_id",
+                "type": "text",
+                "label": "Call ID"
+            },
+            {
+                "name": "phone_number",
+                "type": "text",
+                "label": "Phone Number"
+            },
+            {
+                "name": "city",
+                "type": "text",
+                "label": "City"
+            },
+            {
+                "name": "country",
+                "type": "text",
+                "label": "Country"
+            },
+            {
+                "name": "state",
+                "type": "text",
+                "label": "State"
+            }
+        ],
+        "label": "Variables"
+    },
+    {
+        "name": "answered_by",
+        "type": "text",
+        "label": "Answered By"
+    },
+    {
+        "name": "recording_url",
+        "type": "text",
+        "label": "Recording Url"
+    },
+    {
+        "name": "concatenated_transcript",
+        "type": "text",
+        "label": "Concatenated Transcript"
+    },
+    {
+        "name": "transcripts",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "id",
+                    "type": "number",
+                    "label": "ID"
+                },
+                {
+                    "name": "created_at",
+                    "type": "text",
+                    "label": "Created At"
+                },
+                {
+                    "name": "text",
+                    "type": "text",
+                    "label": "Text"
+                },
+                {
+                    "name": "user",
+                    "type": "text",
+                    "label": "User"
+                },
+                {
+                    "name": "c_id",
+                    "type": "text",
+                    "label": "C ID"
+                }
+            ]
+        },
+        "label": "Transcripts"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "corrected_duration",
+        "type": "text",
+        "label": "Corrected Duration"
+    },
+    {
+        "name": "end_at",
+        "type": "date",
+        "label": "End At"
+    },
+    {
+        "name": "price",
+        "type": "number",
+        "label": "Price"
+    },
+    {
+        "name": "call_id",
+        "type": "text",
+        "label": "Call ID"
+    }
+]

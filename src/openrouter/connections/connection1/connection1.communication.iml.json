@@ -1,0 +1,25 @@
+{
+	// Request
+	"url": "https://www.example.com/api/whoami",          // Absolute URL to the API endpoint which validates credentials
+	"headers": {                                          // Additional HTTP headers
+		// Authorizes user by username and password, provided by user during the connection creation.
+		"authorization": "Basic {{base64(parameters.username + ':' + parameters.password)}}"
+	},
+
+	// Response handling
+	"response": {
+		"metadata": {                                     // Adds authorized user details to the connection label.
+			"type": "email",                              // Type of the parameter. Can be "text" or "email".
+			"value": "{{body.email}}"                     // The value in "email" will be displayed in connection's label.
+		},
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{body.error}}"  // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.authorization"               // Omit HTTP header "Authorization".
+		]
+	}
+}

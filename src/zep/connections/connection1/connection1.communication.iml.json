@@ -1,0 +1,20 @@
+{
+	// Request
+	"url": "https://api.getzep.com/api/v2/users-ordered",          // Absolute URL to the API endpoint which validates credentials
+	"headers": {                                          // Additional HTTP headers
+		"Authorization": "Api-Key {{parameters.apiKey}}"   // Authorizes user by API key, provided by user during the connection creation.
+	},
+
+	// Response handling
+	"response": {
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{body.message}}"  // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.authorization"               // Omit HTTP header "Authorization".
+		]
+	}
+}

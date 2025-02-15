@@ -1,0 +1,122 @@
+[
+	{
+		"name": "file_name",
+		"type": "text",
+		"label": "Name",
+		"required": true,
+		"semantic": "file:name"
+	},
+	{
+		"name": "file_data",
+		"type": "buffer",
+		"label": "Data",
+		"required": true,
+		"semantic": "file:data"
+	},
+	{
+		"name": "webhook_url",
+		"type": "text",
+		"label": "Webhook URL",
+		"required": false,
+		"help": "Webhook URL to receive the upscaled image once it's ready."
+	},
+	{
+		"name": "scale_factor",
+		"type": "select",
+		"label": "Scale Factor",
+		"required": false,
+		"options": [
+			{ "value": "2x", "label": "2x" },
+			{ "value": "4x", "label": "4x" },
+			{ "value": "8x", "label": "8x" },
+			{ "value": "16x", "label": "16x" }
+		],
+		"default": "2x"
+	},
+	{
+		"name": "optimized_for",
+		"type": "select",
+		"label": "Optimized For",
+		"required": false,
+		"options": [
+			{ "value": "standard", "label": "Standard" },
+			{ "value": "soft_portraits", "label": "Soft Portraits" },
+			{ "value": "hard_portraits", "label": "Hard Portraits" },
+			{ "value": "art_n_illustration", "label": "Art & Illustration" },
+			{ "value": "videogame_assets", "label": "Videogame Assets" },
+			{ "value": "nature_n_landscapes", "label": "Nature & Landscapes" },
+			{ "value": "films_n_photography", "label": "Films & Photography" },
+			{ "value": "3d_renders", "label": "3D Renders" },
+			{ "value": "science_fiction_n_horror", "label": "Science Fiction & Horror" }
+		],
+		"default": "standard"
+	},
+	{
+		"name": "prompt",
+		"type": "text",
+		"label": "Prompt",
+		"required": false,
+		"help": "Prompt to guide the upscale process. Reusing the same prompt for AI-generated images will improve the results."
+	},
+	{
+		"name": "creativity",
+		"type": "integer",
+		"label": "Creativity",
+		"required": false,
+		"advanced": true,
+		"default": 0,
+		"validate": {
+			"min": -10,
+			"max": 10
+		}
+	},
+	{
+		"name": "hdr",
+		"type": "integer",
+		"label": "HDR",
+		"required": false,
+		"advanced": true,
+		"default": 0,
+		"validate": {
+			"min": -10,
+			"max": 10
+		}
+	},
+	{
+		"name": "resemblance",
+		"type": "integer",
+		"label": "Resemblance",
+		"required": false,
+		"advanced": true,
+		"default": 0,
+		"validate": {
+			"min": -10,
+			"max": 10
+		}
+	},
+	{
+		"name": "fractality",
+		"type": "integer",
+		"label": "Fractality",
+		"required": false,
+		"advanced": true,
+		"default": 0,
+		"validate": {
+			"min": -10,
+			"max": 10
+		}
+	},
+	{
+		"name": "engine",
+		"type": "select",
+		"label": "Engine",
+		"required": false,
+		"options": [
+			{ "value": "automatic", "label": "Automatic" },
+			{ "value": "magnificent_illusion", "label": "Magnificent Illusion" },
+			{ "value": "magnificent_sharpy", "label": "Magnificent Sharpy" },
+			{ "value": "magnificent_sparkle", "label": "Magnificent Sparkle" }
+		],
+		"default": "automatic"
+	}
+]

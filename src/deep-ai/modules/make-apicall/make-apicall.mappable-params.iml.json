@@ -1,0 +1,84 @@
+[
+    {
+        "help": "Enter a path relative to `https://api.deepai.org/api`. For example: `/text2img`",
+        "name": "url",
+        "type": "text",
+        "label": "URL",
+        "required": true
+    },
+    {
+        "name": "method",
+        "type": "select",
+        "label": "Method",
+        "default": "POST",
+        "options": [
+            {
+                "label": "GET",
+                "value": "GET"
+            },
+            {
+                "label": "POST",
+                "value": "POST"
+            },
+            {
+                "label": "PUT",
+                "value": "PUT"
+            },
+            {
+                "label": "PATCH",
+                "value": "PATCH"
+            },
+            {
+                "label": "DELETE",
+                "value": "DELETE"
+            }
+        ],
+        "required": true
+    },
+    {
+        "help": "You don't have to add authorization headers; we already did that for you.",
+        "name": "headers",
+        "spec": [
+            {
+                "name": "key",
+                "type": "text",
+                "label": "Key"
+            },
+            {
+                "name": "value",
+                "type": "text",
+                "label": "Value"
+            }
+        ],
+        "type": "array",
+        "label": "Headers",
+        "default": [
+            {
+                "key": "Content-Type",
+                "value": "application/json"
+            }
+        ]
+    },
+    {
+        "name": "qs",
+        "spec": [
+            {
+                "name": "key",
+                "type": "text",
+                "label": "Key"
+            },
+            {
+                "name": "value",
+                "type": "text",
+                "label": "Value"
+            }
+        ],
+        "type": "array",
+        "label": "Query String"
+    },
+    {
+        "name": "body",
+        "type": "any",
+        "label": "Body"
+    }
+]

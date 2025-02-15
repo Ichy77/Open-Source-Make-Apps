@@ -1,0 +1,3 @@
+{
+	"output": "{{body}}"  // Returns webhook's response body as an output bundle.
+}

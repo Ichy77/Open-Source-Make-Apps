@@ -1,0 +1,118 @@
+[
+    {
+        "name": "result",
+        "type": "text",
+        "label": "Result"
+    },
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "created",
+        "type": "number",
+        "label": "Created"
+    },
+    {
+        "name": "model",
+        "type": "text",
+        "label": "Model"
+    },
+    {
+        "name": "choices",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "index",
+                    "type": "number",
+                    "label": "Index"
+                },
+                {
+                    "name": "message",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "role",
+                            "type": "text",
+                            "label": "Role"
+                        },
+                        {
+                            "name": "content",
+                            "type": "text",
+                            "label": "Content"
+                        }
+                    ],
+                    "label": "Message"
+                },
+                {
+                    "name": "logprobs",
+                    "type": "text",
+                    "label": "Logprobs"
+                },
+                {
+                    "name": "finish_reason",
+                    "type": "text",
+                    "label": "Finish Reason"
+                }
+            ]
+        },
+        "label": "Choices"
+    },
+    {
+        "name": "usage",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "prompt_tokens",
+                "type": "number",
+                "label": "Prompt Tokens"
+            },
+            {
+                "name": "completion_tokens",
+                "type": "number",
+                "label": "Completion Tokens"
+            },
+            {
+                "name": "total_tokens",
+                "type": "number",
+                "label": "Total Tokens"
+            },
+            {
+                "name": "prompt_tokens_details",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "cached_tokens",
+                        "type": "number",
+                        "label": "Cached Tokens"
+                    }
+                ],
+                "label": "Prompt Tokens Details"
+            },
+            {
+                "name": "prompt_cache_hit_tokens",
+                "type": "number",
+                "label": "Prompt Cache Hit Tokens"
+            },
+            {
+                "name": "prompt_cache_miss_tokens",
+                "type": "number",
+                "label": "Prompt Cache Miss Tokens"
+            }
+        ],
+        "label": "Usage"
+    },
+    {
+        "name": "system_fingerprint",
+        "type": "text",
+        "label": "System Fingerprint"
+    }
+]

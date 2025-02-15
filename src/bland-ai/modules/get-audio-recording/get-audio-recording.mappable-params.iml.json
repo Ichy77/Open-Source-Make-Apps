@@ -1,0 +1,10 @@
+[
+	// Defines "id" as mandatory module input parameter.
+	{
+		"name": "call_id",        // Makes value accesible via "{{parameters.id}}".
+		"type": "text",  // Sets the type to unsigned integer.
+		"label": "Call ID",  // Sets the user friendly label visible in the module.
+		"required": true,
+		"help":"The response will be in .wav format. Keep this in mind if you upload the file anywhere."     // Sets the parameter as mandatory.
+	}
+]

@@ -1,0 +1,19 @@
+{
+		// Uncomment and update the following lines to implement the "attach" method.
+	
+		// Request
+		"url": "https://api.heygen.com/v1/webhook/endpoint.add",
+		"method": "POST",
+		"body": {
+			"url": "{{webhook.url}}",
+			"events":"{{parameters.events}}"
+		},
+	
+		// Response handling
+		"response": {
+			"data": {
+				"externalHookId": "{{body.endpoint_id}}"
+				
+			}
+		}
+}

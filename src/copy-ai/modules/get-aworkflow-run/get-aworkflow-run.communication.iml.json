@@ -1,0 +1,12 @@
+{
+    // Request to API endpoint with parameter "id" defined in Mappable parameters.
+    "url": "/workflow/{{parameters.workflow_id}}/run/{{parameters.run_id}}", // Relative to base URL
+    "method": "GET",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+
+    // Response handling
+    "response": {
+        "output": "{{body.data}}" // Return JSON response body as an output bundle.
+    }
+}

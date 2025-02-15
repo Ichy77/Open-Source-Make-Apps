@@ -1,0 +1,13 @@
+{
+	// Request to API endpoint.
+	"url": "/v1/chat/completions",  // Relative to base URL
+	"method": "POST",
+	"headers": {},    // Additional HTTP headers
+	"qs": {},         // Query string
+	"body": "{{parameters}}",
+
+	// Response handling
+	"response": {
+		"output": "{{parseTimestamps(body)}}"  // Returns API response body as an output bundle.
+	}
+}

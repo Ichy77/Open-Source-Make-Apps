@@ -1,0 +1,24 @@
+{
+	//Verified App
+	// Default request configuration
+	"baseUrl": "https://api.stability.ai/",  
+	"timeout": 300000,       // Default base URL for all modules and RPCs.
+	"headers": {                                          // Default HTTP headers for all modules and RPCs.
+		"Authorization": "Bearer {{connection.apiKey}}",
+		"Stability-Client-Version":"1.0",
+		"Organization":"{{connection.Organization}}"   // Authorization by API key, which user will provide in the connection as parameter.
+	},
+
+	// Default response handling
+	"response": {
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{if(body.message,body.message,join(body.errors,','))}}"  // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.authorization"               // Omit HTTP header "Authorization".
+		]
+	}
+}

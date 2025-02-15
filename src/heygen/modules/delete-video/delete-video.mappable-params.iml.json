@@ -1,0 +1,10 @@
+[
+	{
+		"name": "video_id", // Makes value accesible via "{{parameters.id}}".
+		"type": "select", // Sends the value as unsigned integer.
+		"label": "Video ID", // Sets the user friendly label visible in the module.
+		"required": true,
+		"options": "rpc://listVideos",
+		"dynamic": true
+	}
+]

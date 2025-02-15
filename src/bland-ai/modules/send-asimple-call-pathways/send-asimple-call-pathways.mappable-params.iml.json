@@ -1,0 +1,19 @@
+// Defines "id", "email" and "name" as module input parameters.
+[
+    {
+        //check
+        "name": "phone_number",
+        "type": "text",
+        "label": "Phone Number",
+        "required": true,
+        "help": "The phone number to call in E.164 format. Country code defaults to +1 (US) if not specified."
+    },
+    {
+        //check
+        "name": "pathway_id",
+        "type": "text",
+        "label": "Pathway ID",
+        "required": true,
+        "help": "Follows the conversational pathway you created to guide the conversation."
+    }
+]

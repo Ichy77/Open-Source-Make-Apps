@@ -1,0 +1,18 @@
+{
+	//	// Uncomment and update the following lines to implement the "attach" method.
+	//
+	//	// Request
+	//	"url": "https://www.example.com/api/v2/webhook",
+	//	"method": "POST",
+	//	"body": {
+	//		"url": "{{webhook.url}}"
+	//	},
+	//
+	//	// Response handling
+	//	"response": {
+	//		"data": {
+	//			"externalHookId": "{{body.id}}",  // Stores the webhook's ID to be used in the detach remote procedure. It is accessible via "{{webhook.externalHookId}}".
+	//			"token": "{{body.token}}"         // Stores the webhook's token to be used in the detach remote procedure. It is accessible via "{{webhook.token}}".
+	//		}
+	//	}
+}

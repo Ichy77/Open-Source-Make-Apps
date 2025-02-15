@@ -1,0 +1,12 @@
+{
+    "url": "/chats/message",
+    "body": {
+		"sourceId": "{{'cha_'parameters.sourceId}}",
+		"messages":"{{parameters.messages}}",
+		"referenceSources": "{{parameters.referenceSources}}"
+	},
+    "method": "POST",
+    "response": {
+        "output": "{{body}}"
+    }
+}

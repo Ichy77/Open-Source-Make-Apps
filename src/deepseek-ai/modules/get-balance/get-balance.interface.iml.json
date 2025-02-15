@@ -1,0 +1,37 @@
+[
+    {
+        "name": "is_available",
+        "type": "boolean",
+        "label": "Is Available"
+    },
+    {
+        "name": "balance_infos",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "currency",
+                    "type": "text",
+                    "label": "Currency"
+                },
+                {
+                    "name": "total_balance",
+                    "type": "text",
+                    "label": "Total Balance"
+                },
+                {
+                    "name": "granted_balance",
+                    "type": "text",
+                    "label": "Granted Balance"
+                },
+                {
+                    "name": "topped_up_balance",
+                    "type": "text",
+                    "label": "Topped Up Balance"
+                }
+            ]
+        },
+        "label": "Balance Infos"
+    }
+]

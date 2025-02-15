@@ -1,0 +1,19 @@
+[
+    
+	{
+		"name": "events",
+		"label": "Events",
+		"type": "select",
+		"options": [
+			{
+				"label": "Avatar Video Success",
+				"value": "avatar_video.success"
+			},
+			{
+				"label": "Avatar Video Fail",
+				"value": "avatar_video.fail"
+			}
+		],
+		"multiple": true
+	}
+]

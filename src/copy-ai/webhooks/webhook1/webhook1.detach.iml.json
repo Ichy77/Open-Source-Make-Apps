@@ -1,0 +1,6 @@
+{
+	// Uncomment and update the following lines to implement the "detach" method.
+	
+	"url": "https://api.copy.ai/api/webhook/{{webhook.externalHookId}}",
+	"method": "DELETE"
+}

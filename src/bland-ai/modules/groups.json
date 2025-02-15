@@ -1,0 +1,19 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"listCalls",
+			"getCallDetails",
+			"getAudioRecording",
+			"stopActiveCall",
+			"sendACall",
+			"watchIncomingPhoneCalls",
+			"watchOutboundPhoneCalls",
+			"listVoices",
+			"makeAnApiCall",
+			"analyzeACall",
+			"sendASimpleCall",
+			"sendASimpleCallPathways"
+		]
+	}
+]

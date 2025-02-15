@@ -1,0 +1,19 @@
+{
+    "qs": {
+        "{{...}}": "{{toCollection(parameters.qs, 'key', 'value')}}"
+    },
+    "url": "https://api.getzep.com/api{{parameters.url}}",  // Defines the fixed base URL and maps the relative path URL from the user.
+    "body": "{{parameters.body}}",
+    "type": "text",
+    "method": "{{parameters.method}}",
+    "headers": {
+        "{{...}}": "{{toCollection(parameters.headers, 'key', 'value')}}"
+    },
+    "response": {
+        "output": {
+            "body": "{{body}}",
+            "headers": "{{headers}}",
+            "statusCode": "{{statusCode}}"
+        }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Copy AI",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "getAWorkflowRun": {
+                "label": "Get a Workflow Run",
+                "description": "Retrieves the result of a workflow run.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-aworkflow-run/get-aworkflow-run.communication.iml.json",
+                    "staticParams": "modules/get-aworkflow-run/get-aworkflow-run.static-params.iml.json",
+                    "mappableParams": "modules/get-aworkflow-run/get-aworkflow-run.mappable-params.iml.json",
+                    "interface": "modules/get-aworkflow-run/get-aworkflow-run.interface.iml.json",
+                    "samples": "modules/get-aworkflow-run/get-aworkflow-run.samples.iml.json",
+                    "scope": "modules/get-aworkflow-run/get-aworkflow-run.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API Call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            },
+            "watchNewWorkflowRuns": {
+                "label": "Watch New Workflow Runs",
+                "description": "Triggers when a workflow run has started, completed, or failed.",
+                "moduleType": "instant_trigger",
+                "connection": null,
+                "altConnection": null,
+                "webhook": "webhook1",
+                "codeFiles": {
+                    "communication": "modules/watch-new-workflow-runs/watch-new-workflow-runs.communication.iml.json",
+                    "staticParams": "modules/watch-new-workflow-runs/watch-new-workflow-runs.static-params.iml.json",
+                    "mappableParams": "modules/watch-new-workflow-runs/watch-new-workflow-runs.mappable-params.iml.json",
+                    "interface": "modules/watch-new-workflow-runs/watch-new-workflow-runs.interface.iml.json",
+                    "samples": "modules/watch-new-workflow-runs/watch-new-workflow-runs.samples.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {},
+        "webhook": {
+            "webhook1": {
+                "label": "Workflow Events",
+                "webhookType": "web",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "webhooks/webhook1/webhook1.communication.iml.json",
+                    "params": "webhooks/webhook1/webhook1.params.iml.json",
+                    "attach": "webhooks/webhook1/webhook1.attach.iml.json",
+                    "detach": "webhooks/webhook1/webhook1.detach.iml.json",
+                    "update": "webhooks/webhook1/webhook1.update.iml.json",
+                    "requiredScope": "webhooks/webhook1/webhook1.required-scope.iml.json"
+                }
+            }
+        }
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "copy-ai",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "copy-ai"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "getAWorkflowRun",
+                        "remote": "getAWorkflowRun"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    },
+                    {
+                        "local": "watchNewWorkflowRuns",
+                        "remote": "watchNewWorkflowRuns"
+                    }
+                ],
+                "function": [],
+                "rpc": [],
+                "webhook": [
+                    {
+                        "local": "webhook1",
+                        "remote": "copy-ai"
+                    }
+                ]
+            },
+            "apikeyFile": "../../.secrets/apikey5"
+        }
+    ]
+}

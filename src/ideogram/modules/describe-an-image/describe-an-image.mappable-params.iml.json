@@ -1,0 +1,18 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+{
+        "name": "file_name",
+        "type": "text",
+        "label": "Name",
+        "required": true,
+        "semantic": "file:name",
+		"extension": ["jpg", "webp", "png"]
+    },
+    {
+        "name": "file_data",
+        "type": "buffer",
+        "label": "Data",
+        "required": true,
+        "semantic": "file:data"
+    }
+]

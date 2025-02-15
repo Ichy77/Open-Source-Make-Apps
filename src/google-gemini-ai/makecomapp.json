@@ -1,0 +1,158 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "gemini-ai-q9zyjp": {
+                "label": "Gemini AI",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/gemini-ai-q9zyjp/gemini-ai-q9zyjp.communication.iml.json",
+                    "params": "connections/gemini-ai-q9zyjp/gemini-ai-q9zyjp.params.iml.json",
+                    "common": "connections/gemini-ai-q9zyjp/gemini-ai-q9zyjp.common.json"
+                }
+            }
+        },
+        "module": {
+            "createACompletionGeminiPro": {
+                "label": "Create a Completion",
+                "description": "Creates a completion for the provided prompt or chat.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "gemini-ai-q9zyjp",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-acompletion-gemini-pro/create-acompletion-gemini-pro.communication.iml.json",
+                    "staticParams": "modules/create-acompletion-gemini-pro/create-acompletion-gemini-pro.static-params.iml.json",
+                    "mappableParams": "modules/create-acompletion-gemini-pro/create-acompletion-gemini-pro.mappable-params.iml.json",
+                    "interface": "modules/create-acompletion-gemini-pro/create-acompletion-gemini-pro.interface.iml.json",
+                    "samples": "modules/create-acompletion-gemini-pro/create-acompletion-gemini-pro.samples.iml.json",
+                    "scope": "modules/create-acompletion-gemini-pro/create-acompletion-gemini-pro.scope.iml.json"
+                }
+            },
+            "makeApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "gemini-ai-q9zyjp",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-api-call/make-api-call.communication.iml.json",
+                    "staticParams": "modules/make-api-call/make-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-api-call/make-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-api-call/make-api-call.interface.iml.json",
+                    "samples": "modules/make-api-call/make-api-call.samples.iml.json",
+                    "scope": "modules/make-api-call/make-api-call.scope.iml.json"
+                }
+            },
+            "uploadAFile": {
+                "label": "Upload a File",
+                "description": "Uploads a file so it can be used in the completions.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "gemini-ai-q9zyjp",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/upload-afile/upload-afile.communication.iml.json",
+                    "staticParams": "modules/upload-afile/upload-afile.static-params.iml.json",
+                    "mappableParams": "modules/upload-afile/upload-afile.mappable-params.iml.json",
+                    "interface": "modules/upload-afile/upload-afile.interface.iml.json",
+                    "samples": "modules/upload-afile/upload-afile.samples.iml.json",
+                    "scope": "modules/upload-afile/upload-afile.scope.iml.json"
+                }
+            }
+        },
+        "function": {
+            "removeEmpty": {
+                "codeFiles": {
+                    "code": "functions/remove-empty/remove-empty.code.js",
+                    "test": "functions/remove-empty/remove-empty.test.js"
+                }
+            },
+            "removeTypeKeys": {
+                "codeFiles": {
+                    "code": "functions/remove-type-keys/remove-type-keys.code.js",
+                    "test": "functions/remove-type-keys/remove-type-keys.test.js"
+                }
+            }
+        },
+        "rpc": {
+            "getTextChatModels": {
+                "label": "getTextChatModels",
+                "connection": "gemini-ai-q9zyjp",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-text-chat-models/get-text-chat-models.communication.iml.json",
+                    "params": "rpcs/get-text-chat-models/get-text-chat-models.params.iml.json"
+                }
+            },
+            "getVisionModels": {
+                "label": "getVisionModels",
+                "connection": "gemini-ai-q9zyjp",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-vision-models/get-vision-models.communication.iml.json",
+                    "params": "rpcs/get-vision-models/get-vision-models.params.iml.json"
+                }
+            }
+        },
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "gemini-ai",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "gemini-ai-q9zyjp",
+                        "remote": "gemini-ai-q9zyjp"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "createACompletionGeminiPro",
+                        "remote": "createACompletionGeminiPro"
+                    },
+                    {
+                        "local": "makeApiCall",
+                        "remote": "makeApiCall"
+                    },
+                    {
+                        "local": "uploadAFile",
+                        "remote": "uploadAFile"
+                    }
+                ],
+                "function": [
+                    {
+                        "local": "removeEmpty",
+                        "remote": "removeEmpty"
+                    },
+                    {
+                        "local": "removeTypeKeys",
+                        "remote": "removeTypeKeys"
+                    }
+                ],
+                "rpc": [
+                    {
+                        "local": "getTextChatModels",
+                        "remote": "getTextChatModels"
+                    },
+                    {
+                        "local": "getVisionModels",
+                        "remote": "getVisionModels"
+                    }
+                ],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey9"
+        }
+    ]
+}

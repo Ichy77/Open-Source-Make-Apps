@@ -1,0 +1,11 @@
+{
+    "url": "/image-editor",
+    "body": {
+        "text": "{{parameters.text}}",
+        "image": "{{parameters.image}}"
+    },
+    "method": "POST",
+    "response": {
+        "output": "{{body}}"
+    }
+}

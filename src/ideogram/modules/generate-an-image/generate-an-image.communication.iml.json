@@ -1,0 +1,14 @@
+{
+	// Request to API endpoint with parameter "id" defined in Mappable parameters.
+	"url": "/generate",      // Relative to base URL
+	"method": "POST",
+	"headers": {},                          // Additional HTTP headers
+	"body": {
+		"image_request": "{{removeEmptyColorPalette(parameters)}}"
+	},                               // Query string
+
+	// Response handling
+	"response": {
+		"output": "{{first(body.data)}}"                // Return JSON response body as an output bundle.
+	}
+}

@@ -1,0 +1,11 @@
+{
+    "url": "/v2/users-ordered",
+    "method": "GET",
+    "response": {
+        "iterate": "{{get(parseJSON(body),'users')}}",
+        "output": {
+            "label": "{{item.first_name ' ' item.last_name}}",
+            "value": "{{item.user_id}}"
+        }
+    }
+}

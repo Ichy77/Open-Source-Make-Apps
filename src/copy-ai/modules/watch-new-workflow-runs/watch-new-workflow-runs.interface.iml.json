@@ -1,0 +1,62 @@
+[
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "input",
+        "type": "collection",
+        "label": "Input"
+    },
+    {
+        "name": "output",
+        "type": "collection",
+        "label": "Output"
+    },
+    {
+        "name": "toolKey",
+        "type": "text",
+        "label": "Tool Key"
+    },
+    {
+        "name": "metadata",
+        "type": "collection",
+        "label": "Metadata"
+    },
+    {
+        "name": "error",
+        "type": "text",
+        "label": "Error"
+    },
+    {
+        "name": "createdAt",
+        "type": "date",
+        "label": "Created At"
+    },
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "workflowRunId",
+        "type": "text",
+        "label": "Workflow Run ID"
+    },
+    {
+        "name": "workflowId",
+        "type": "text",
+        "label": "Workflow ID"
+    },
+    {
+        "name": "credits",
+        "type": "number",
+        "label": "Credits"
+    },
+    {
+        "name": "type",
+        "type": "text",
+        "label": "Type"
+    }
+]

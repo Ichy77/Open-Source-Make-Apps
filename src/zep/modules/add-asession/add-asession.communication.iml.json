@@ -1,0 +1,20 @@
+{
+	// Request to API endpoint.
+	"url": "/v2/sessions",  // Relative to base URL
+	// "url": "https://hook.eu1.make.com/h88ucvs5ygy6guw7i22cfd799c7imma8",  // Relative to base URL
+	"method": "POST",
+	"body": {
+		"user_id": "{{parameters.user_id}}",
+		"session_id": "{{uuid}}",
+		"fact_rating_instruction": {
+			"examples": "{{toCollection(parameters.fact_rating_instruction.examples,'key','value')}}",
+			"instruction": "{{parameters.fact_rating_instruction.instruction}}"
+		},
+		"metadata": "{{toCollection(parameters.metadata,'key','value')}}"
+	},
+
+	// Response handling
+	"response": {
+		"output": "{{parseJSON(body)}}"  // Returns API response body as an output bundle.
+	}
+}

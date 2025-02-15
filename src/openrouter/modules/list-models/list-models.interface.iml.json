@@ -1,0 +1,95 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "description",
+        "type": "text",
+        "label": "Description"
+    },
+    {
+        "name": "pricing",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "prompt",
+                "type": "text",
+                "label": "Prompt"
+            },
+            {
+                "name": "completion",
+                "type": "text",
+                "label": "Completion"
+            }
+        ],
+        "label": "Pricing"
+    },
+    {
+        "name": "context_length",
+        "type": "number",
+        "label": "Context Length"
+    },
+    {
+        "name": "architecture",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "tokenizer",
+                "type": "text",
+                "label": "Tokenizer"
+            },
+            {
+                "name": "instruct_type",
+                "type": "text",
+                "label": "Instruct Type"
+            }
+        ],
+        "label": "Architecture"
+    },
+    {
+        "name": "top_provider",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "max_completion_tokens",
+                "type": "text",
+                "label": "Max Completion Tokens"
+            }
+        ],
+        "label": "Top Provider"
+    },
+    {
+        "name": "per_request_limits",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "prompt_tokens",
+                "type": "text",
+                "label": "Prompt Tokens"
+            },
+            {
+                "name": "completion_tokens",
+                "type": "text",
+                "label": "Completion Tokens"
+            }
+        ],
+        "label": "Per Request Limits"
+    },
+    {
+        "name": "__IMTLENGTH__",
+        "type": "number",
+        "label": "  IMTLENGTH  "
+    },
+    {
+        "name": "__IMTINDEX__",
+        "type": "number",
+        "label": "  IMTINDEX  "
+    }
+]

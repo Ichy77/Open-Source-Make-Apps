@@ -1,0 +1,14 @@
+[
+    {
+        "name": "image",
+        "type": "url",
+        "label": "Image URL",
+        "required": true
+    },
+    {
+        "name": "text",
+        "type": "text",
+        "label": "Text",
+        "required": true
+    }
+]

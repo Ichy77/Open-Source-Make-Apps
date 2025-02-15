@@ -1,0 +1,27 @@
+[
+    {
+        "name": "avatar_id",
+        "type": "text",
+        "label": "Avatar ID"
+    },
+    {
+        "name": "avatar_name",
+        "type": "text",
+        "label": "Avatar Name"
+    },
+    {
+        "name": "gender",
+        "type": "text",
+        "label": "Gender"
+    },
+    {
+        "name": "preview_image_url",
+        "type": "text",
+        "label": "Preview Image Url"
+    },
+    {
+        "name": "preview_video_url",
+        "type": "text",
+        "label": "Preview Video Url"
+    }
+]

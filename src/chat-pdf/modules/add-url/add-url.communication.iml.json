@@ -1,0 +1,10 @@
+{
+    "url": "/sources/add-url",
+    "body": {
+        "url": "{{parameters.url}}"
+    },
+    "method": "POST",
+    "response": {
+        "output": "{{body}}"
+    }
+}

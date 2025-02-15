@@ -1,0 +1,8 @@
+[
+    {
+        "name": "text",
+        "type": "text",
+        "label": "Text",
+        "required": true
+    }
+]

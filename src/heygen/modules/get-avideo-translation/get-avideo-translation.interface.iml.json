@@ -1,0 +1,27 @@
+[
+    {
+        "name": "video_translate_id",
+        "type": "text",
+        "label": "Video Translate ID"
+    },
+    {
+        "name": "title",
+        "type": "text",
+        "label": "Title"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "url",
+        "type": "text",
+        "label": "Url"
+    },
+    {
+        "name": "message",
+        "type": "text",
+        "label": "Message"
+    }
+]

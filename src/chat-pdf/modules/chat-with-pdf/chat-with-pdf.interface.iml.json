@@ -1,0 +1,22 @@
+[
+    {
+        "name": "content",
+        "type": "text",
+        "label": "Content"
+    },
+    {
+        "name": "references",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "pageNumber",
+                    "type": "number",
+                    "label": "Page Number"
+                }
+            ]
+        },
+        "label": "References"
+    }
+]

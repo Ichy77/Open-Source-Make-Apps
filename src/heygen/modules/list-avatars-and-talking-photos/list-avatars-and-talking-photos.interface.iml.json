@@ -1,0 +1,17 @@
+[
+    {
+        "name": "talking_photo_id",
+        "type": "text",
+        "label": "Talking Photo ID"
+    },
+    {
+        "name": "talking_photo_name",
+        "type": "text",
+        "label": "Talking Photo Name"
+    },
+    {
+        "name": "preview_image_url",
+        "type": "text",
+        "label": "Preview Image Url"
+    }
+]

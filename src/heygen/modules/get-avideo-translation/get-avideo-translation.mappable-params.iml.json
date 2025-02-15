@@ -1,0 +1,9 @@
+// Defines "id", "email" and "name" as module input parameters.
+[
+	{
+		"name": "video_translate_id",        // Makes value accesible via "{{parameters.id}}".
+		"type": "text",  // Sends the value as unsigned integer.
+		"label": "Video Translation ID",  // Sets the user friendly label visible in the module.
+		"required": true     // Sets the parameter as mandatory.
+	}
+]

@@ -1,0 +1,16 @@
+{
+	// Request to API endpoint.
+	"url": "/chat/completions",  // Relative to base URL
+	"method": "POST",
+	"headers": {},    // Additional HTTP headers
+	"qs": {},         // Query string
+	"body":"{{parameters}}",
+
+	// Response handling
+	"response": {
+		"output": {
+			"{{...}}": "{{body}}",
+			"result": "{{if(body.choices[1].message.content,body.choices[1].message.content,)}}"
+		}
+	}
+}

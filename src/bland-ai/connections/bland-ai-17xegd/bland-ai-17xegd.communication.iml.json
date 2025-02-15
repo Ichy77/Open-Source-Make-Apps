@@ -1,0 +1,24 @@
+[
+    {
+        "url": "https://api.bland.ai/v1/voices", // Absolute URL to the API endpoint which validates credentials
+        "headers": { // Additional HTTP headers
+            "Authorization": "{{parameters.apiKey}}" // Authorizes user by API key, provided by user during the connection creation.
+        },
+        // "qs": {
+        //     "limit": 1
+        // },
+
+        // Response handling
+        "response": {
+            "error": { // Error handling
+                "message": "[{{statusCode}}] {{body.message}}: {{body.errors}}" // On error, returns error message as "[statusCode] error text".
+            }
+        },
+
+        "log": {
+            "sanitize": [ // Excludes sensitive parameters from logs.
+                "request.headers.authorization" // Omit HTTP header "Authorization".
+            ]
+        }
+    }
+]

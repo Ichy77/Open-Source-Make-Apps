@@ -1,0 +1,101 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+	{
+		"name": "session_id",
+		"label": "Session ID",
+		"type": "select",
+		"required": true,
+		"options": "rpc://listSessions"
+	},
+	{
+		"name": "messages",
+		"type": "array",
+		"label": "Messages",
+		"required": true,
+		"spec": {
+			"type": "collection",
+			"spec": [
+				{
+					"name": "role_type",
+					"type": "select",
+					"label": "Role Type",
+					"required": true,
+					"options": [
+						{
+							"label": "User",
+							"value": "user"
+						},
+						{
+							"label": "System",
+							"value": "system"
+						},
+						{
+							"label": "Assistant",
+							"value": "assistant"
+						},
+						{
+							"label": "Function",
+							"value": "function"
+						},
+						{
+							"label": "Tool",
+							"value": "tool"
+						},
+						{
+							"label": "No Role",
+							"value": "norole"
+						}
+					]
+				},
+				{
+					"name": "content",
+					"type": "text",
+					"label": "Content",
+					"required": true
+				},
+				{
+					"name": "role",
+					"type": "text",
+					"label": "Role",
+					"advanced": true
+				},
+				{
+					"name": "token_count",
+					"label": "Token Count",
+					"type": "integer",
+					"advanced": true
+				},
+				{
+					"name": "uuid",
+					"label": "UUID",
+					"type": "text",
+					"advanced": true
+				},
+				{
+					"name": "created_at",
+					"label": "Created At",
+					"type": "text",
+					"advanced": true
+				},
+				{
+					"name": "updated_at",
+					"label": "Updated At",
+					"type": "text",
+					"advanced": true
+				}
+			]
+		}
+	},
+	{
+		"name": "fact_instruction",
+		"label": "Fact Instruction",
+		"type": "text",
+		"advanced": true
+	},
+	{
+		"name": "summary_instruction",
+		"label": "Summary Instruction",
+		"type": "text",
+		"advanced": true
+	}
+]

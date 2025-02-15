@@ -1,0 +1,128 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "ChatPDF",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "addUrl": {
+                "label": "Upload a PDF",
+                "description": "Uploads a PDF.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/add-url/add-url.communication.iml.json",
+                    "staticParams": "modules/add-url/add-url.static-params.iml.json",
+                    "mappableParams": "modules/add-url/add-url.mappable-params.iml.json",
+                    "interface": "modules/add-url/add-url.interface.iml.json",
+                    "samples": "modules/add-url/add-url.samples.iml.json",
+                    "scope": "modules/add-url/add-url.scope.iml.json"
+                }
+            },
+            "chatWithPdf": {
+                "label": "Chat with PDF",
+                "description": "Sends a chat message to a PDF file using its source ID.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/chat-with-pdf/chat-with-pdf.communication.iml.json",
+                    "staticParams": "modules/chat-with-pdf/chat-with-pdf.static-params.iml.json",
+                    "mappableParams": "modules/chat-with-pdf/chat-with-pdf.mappable-params.iml.json",
+                    "interface": "modules/chat-with-pdf/chat-with-pdf.interface.iml.json",
+                    "samples": "modules/chat-with-pdf/chat-with-pdf.samples.iml.json",
+                    "scope": "modules/chat-with-pdf/chat-with-pdf.scope.iml.json"
+                }
+            },
+            "MakeAPICall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-apicall/make-apicall.communication.iml.json",
+                    "staticParams": "modules/make-apicall/make-apicall.static-params.iml.json",
+                    "mappableParams": "modules/make-apicall/make-apicall.mappable-params.iml.json",
+                    "interface": "modules/make-apicall/make-apicall.interface.iml.json",
+                    "samples": "modules/make-apicall/make-apicall.samples.iml.json",
+                    "scope": "modules/make-apicall/make-apicall.scope.iml.json"
+                }
+            },
+            "uploadFile": {
+                "label": "Upload a File",
+                "description": "Upload a file to your source list.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/upload-file/upload-file.communication.iml.json",
+                    "staticParams": "modules/upload-file/upload-file.static-params.iml.json",
+                    "mappableParams": "modules/upload-file/upload-file.mappable-params.iml.json",
+                    "interface": "modules/upload-file/upload-file.interface.iml.json",
+                    "samples": "modules/upload-file/upload-file.samples.iml.json",
+                    "scope": "modules/upload-file/upload-file.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {},
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "chatpdf",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "chatpdf"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "addUrl",
+                        "remote": "addUrl"
+                    },
+                    {
+                        "local": "chatWithPdf",
+                        "remote": "chatWithPdf"
+                    },
+                    {
+                        "local": "MakeAPICall",
+                        "remote": "MakeAPICall"
+                    },
+                    {
+                        "local": "uploadFile",
+                        "remote": "uploadFile"
+                    }
+                ],
+                "function": [],
+                "rpc": [],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey4"
+        }
+    ]
+}

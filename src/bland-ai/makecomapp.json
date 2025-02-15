@@ -1,0 +1,354 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "bland-ai-17xegd": {
+                "label": "Bland",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/bland-ai-17xegd/bland-ai-17xegd.communication.iml.json",
+                    "params": "connections/bland-ai-17xegd/bland-ai-17xegd.params.iml.json",
+                    "common": "connections/bland-ai-17xegd/bland-ai-17xegd.common.json"
+                }
+            }
+        },
+        "module": {
+            "analyzeACall": {
+                "label": "Analyze a Call",
+                "description": "Analyzes a call based on questions and goals.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/analyze-acall/analyze-acall.communication.iml.json",
+                    "staticParams": "modules/analyze-acall/analyze-acall.static-params.iml.json",
+                    "mappableParams": "modules/analyze-acall/analyze-acall.mappable-params.iml.json",
+                    "interface": "modules/analyze-acall/analyze-acall.interface.iml.json",
+                    "samples": "modules/analyze-acall/analyze-acall.samples.iml.json",
+                    "scope": "modules/analyze-acall/analyze-acall.scope.iml.json"
+                }
+            },
+            "getAudioRecording": {
+                "label": "Get an Audio Recording",
+                "description": "Retrieves the call's audio file, if it exists.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-audio-recording/get-audio-recording.communication.iml.json",
+                    "staticParams": "modules/get-audio-recording/get-audio-recording.static-params.iml.json",
+                    "mappableParams": "modules/get-audio-recording/get-audio-recording.mappable-params.iml.json",
+                    "interface": "modules/get-audio-recording/get-audio-recording.interface.iml.json",
+                    "samples": "modules/get-audio-recording/get-audio-recording.samples.iml.json",
+                    "scope": "modules/get-audio-recording/get-audio-recording.scope.iml.json"
+                }
+            },
+            "getCallDetails": {
+                "label": "Get a Call Details",
+                "description": "Retrieves detailed information and the transcript of a call.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-call-details/get-call-details.communication.iml.json",
+                    "staticParams": "modules/get-call-details/get-call-details.static-params.iml.json",
+                    "mappableParams": "modules/get-call-details/get-call-details.mappable-params.iml.json",
+                    "interface": "modules/get-call-details/get-call-details.interface.iml.json",
+                    "samples": "modules/get-call-details/get-call-details.samples.iml.json",
+                    "scope": "modules/get-call-details/get-call-details.scope.iml.json"
+                }
+            },
+            "listCalls": {
+                "label": "List Calls",
+                "description": "Returns a list of calls.",
+                "moduleType": "search",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-calls/list-calls.communication.iml.json",
+                    "staticParams": "modules/list-calls/list-calls.static-params.iml.json",
+                    "mappableParams": "modules/list-calls/list-calls.mappable-params.iml.json",
+                    "interface": "modules/list-calls/list-calls.interface.iml.json",
+                    "samples": "modules/list-calls/list-calls.samples.iml.json",
+                    "scope": "modules/list-calls/list-calls.scope.iml.json"
+                }
+            },
+            "listVoices": {
+                "label": "List Voices",
+                "description": "Lists available voices.",
+                "moduleType": "search",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-voices/list-voices.communication.iml.json",
+                    "staticParams": "modules/list-voices/list-voices.static-params.iml.json",
+                    "mappableParams": "modules/list-voices/list-voices.mappable-params.iml.json",
+                    "interface": "modules/list-voices/list-voices.interface.iml.json",
+                    "samples": "modules/list-voices/list-voices.samples.iml.json",
+                    "scope": "modules/list-voices/list-voices.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API Call.",
+                "moduleType": "universal",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            },
+            "sendACall": {
+                "label": "Send a Call",
+                "description": "Sends an AI phone call.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/send-acall/send-acall.communication.iml.json",
+                    "staticParams": "modules/send-acall/send-acall.static-params.iml.json",
+                    "mappableParams": "modules/send-acall/send-acall.mappable-params.iml.json",
+                    "interface": "modules/send-acall/send-acall.interface.iml.json",
+                    "samples": "modules/send-acall/send-acall.samples.iml.json",
+                    "scope": "modules/send-acall/send-acall.scope.iml.json"
+                }
+            },
+            "sendASimpleCall": {
+                "label": "Send a simple Call",
+                "description": "Sends a simple call. Without a lot of settings.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/send-asimple-call/send-asimple-call.communication.iml.json",
+                    "staticParams": "modules/send-asimple-call/send-asimple-call.static-params.iml.json",
+                    "mappableParams": "modules/send-asimple-call/send-asimple-call.mappable-params.iml.json",
+                    "interface": "modules/send-asimple-call/send-asimple-call.interface.iml.json",
+                    "samples": "modules/send-asimple-call/send-asimple-call.samples.iml.json",
+                    "scope": "modules/send-asimple-call/send-asimple-call.scope.iml.json"
+                }
+            },
+            "sendASimpleCallPathways": {
+                "label": "Send a simple Call using Pathways",
+                "description": "Sends a simple call without a lot of settings using Pathways.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/send-asimple-call-pathways/send-asimple-call-pathways.communication.iml.json",
+                    "staticParams": "modules/send-asimple-call-pathways/send-asimple-call-pathways.static-params.iml.json",
+                    "mappableParams": "modules/send-asimple-call-pathways/send-asimple-call-pathways.mappable-params.iml.json",
+                    "interface": "modules/send-asimple-call-pathways/send-asimple-call-pathways.interface.iml.json",
+                    "samples": "modules/send-asimple-call-pathways/send-asimple-call-pathways.samples.iml.json",
+                    "scope": "modules/send-asimple-call-pathways/send-asimple-call-pathways.scope.iml.json"
+                }
+            },
+            "stopActiveCall": {
+                "label": "Stop an Active Call",
+                "description": "Stops an active call.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/stop-active-call/stop-active-call.communication.iml.json",
+                    "staticParams": "modules/stop-active-call/stop-active-call.static-params.iml.json",
+                    "mappableParams": "modules/stop-active-call/stop-active-call.mappable-params.iml.json",
+                    "interface": "modules/stop-active-call/stop-active-call.interface.iml.json",
+                    "samples": "modules/stop-active-call/stop-active-call.samples.iml.json",
+                    "scope": "modules/stop-active-call/stop-active-call.scope.iml.json"
+                }
+            },
+            "watchIncomingPhoneCalls": {
+                "label": "Watch Incoming Phone Calls",
+                "description": "Triggers when an incoming phone call has finished.",
+                "moduleType": "instant_trigger",
+                "connection": null,
+                "altConnection": null,
+                "webhook": "bland-ai-17xegd",
+                "codeFiles": {
+                    "communication": "modules/watch-incoming-phone-calls/watch-incoming-phone-calls.communication.iml.json",
+                    "staticParams": "modules/watch-incoming-phone-calls/watch-incoming-phone-calls.static-params.iml.json",
+                    "mappableParams": "modules/watch-incoming-phone-calls/watch-incoming-phone-calls.mappable-params.iml.json",
+                    "interface": "modules/watch-incoming-phone-calls/watch-incoming-phone-calls.interface.iml.json",
+                    "samples": "modules/watch-incoming-phone-calls/watch-incoming-phone-calls.samples.iml.json"
+                }
+            },
+            "watchOutboundPhoneCalls": {
+                "label": "Watch Outbound Phone Calls",
+                "description": "Triggers when an outbound phone call is finished.",
+                "moduleType": "instant_trigger",
+                "connection": null,
+                "altConnection": null,
+                "webhook": "bland-ai-17xegd",
+                "codeFiles": {
+                    "communication": "modules/watch-outbound-phone-calls/watch-outbound-phone-calls.communication.iml.json",
+                    "staticParams": "modules/watch-outbound-phone-calls/watch-outbound-phone-calls.static-params.iml.json",
+                    "mappableParams": "modules/watch-outbound-phone-calls/watch-outbound-phone-calls.mappable-params.iml.json",
+                    "interface": "modules/watch-outbound-phone-calls/watch-outbound-phone-calls.interface.iml.json",
+                    "samples": "modules/watch-outbound-phone-calls/watch-outbound-phone-calls.samples.iml.json"
+                }
+            }
+        },
+        "function": {
+            "arrayOfObjects": {
+                "codeFiles": {
+                    "code": "functions/array-of-objects/array-of-objects.code.js",
+                    "test": "functions/array-of-objects/array-of-objects.test.js"
+                }
+            },
+            "removeEmpty": {
+                "codeFiles": {
+                    "code": "functions/remove-empty/remove-empty.code.js",
+                    "test": "functions/remove-empty/remove-empty.test.js"
+                }
+            }
+        },
+        "rpc": {
+            "getOutboundNumbers": {
+                "label": "getOutboundNumbers",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-outbound-numbers/get-outbound-numbers.communication.iml.json",
+                    "params": "rpcs/get-outbound-numbers/get-outbound-numbers.params.iml.json"
+                }
+            },
+            "listVoices": {
+                "label": "listVoices",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-voices/list-voices.communication.iml.json",
+                    "params": "rpcs/list-voices/list-voices.params.iml.json"
+                }
+            }
+        },
+        "webhook": {
+            "bland-ai-17xegd": {
+                "label": "Watch Calls",
+                "webhookType": "web",
+                "connection": "bland-ai-17xegd",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "webhooks/bland-ai-17xegd/bland-ai-17xegd.communication.iml.json",
+                    "params": "webhooks/bland-ai-17xegd/bland-ai-17xegd.params.iml.json",
+                    "attach": "webhooks/bland-ai-17xegd/bland-ai-17xegd.attach.iml.json",
+                    "detach": "webhooks/bland-ai-17xegd/bland-ai-17xegd.detach.iml.json",
+                    "update": "webhooks/bland-ai-17xegd/bland-ai-17xegd.update.iml.json",
+                    "requiredScope": "webhooks/bland-ai-17xegd/bland-ai-17xegd.required-scope.iml.json"
+                }
+            }
+        }
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "bland",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "bland-ai-17xegd",
+                        "remote": "bland-ai-17xegd"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "analyzeACall",
+                        "remote": "analyzeACall"
+                    },
+                    {
+                        "local": "getAudioRecording",
+                        "remote": "getAudioRecording"
+                    },
+                    {
+                        "local": "getCallDetails",
+                        "remote": "getCallDetails"
+                    },
+                    {
+                        "local": "listCalls",
+                        "remote": "listCalls"
+                    },
+                    {
+                        "local": "listVoices",
+                        "remote": "listVoices"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    },
+                    {
+                        "local": "sendACall",
+                        "remote": "sendACall"
+                    },
+                    {
+                        "local": "sendASimpleCall",
+                        "remote": "sendASimpleCall"
+                    },
+                    {
+                        "local": "sendASimpleCallPathways",
+                        "remote": "sendASimpleCallPathways"
+                    },
+                    {
+                        "local": "stopActiveCall",
+                        "remote": "stopActiveCall"
+                    },
+                    {
+                        "local": "watchIncomingPhoneCalls",
+                        "remote": "watchIncomingPhoneCalls"
+                    },
+                    {
+                        "local": "watchOutboundPhoneCalls",
+                        "remote": "watchOutboundPhoneCalls"
+                    }
+                ],
+                "function": [
+                    {
+                        "local": "arrayOfObjects",
+                        "remote": "arrayOfObjects"
+                    },
+                    {
+                        "local": "removeEmpty",
+                        "remote": "removeEmpty"
+                    }
+                ],
+                "rpc": [
+                    {
+                        "local": "getOutboundNumbers",
+                        "remote": "getOutboundNumbers"
+                    },
+                    {
+                        "local": "listVoices",
+                        "remote": "listVoices"
+                    }
+                ],
+                "webhook": [
+                    {
+                        "local": "bland-ai-17xegd",
+                        "remote": "bland-ai-17xegd"
+                    }
+                ]
+            },
+            "apikeyFile": "../../.secrets/apikey3"
+        }
+    ]
+}

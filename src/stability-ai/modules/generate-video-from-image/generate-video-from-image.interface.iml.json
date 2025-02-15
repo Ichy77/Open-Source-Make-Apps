@@ -1,0 +1,12 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    }
+]

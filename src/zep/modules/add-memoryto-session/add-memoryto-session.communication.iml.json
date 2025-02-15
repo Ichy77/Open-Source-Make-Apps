@@ -1,0 +1,16 @@
+{
+	// Request to API endpoint.
+	"url": "/v2/sessions/{{parameters.session_id}}/memory",  // Relative to base URL
+	// "url": "https://hook.eu1.make.com/h88ucvs5ygy6guw7i22cfd799c7imma8",  // Relative to base URL
+	"method": "POST",
+	"body": {
+		"messages": "{{parameters.messages}}",
+		"fact_instruction": "{{parameters.fact_instruction}}",
+		"summary_instruction": "{{parameters.summary_instruction}}"
+	},
+
+	// Response handling
+	"response": {
+		"output": null  // Returns API response body as an output bundle.
+	}
+}

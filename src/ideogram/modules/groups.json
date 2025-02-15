@@ -1,0 +1,10 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"makeAnApiCall",
+			"generateAnImage",
+			"describeAnImage"
+		]
+	}
+]

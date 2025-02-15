@@ -1,0 +1,15 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"listEngines",
+			"generateImageFromImage",
+			"makeAnApiCall",
+			"getAccountBalance",
+			"generateImageFromText2",
+			"upscaleAnImage",
+			"generateVideoFromImage",
+			"getVideoResult"
+		]
+	}
+]

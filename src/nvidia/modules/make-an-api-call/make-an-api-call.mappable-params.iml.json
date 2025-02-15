@@ -1,0 +1,98 @@
+[
+	{
+		"help": "Enter a path relative to `https://integrate.api.nvidia.com`. For example, `/v1/models`.",
+		"name": "url", // Makes value accesible via "{{parameters.url}}"".
+		"type": "text",
+		"label": "URL",
+		"required": true
+	},
+	{
+		"name": "method", // Allows the user to select the method by themselves.
+		"type": "select",
+		"label": "Method",
+		"default": "GET",
+		"options": [
+			{
+				"label": "GET",
+				"value": "GET"
+			},
+			{
+				"label": "POST",
+				"value": "POST"
+			},
+			{
+				"label": "PUT",
+				"value": "PUT"
+			},
+			{
+				"label": "PATCH",
+				"value": "PATCH"
+			},
+			{
+				"label": "DELETE",
+				"value": "DELETE"
+			}
+		],
+		"required": true
+	},
+	{
+		"name": "headers", // Allows the user to add headers by themselves.
+		"label": "Headers",
+		"help": "You don't have to add authorization headers; we already did that for you.",
+		"type": "array",
+		"spec": {
+			"label": "Header",
+			"type": "collection",
+			"spec": [
+				{
+					"name": "key",
+					"label": "Key",
+					"type": "text"
+				},
+				{
+					"name": "value",
+					"label": "Value",
+					"type": "text"
+				}
+			]
+		},
+		"labels": {
+			"add": "Add header"
+		},
+		"default": [
+			{
+				"key": "Content-Type",
+				"value": "application/json"
+			}
+		]
+	},
+	{
+		"name": "qs", // Allows the user to set Query String by themselves.
+		"label": "Query String",
+		"type": "array",
+		"spec": {
+			"label": "Parameter",
+			"type": "collection",
+			"spec": [
+				{
+					"name": "key",
+					"label": "Key",
+					"type": "text"
+				},
+				{
+					"name": "value",
+					"label": "Value",
+					"type": "text"
+				}
+			]
+		},
+		"labels": {
+			"add": "Add parameter"
+		}
+	},
+	{
+		"name": "body", // Allows the user to set Body by themselves.
+		"type": "any",
+		"label": "Body"
+	}
+]

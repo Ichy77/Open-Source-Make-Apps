@@ -1,0 +1,52 @@
+[
+    {
+        "name": "c_id",
+        "type": "text",
+        "label": "C ID"
+    },
+    {
+        "name": "created_at",
+        "type": "text",
+        "label": "Created At"
+    },
+    {
+        "name": "call_length",
+        "type": "number",
+        "label": "Call Length"
+    },
+    {
+        "name": "to",
+        "type": "text",
+        "label": "To"
+    },
+    {
+        "name": "from",
+        "type": "text",
+        "label": "From"
+    },
+    {
+        "name": "completed",
+        "type": "boolean",
+        "label": "Completed"
+    },
+    {
+        "name": "queue_status",
+        "type": "text",
+        "label": "Queue Status"
+    },
+    {
+        "name": "error_message",
+        "type": "text",
+        "label": "Error Message"
+    },
+    {
+        "name": "answered_by",
+        "type": "text",
+        "label": "Answered By"
+    },
+    {
+        "name": "batch_id",
+        "type": "text",
+        "label": "Batch ID"
+    }
+]

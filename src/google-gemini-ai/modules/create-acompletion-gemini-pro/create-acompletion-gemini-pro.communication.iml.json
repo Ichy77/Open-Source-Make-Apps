@@ -1,0 +1,19 @@
+{
+	// Request to API endpoint.
+	"url": "/models/{{parameters.model}}:generateContent", // Relative to base URL
+	"method": "POST",
+	"headers": { }, // Additional HTTP headers
+	"qs": { }, // Query string
+	"body": {
+		"tools": "{{if(parameters.tools,parseJSON(parameters.tools))}}",
+		"tool_config": "{{if(parameters.tool_config,parseJSON(parameters.tool_config))}}",
+		"{{...}}": "{{removeTypeKeys(removeEmpty(omit(parameters,'tools','tool_config')))}}"
+	},
+
+	"response": {
+		"output": {
+			"{{...}}": "{{body}}", // Include all body keys and values
+			"result": "{{body.candidates[1].content.parts[1].text}}" // Add the result key from the first item in choices array as a test
+		}
+	}
+}

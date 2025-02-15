@@ -1,0 +1,234 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Stability",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "generateImageFromImage": {
+                "label": "Generate an Image from an Image",
+                "description": "Generates a new image based on an existing image.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/generate-image-from-image/generate-image-from-image.communication.iml.json",
+                    "staticParams": "modules/generate-image-from-image/generate-image-from-image.static-params.iml.json",
+                    "mappableParams": "modules/generate-image-from-image/generate-image-from-image.mappable-params.iml.json",
+                    "interface": "modules/generate-image-from-image/generate-image-from-image.interface.iml.json",
+                    "samples": "modules/generate-image-from-image/generate-image-from-image.samples.iml.json",
+                    "scope": "modules/generate-image-from-image/generate-image-from-image.scope.iml.json"
+                }
+            },
+            "generateImageFromText2": {
+                "label": "Generate an Image from Text",
+                "description": "Generates a new image from a text prompt.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/generate-image-from-text2/generate-image-from-text2.communication.iml.json",
+                    "staticParams": "modules/generate-image-from-text2/generate-image-from-text2.static-params.iml.json",
+                    "mappableParams": "modules/generate-image-from-text2/generate-image-from-text2.mappable-params.iml.json",
+                    "interface": "modules/generate-image-from-text2/generate-image-from-text2.interface.iml.json",
+                    "samples": "modules/generate-image-from-text2/generate-image-from-text2.samples.iml.json",
+                    "scope": "modules/generate-image-from-text2/generate-image-from-text2.scope.iml.json"
+                }
+            },
+            "generateVideoFromImage": {
+                "label": "Generate a Video from an Image",
+                "description": "Generates a video based on an input image.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/generate-video-from-image/generate-video-from-image.communication.iml.json",
+                    "staticParams": "modules/generate-video-from-image/generate-video-from-image.static-params.iml.json",
+                    "mappableParams": "modules/generate-video-from-image/generate-video-from-image.mappable-params.iml.json",
+                    "interface": "modules/generate-video-from-image/generate-video-from-image.interface.iml.json",
+                    "samples": "modules/generate-video-from-image/generate-video-from-image.samples.iml.json",
+                    "scope": "modules/generate-video-from-image/generate-video-from-image.scope.iml.json"
+                }
+            },
+            "getAccountBalance": {
+                "label": "Get the Account Balance",
+                "description": "Returns the remaining balance of your account.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-account-balance/get-account-balance.communication.iml.json",
+                    "staticParams": "modules/get-account-balance/get-account-balance.static-params.iml.json",
+                    "mappableParams": "modules/get-account-balance/get-account-balance.mappable-params.iml.json",
+                    "interface": "modules/get-account-balance/get-account-balance.interface.iml.json",
+                    "samples": "modules/get-account-balance/get-account-balance.samples.iml.json",
+                    "scope": "modules/get-account-balance/get-account-balance.scope.iml.json"
+                }
+            },
+            "getVideoResult": {
+                "label": "Get a Video Result",
+                "description": "Returns the status and result of a video generation.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-video-result/get-video-result.communication.iml.json",
+                    "staticParams": "modules/get-video-result/get-video-result.static-params.iml.json",
+                    "mappableParams": "modules/get-video-result/get-video-result.mappable-params.iml.json",
+                    "interface": "modules/get-video-result/get-video-result.interface.iml.json",
+                    "samples": "modules/get-video-result/get-video-result.samples.iml.json",
+                    "scope": "modules/get-video-result/get-video-result.scope.iml.json"
+                }
+            },
+            "listEngines": {
+                "label": "List Engines",
+                "description": "Returns a list of engines available to your organization/user.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-engines/list-engines.communication.iml.json",
+                    "staticParams": "modules/list-engines/list-engines.static-params.iml.json",
+                    "mappableParams": "modules/list-engines/list-engines.mappable-params.iml.json",
+                    "interface": "modules/list-engines/list-engines.interface.iml.json",
+                    "samples": "modules/list-engines/list-engines.samples.iml.json",
+                    "scope": "modules/list-engines/list-engines.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            },
+            "upscaleAnImage": {
+                "label": "Upscale an Image",
+                "description": "Creates a higher resolution version of an input image.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/upscale-an-image/upscale-an-image.communication.iml.json",
+                    "staticParams": "modules/upscale-an-image/upscale-an-image.static-params.iml.json",
+                    "mappableParams": "modules/upscale-an-image/upscale-an-image.mappable-params.iml.json",
+                    "interface": "modules/upscale-an-image/upscale-an-image.interface.iml.json",
+                    "samples": "modules/upscale-an-image/upscale-an-image.samples.iml.json",
+                    "scope": "modules/upscale-an-image/upscale-an-image.scope.iml.json"
+                }
+            }
+        },
+        "function": {
+            "transformInput": {
+                "codeFiles": {
+                    "code": "functions/transform-input/transform-input.code.js",
+                    "test": "functions/transform-input/transform-input.test.js"
+                }
+            }
+        },
+        "rpc": {
+            "listEngines": {
+                "label": "listEngines",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-engines/list-engines.communication.iml.json",
+                    "params": "rpcs/list-engines/list-engines.params.iml.json"
+                }
+            }
+        },
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "stability-ai",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "stability-ai"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "generateImageFromImage",
+                        "remote": "generateImageFromImage"
+                    },
+                    {
+                        "local": "generateImageFromText2",
+                        "remote": "generateImageFromText2"
+                    },
+                    {
+                        "local": "generateVideoFromImage",
+                        "remote": "generateVideoFromImage"
+                    },
+                    {
+                        "local": "getAccountBalance",
+                        "remote": "getAccountBalance"
+                    },
+                    {
+                        "local": "getVideoResult",
+                        "remote": "getVideoResult"
+                    },
+                    {
+                        "local": "listEngines",
+                        "remote": "listEngines"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    },
+                    {
+                        "local": "upscaleAnImage",
+                        "remote": "upscaleAnImage"
+                    }
+                ],
+                "function": [
+                    {
+                        "local": "transformInput",
+                        "remote": "transformInput"
+                    }
+                ],
+                "rpc": [
+                    {
+                        "local": "listEngines",
+                        "remote": "listEngines"
+                    }
+                ],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey15"
+        }
+    ]
+}

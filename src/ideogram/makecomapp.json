@@ -1,0 +1,120 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Ideogram",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "describeAnImage": {
+                "label": "Describe an Image",
+                "description": "Describes an image.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/describe-an-image/describe-an-image.communication.iml.json",
+                    "staticParams": "modules/describe-an-image/describe-an-image.static-params.iml.json",
+                    "mappableParams": "modules/describe-an-image/describe-an-image.mappable-params.iml.json",
+                    "interface": "modules/describe-an-image/describe-an-image.interface.iml.json",
+                    "samples": "modules/describe-an-image/describe-an-image.samples.iml.json",
+                    "scope": "modules/describe-an-image/describe-an-image.scope.iml.json"
+                }
+            },
+            "generateAnImage": {
+                "label": "Generate an Image",
+                "description": "Generates a new image.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/generate-an-image/generate-an-image.communication.iml.json",
+                    "staticParams": "modules/generate-an-image/generate-an-image.static-params.iml.json",
+                    "mappableParams": "modules/generate-an-image/generate-an-image.mappable-params.iml.json",
+                    "interface": "modules/generate-an-image/generate-an-image.interface.iml.json",
+                    "samples": "modules/generate-an-image/generate-an-image.samples.iml.json",
+                    "scope": "modules/generate-an-image/generate-an-image.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API Call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            }
+        },
+        "function": {
+            "removeEmptyColorPalette": {
+                "codeFiles": {
+                    "code": "functions/remove-empty-color-palette/remove-empty-color-palette.code.js",
+                    "test": "functions/remove-empty-color-palette/remove-empty-color-palette.test.js"
+                }
+            }
+        },
+        "rpc": {},
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "ideogram",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "ideogram"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "describeAnImage",
+                        "remote": "describeAnImage"
+                    },
+                    {
+                        "local": "generateAnImage",
+                        "remote": "generateAnImage"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    }
+                ],
+                "function": [
+                    {
+                        "local": "removeEmptyColorPalette",
+                        "remote": "removeEmptyColorPalette"
+                    }
+                ],
+                "rpc": [],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey11"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "description",
+        "type": "text",
+        "label": "Description"
+    },
+    {
+        "name": "public",
+        "type": "boolean",
+        "label": "Public"
+    },
+    {
+        "name": "ratings",
+        "type": "number",
+        "label": "Ratings"
+    },
+    {
+        "name": "tags",
+        "type": "array",
+        "spec": {
+            "type": "text"
+        },
+        "label": "Tags"
+    },
+    {
+        "name": "user_id",
+        "type": "text",
+        "label": "User ID"
+    },
+    {
+        "name": "average_rating",
+        "type": "text",
+        "label": "Average Rating"
+    }
+]

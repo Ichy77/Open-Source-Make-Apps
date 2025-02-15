@@ -1,0 +1,71 @@
+[
+    {
+        "name": "data",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "base64",
+                    "type": "text",
+                    "label": "Base 64"
+                },
+                {
+                    "name": "has_nsfw",
+                    "type": "boolean",
+                    "label": "Has Nsfw"
+                }
+            ]
+        },
+        "label": "Data"
+    },
+    {
+        "name": "meta",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "prompt",
+                "type": "text",
+                "label": "Prompt"
+            },
+            {
+                "name": "seed",
+                "type": "number",
+                "label": "Seed"
+            },
+            {
+                "name": "image",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "size",
+                        "type": "text",
+                        "label": "Size"
+                    },
+                    {
+                        "name": "width",
+                        "type": "number",
+                        "label": "Width"
+                    },
+                    {
+                        "name": "height",
+                        "type": "number",
+                        "label": "Height"
+                    }
+                ],
+                "label": "Image"
+            },
+            {
+                "name": "num_inference_steps",
+                "type": "number",
+                "label": "Num Inference Steps"
+            },
+            {
+                "name": "guidance_scale",
+                "type": "number",
+                "label": "Guidance Scale"
+            }
+        ],
+        "label": "Meta"
+    }
+]

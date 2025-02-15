@@ -1,0 +1,22 @@
+[
+    {
+        "url": "https://api.heygen.com/v2/voices", // Absolute URL to the API endpoint which validates credentials
+        "headers": { // Additional HTTP headers
+            "X-Api-Key": "{{parameters.apiKey}}"
+        },
+
+        // Response handling
+        "response": {
+            "error": { // Error handling
+                "message": "[{{statusCode}}] {{body.message}}" // On error, returns error message as "[statusCode] error text".
+            }
+        },
+
+        "log": {
+            "sanitize": [ // Excludes sensitive parameters from logs.
+                "request.headers.X-Api-Key",
+                "request.headers.accessToken" // Omit HTTP header "Authorization".
+            ]
+        }
+    }
+]

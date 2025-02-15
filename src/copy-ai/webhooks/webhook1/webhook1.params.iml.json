@@ -1,0 +1,20 @@
+[
+    {
+        "name": "eventType",
+        "type": "select",
+        "label": "Event Type",
+        "options": [
+            { "label": "Workflow run started", "value": "workflowRun.started" },
+            { "label": "Workflow run completed", "value": "workflowRun.completed" },
+            { "label": "Workflow run failed", "value": "workflowRun.failed" },
+            { "label": "Workflow credit limit reached ", "value": "workflowCreditLimit.reached" }
+        ],
+        "required": true
+    },
+    {
+        "name": "workflowId",
+        "type": "text",
+        "label": "Workflow Id",
+        "help": "If a workflow Id is not included, you will receive events for all workflows in your workspace."
+    }
+]

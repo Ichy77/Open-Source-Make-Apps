@@ -1,0 +1,10 @@
+[
+    {
+        "name": "key",
+        "type": "password",
+        "label": "API Key",
+        "required": true,
+        "help":"You can get an API Key through http://makersuite.google.com/.",
+        "editable":true
+    }
+]

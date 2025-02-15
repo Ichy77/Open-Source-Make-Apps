@@ -1,0 +1,171 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+	{
+		"name": "messages", // Makes value accesible via "{{parameters.messages}}".
+		"type": "array", // Validates that email is correctly entered.
+		"label": "Messages", // Sets the user friendly label visible in the module.
+		"required": true,
+		"spec": [
+			{
+				"name": "role",
+				"type": "select",
+				"label": "Role",
+				"options": [
+					{ "value": "user", "label": "User" },
+					{ "value": "assistant", "label": "Assistant" },
+					{ "value": "system", "label": "System" }
+				],
+				"required": true
+			},
+			{
+				"name": "content",
+				"type": "text",
+				"label": "Content",
+				"required": true
+			}
+		]
+	},
+	{
+		"name": "model",
+		"type": "select",
+		"label": "Model",
+		"required": true,
+		"options": "rpc://listModels"
+	},
+	{
+		"name": "frequency_penalty",
+		"type": "number",
+		"label": "Frequency Penalty",
+		"required": false,
+		"validate": {
+			"min": -2,
+			"max": 2
+		}
+	},
+	{
+		"name": "max_tokens",
+		"type": "number",
+		"label": "Max Tokens",
+		"required": false
+	},
+	{
+		"name": "presence_penalty",
+		"type": "number",
+		"label": "Presence Penalty",
+		"required": false,
+		"validate": {
+			"min": -2,
+			"max": 2
+		}
+	},
+	{
+		"name": "temperature",
+		"type": "number",
+		"label": "Temperature",
+		"required": false,
+		"validate": {
+			"min": 0,
+			"max": 2
+		}
+	},
+	{
+		"name": "top_p",
+		"type": "number",
+		"label": "Top P",
+		"required": false,
+		"validate": {
+			"min": 0,
+			"max": 1
+		}
+	},
+	{
+		"name": "tools",
+		"type": "any",
+		"label": "Tools",
+		"advanced": true
+	},
+	{
+		"name": "tool_choice",
+		"type": "any",
+		"label": "Tool Choice",
+		"advanced": true,
+		"help": "Controls which (if any) tool is called by the model."
+	}, {
+		"help": "Maximum of 4 sequences that will trigger the Model to stop generating further text. The returned text will not contain the stop sequences.",
+		"name": "stop",
+		"spec": {
+			"label": "Stop Sequence",
+			"type": "text"
+		},
+		"labels": {
+			"add": "Add stop sequence"
+		},
+		"type": "array",
+		"label": "Stop Sequences",
+		"advanced": true,
+		"validate": {
+			"maxItems": 4
+		}
+	},
+	{
+		"name": "seed",
+		"type": "number",
+		"label": "Seed",
+		"required": false,
+		"validate": {
+			"min": -9223372036854776000,
+			"max": 9223372036854776000
+		},
+		"advanced": true
+	},
+	{
+		"help": "When using `JSON Object`, you must also instruct the model to produce JSON via a `System` or `User` message. If not, the model can generate an unending stream of whitespace until it reaches the token limit. This will result in a long-running and seemingly \"stuck\" request.",
+		"name": "response_format",
+		"type": "select",
+		"label": "Response Format",
+		"options": [
+			{
+				"label": "Text",
+				"value": "text"
+			},
+			{
+				"label": "JSON Object",
+				"value": "json_object"
+			}
+		],
+		"advanced": true
+	},
+	{
+		"name": "logit_bias",
+		"spec": {
+			"label": "Token Probability",
+			"type": "collection",
+			"spec": [
+				{
+					"name": "token",
+					"type": "text",
+					"label": "Token ID",
+					"required": true
+				},
+				{
+					"name": "probability",
+					"type": "number",
+					"label": "Probability",
+					"required": true,
+					"validate": {
+						"max": 100,
+						"min": -100
+					},
+					"help": "The exact effect will vary per model, but values between -1 and 1 should decrease or increase likelihood of selection; values like -100 or 100 should result in a ban or exclusive selection of the relevant token."
+				}
+			]
+		},
+		"labels": {
+			"add": "Add token probability"
+		},
+		"type": "array",
+		"label": "Token Probability",
+		"help": "Configuration of the occurence of specific tokens in the generated response.",
+		"advanced": true
+	}
+]

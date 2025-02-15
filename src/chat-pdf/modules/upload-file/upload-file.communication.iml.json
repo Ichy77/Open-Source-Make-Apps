@@ -1,0 +1,16 @@
+{
+    "url": "/sources/add-file",
+    "body": {
+        "file": {
+            "value": "{{parameters.fileData}}",
+            "options": {
+                "filename": "{{parameters.fileName}}"
+            }
+        }
+    },
+    "type": "multipart/form-data",
+    "method": "POST",
+    "response": {
+        "output": "{{body}}"
+    }
+}

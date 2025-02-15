@@ -1,0 +1,98 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "created",
+        "type": "date",
+        "label": "Created"
+    },
+    {
+        "name": "model",
+        "type": "text",
+        "label": "Model"
+    },
+    {
+        "name": "choices",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "index",
+                    "type": "number",
+                    "label": "Index"
+                },
+                {
+                    "name": "message",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "role",
+                            "type": "text",
+                            "label": "Role"
+                        },
+                        {
+                            "name": "content",
+                            "type": "text",
+                            "label": "Content"
+                        }
+                    ],
+                    "label": "Message"
+                },
+                {
+                    "name": "logprobs",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "content",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "spec": [
+                                    {
+                                        "name": "logprob",
+                                        "type": "number",
+                                        "label": "Logprob"
+                                    }
+                                ]
+                            },
+                            "label": "Content"
+                        }
+                    ],
+                    "label": "Logprobs"
+                }
+            ]
+        },
+        "label": "Choices"
+    },
+    {
+        "name": "usage",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "prompt_tokens",
+                "type": "number",
+                "label": "Prompt Tokens"
+            },
+            {
+                "name": "total_tokens",
+                "type": "number",
+                "label": "Total Tokens"
+            },
+            {
+                "name": "completion_tokens",
+                "type": "number",
+                "label": "Completion Tokens"
+            }
+        ],
+        "label": "Usage"
+    }
+]

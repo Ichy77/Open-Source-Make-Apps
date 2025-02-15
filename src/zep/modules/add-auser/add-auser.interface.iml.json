@@ -1,0 +1,103 @@
+[
+    {
+        "name": "uuid",
+        "type": "text",
+        "label": "Uuid"
+    },
+    {
+        "name": "id",
+        "type": "number",
+        "label": "ID"
+    },
+    {
+        "name": "created_at",
+        "type": "text",
+        "label": "Created At"
+    },
+    {
+        "name": "updated_at",
+        "type": "text",
+        "label": "Updated At"
+    },
+    {
+        "name": "deleted_at",
+        "type": "text",
+        "label": "Deleted At"
+    },
+    {
+        "name": "user_id",
+        "type": "text",
+        "label": "User ID"
+    },
+    {
+        "name": "email",
+        "type": "text",
+        "label": "Email"
+    },
+    {
+        "name": "first_name",
+        "type": "text",
+        "label": "First Name"
+    },
+    {
+        "name": "last_name",
+        "type": "text",
+        "label": "Last Name"
+    },
+    {
+        "name": "metadata",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "Colour",
+                "type": "text",
+                "label": "Colour"
+            },
+            {
+                "name": "Size",
+                "type": "text",
+                "label": "Size"
+            }
+        ],
+        "label": "Metadata"
+    },
+    {
+        "name": "fact_rating_instruction",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "instruction",
+                "type": "text",
+                "label": "Instruction"
+            },
+            {
+                "name": "examples",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "high",
+                        "type": "text",
+                        "label": "High"
+                    },
+                    {
+                        "name": "medium",
+                        "type": "text",
+                        "label": "Medium"
+                    },
+                    {
+                        "name": "low",
+                        "type": "text",
+                        "label": "Low"
+                    }
+                ],
+                "label": "Examples"
+            }
+        ],
+        "label": "Fact Rating Instruction"
+    },
+    {
+        "name": "project_uuid",
+        "type": "text",
+        "label": "Project Uuid"
+    }
+]

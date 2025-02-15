@@ -1,0 +1,21 @@
+{
+	// Default request configuration
+	"baseUrl": "https://api.deepseek.com",
+	"timeout": 300000,
+	"headers": {                                          // Default HTTP headers for all modules and RPCs.
+		"Authorization": "Bearer {{connection.apiKey}}"   // Authorization by API key, which user will provide in the connection as parameter.
+	},
+
+	// Default response handling
+	"response": {
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{body.error.message}}"  // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.authorization"               // Omit HTTP header "Authorization".
+		]
+	}
+}

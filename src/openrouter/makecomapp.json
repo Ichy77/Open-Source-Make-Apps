@@ -1,0 +1,155 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "OpenRouter",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            },
+            "open-router-4ur2vj": {
+                "label": "OpenRouter",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/open-router-4ur2vj/open-router-4ur2vj.communication.iml.json",
+                    "params": "connections/open-router-4ur2vj/open-router-4ur2vj.params.iml.json",
+                    "common": "connections/open-router-4ur2vj/open-router-4ur2vj.common.json"
+                }
+            }
+        },
+        "module": {
+            "createAChatCompletion": {
+                "label": "Create a Chat Completion",
+                "description": "Creates a new chat completion with a selected AI Model and automatic fallback if enabled.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "open-router-4ur2vj",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-achat-completion/create-achat-completion.communication.iml.json",
+                    "staticParams": "modules/create-achat-completion/create-achat-completion.static-params.iml.json",
+                    "mappableParams": "modules/create-achat-completion/create-achat-completion.mappable-params.iml.json",
+                    "interface": "modules/create-achat-completion/create-achat-completion.interface.iml.json",
+                    "samples": "modules/create-achat-completion/create-achat-completion.samples.iml.json",
+                    "scope": "modules/create-achat-completion/create-achat-completion.scope.iml.json"
+                }
+            },
+            "createAChatCompletionWithFallback": {
+                "label": "Create a Chat Completion (with Fallback)",
+                "description": "Creates a chat completion with specifically defined fallback models.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "open-router-4ur2vj",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-achat-completion-with-fallback/create-achat-completion-with-fallback.communication.iml.json",
+                    "staticParams": "modules/create-achat-completion-with-fallback/create-achat-completion-with-fallback.static-params.iml.json",
+                    "mappableParams": "modules/create-achat-completion-with-fallback/create-achat-completion-with-fallback.mappable-params.iml.json",
+                    "interface": "modules/create-achat-completion-with-fallback/create-achat-completion-with-fallback.interface.iml.json",
+                    "samples": "modules/create-achat-completion-with-fallback/create-achat-completion-with-fallback.samples.iml.json",
+                    "scope": "modules/create-achat-completion-with-fallback/create-achat-completion-with-fallback.scope.iml.json"
+                }
+            },
+            "listModels": {
+                "label": "List Models",
+                "description": "Returns a list of available models.",
+                "moduleType": "search",
+                "connection": "open-router-4ur2vj",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-models/list-models.communication.iml.json",
+                    "staticParams": "modules/list-models/list-models.static-params.iml.json",
+                    "mappableParams": "modules/list-models/list-models.mappable-params.iml.json",
+                    "interface": "modules/list-models/list-models.interface.iml.json",
+                    "samples": "modules/list-models/list-models.samples.iml.json",
+                    "scope": "modules/list-models/list-models.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "open-router-4ur2vj",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {
+            "getModels": {
+                "label": "getModels",
+                "connection": "open-router-4ur2vj",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-models/get-models.communication.iml.json",
+                    "params": "rpcs/get-models/get-models.params.iml.json"
+                }
+            }
+        },
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "open-router",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "open-router"
+                    },
+                    {
+                        "local": "open-router-4ur2vj",
+                        "remote": "open-router-4ur2vj"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "createAChatCompletion",
+                        "remote": "createAChatCompletion"
+                    },
+                    {
+                        "local": "createAChatCompletionWithFallback",
+                        "remote": "createAChatCompletionWithFallback"
+                    },
+                    {
+                        "local": "listModels",
+                        "remote": "listModels"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    }
+                ],
+                "function": [],
+                "rpc": [
+                    {
+                        "local": "getModels",
+                        "remote": "getModels"
+                    }
+                ],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey14"
+        }
+    ]
+}

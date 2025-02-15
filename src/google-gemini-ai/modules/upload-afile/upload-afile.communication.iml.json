@@ -1,0 +1,18 @@
+{
+	// Request to API endpoint with parameter "id" defined in Mappable parameters.
+	"url": "https://generativelanguage.googleapis.com/upload/v1beta/files",
+    "body": {
+        "file": {
+            "value": "{{parameters.file_data}}",
+            "options": {
+                "filename": "{{parameters.file_name}}"
+            }
+        }
+    },
+    "type": "multipart/form-data",
+    "method": "POST",
+	// Response handling
+	"response": {
+		"output": "{{body.file}}"  // Returns no output bundle as no API output is expected.
+	}
+}

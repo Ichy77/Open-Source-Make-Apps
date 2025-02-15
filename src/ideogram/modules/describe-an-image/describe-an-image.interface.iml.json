@@ -1,0 +1,17 @@
+[
+    {
+        "name": "descriptions",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "text",
+                    "type": "text",
+                    "label": "Text"
+                }
+            ]
+        },
+        "label": "Descriptions"
+    }
+]

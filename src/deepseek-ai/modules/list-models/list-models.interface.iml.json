@@ -1,0 +1,17 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "owned_by",
+        "type": "text",
+        "label": "Owned By"
+    }
+]

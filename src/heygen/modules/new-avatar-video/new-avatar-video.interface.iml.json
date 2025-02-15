@@ -1,0 +1,29 @@
+[
+    {
+        "name": "event_type",
+        "type": "text",
+        "label": "Event Type"
+    },
+    {
+        "name": "event_data",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "video_id",
+                "type": "text",
+                "label": "Video ID"
+            },
+            {
+                "name": "url",
+                "type": "text",
+                "label": "Url"
+            },
+            {
+                "name": "callback_id",
+                "type": "text",
+                "label": "Callback ID"
+            }
+        ],
+        "label": "Event Data"
+    }
+]

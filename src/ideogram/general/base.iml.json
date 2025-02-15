@@ -1,0 +1,20 @@
+{
+	// Default request configuration
+	"baseUrl": "https://api.ideogram.ai/",          // Default base URL for all modules and RPCs.
+	"headers": {                                          // Default HTTP headers for all modules and RPCs.
+		"Api-Key": "{{connection.apiKey}}"   // Authorization by API key, which user will provide in the connection as parameter.
+	},
+
+	// Default response handling
+	"response": {
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{ifempty(body.error,body.detail)}}"
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.Api-Key"               // Omit HTTP header "Authorization".
+		]
+	}
+}

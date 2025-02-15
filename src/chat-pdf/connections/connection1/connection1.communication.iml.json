@@ -1,0 +1,20 @@
+{
+    // "method": "POST",
+    // "log": {
+    //     "sanitize": [
+    //         "request.headers.x-api-key"
+    //     ]
+    // },
+    // "url": "https://api.chatpdf.com/v1/sources/add-url",
+    // "headers": {
+    //     "x-api-key": "{{parameters.apiKey}}"
+    // },
+    // "body": {
+    //     "url": "https://uscode.house.gov/static/constitution.pdf"
+    // },
+    // "response": {
+    //     "error": {
+    //         "message": "[{{statusCode}}] {{body.error}}"
+    //     }
+    // }
+}

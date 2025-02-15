@@ -1,0 +1,42 @@
+[
+    {
+        "name": "call_id",
+        "type": "text",
+        "label": "Call ID"
+    },
+    {
+        "name": "transcript",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "id",
+                    "type": "number",
+                    "label": "ID"
+                },
+                {
+                    "name": "created_at",
+                    "type": "text",
+                    "label": "Created At"
+                },
+                {
+                    "name": "text",
+                    "type": "text",
+                    "label": "Text"
+                },
+                {
+                    "name": "user",
+                    "type": "text",
+                    "label": "User"
+                },
+                {
+                    "name": "C_id",
+                    "type": "text",
+                    "label": "C ID"
+                }
+            ]
+        },
+        "label": "Transcript"
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "data",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "task_id",
+                "type": "text",
+                "label": "Task ID"
+            },
+            {
+                "name": "status",
+                "type": "text",
+                "label": "Status"
+            },
+            {
+                "name": "generated",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Generated"
+            }
+        ],
+        "label": "Data"
+    }
+]

@@ -1,0 +1,17 @@
+{
+    // Request to API endpoint.
+    "url": "/embeddings", // Relative to base URL
+    "method": "POST",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": {
+        "model": "{{parameters.model}}",
+        "input": "{{parameters.input}}",
+        "encoding_format": "{{parameters.encoding_format}}"
+    },
+
+    // Response handling
+    "response": {
+        "output": "{{body}}" // Returns API response body as an output bundle.
+    }
+}

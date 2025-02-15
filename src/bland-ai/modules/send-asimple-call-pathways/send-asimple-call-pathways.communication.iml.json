@@ -1,0 +1,16 @@
+{
+    // Request to API endpoint.
+    "url": "/calls", // Relative to base URL
+    "method": "POST",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": {
+        "phone_number": "{{parameters.phone_number}}", //check 
+        "pathway_id": "{{parameters.pathway_id}}"
+    },
+
+    // Response handling
+    "response": {
+        "output": "{{body}}" // Returns API response body as an output bundle.
+    }
+}

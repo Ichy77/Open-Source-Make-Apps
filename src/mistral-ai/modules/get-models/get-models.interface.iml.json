@@ -1,0 +1,37 @@
+[
+    {
+        "name": "object",
+        "type": "text",
+        "label": "Object"
+    },
+    {
+        "name": "data",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "id",
+                    "type": "text",
+                    "label": "ID"
+                },
+                {
+                    "name": "object",
+                    "type": "text",
+                    "label": "Object"
+                },
+                {
+                    "name": "created",
+                    "type": "number",
+                    "label": "Created"
+                },
+                {
+                    "name": "owned_by",
+                    "type": "text",
+                    "label": "Owned By"
+                }
+            ]
+        },
+        "label": "Data"
+    }
+]

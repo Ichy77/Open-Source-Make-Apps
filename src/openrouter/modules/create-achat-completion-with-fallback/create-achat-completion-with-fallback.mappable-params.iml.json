@@ -1,0 +1,141 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+    {
+        "name": "messages",
+        "type": "array",
+        "label": "Messages",
+        "required": true,
+        "spec": [
+            {
+                "name": "content",
+                "type": "text",
+                "label": "Content",
+                "required": true
+            },
+            {
+                "name": "role",
+                "type": "select",
+                "label": "Role",
+                "required": true,
+                "options": [
+                    { "label": "User", "value": "user" },
+                    { "label": "Assistant", "value": "assistant" },
+                    { "label": "System", "value": "system" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "models",
+        "type": "array",
+        "label": "Models incl. the Fallback models",
+        "spec": {
+            "type":"select",
+            "options":"rpc://getModels"
+        },
+        "multiple": true,
+		"required":true
+    },
+    {
+        "name": "fallback",
+        "type": "boolean",
+        "label": "Fallback Enabled?",
+        "default": true,
+        "help": "If fallback is enabled but no fallback models specified, OpenRouter will try the most appropriate open-source model available, with pricing less than the primary model (or very close to it)."
+    },
+    {
+        "name": "json_mode",
+        "type": "boolean",
+        "label": "Enable JSON Mode?",
+        "help": "Enables JSON mode, which guarantees the message the model generates is valid JSON. Note: when using JSON mode, you should also instruct the model to produce JSON yourself via a system or user message.",
+        "default": false,
+        "advanced": true
+    },
+    {
+        "name": "max_tokens",
+        "type": "integer",
+        "label": "Max Tokens",
+        "required": false,
+		"advanced": true
+    },
+    {
+        "name": "n",
+        "type": "integer",
+        "label": "Number of Choices",
+        "default": 1,
+        "required": false,
+        "validate": {
+            "min": 1
+        },
+		"advanced": true
+    },
+    {
+        "name": "temperature",
+        "type": "number",
+        "label": "Temperature",
+        "default": 1,
+        "required": false,
+        "advanced": true,
+        "validate": {
+            "min": 0,
+            "max": 2
+        }
+    },
+    {
+        "name": "top_p",
+        "type": "number",
+        "label": "Top P",
+        "default": 1,
+        "required": false,
+        "advanced": true,
+        "validate": {
+            "min": 0,
+            "max": 1
+        }
+    },
+    {
+        "name": "frequency_penalty",
+        "type": "number",
+        "label": "Frequency Penalty",
+        "default": 0,
+        "required": false,
+        "validate": {
+            "min": -2,
+            "max": 2
+        },
+        "advanced": true
+    },
+    {
+        "name": "presence_penalty",
+        "type": "number",
+        "label": "Presence Penalty",
+        "default": 0,
+        "required": false,
+        "validate": {
+            "min": -2,
+            "max":2
+        },
+        "advanced": true
+    },
+    {
+        "name": "seed",
+        "type": "integer",
+        "label": "Seed",
+        "required": false,
+        "advanced": true
+    },
+    {
+        "name": "stop",
+        "type": "array",
+        "label": "Stop Sequences",
+        "required": false,
+        "advanced": true
+    },
+    {
+        "name": "top_k",
+        "type": "number",
+        "label": "Top k",
+        "required": false,
+        "advanced": true
+    }
+]

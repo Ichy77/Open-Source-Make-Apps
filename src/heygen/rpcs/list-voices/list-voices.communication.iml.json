@@ -1,0 +1,14 @@
+{
+	"url": "/v2/voices",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{body.data.voices}}",
+		"output": {
+			"label": "{{item.name}}",
+			"value": "{{item.voice_id}}"
+		}
+	}
+}

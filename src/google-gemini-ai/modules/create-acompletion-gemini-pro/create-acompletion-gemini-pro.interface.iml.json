@@ -1,0 +1,96 @@
+[
+    {
+        "name": "result",
+        "type": "text",
+        "label": "Result"
+    },
+    {
+        "name": "candidates",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "content",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "parts",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "spec": [
+                                    {
+                                        "name": "text",
+                                        "type": "text",
+                                        "label": "Text"
+                                    }
+                                ]
+                            },
+                            "label": "Parts"
+                        },
+                        {
+                            "name": "role",
+                            "type": "text",
+                            "label": "Role"
+                        }
+                    ],
+                    "label": "Content"
+                },
+                {
+                    "name": "finishReason",
+                    "type": "text",
+                    "label": "Finish Reason"
+                },
+                {
+                    "name": "index",
+                    "type": "number",
+                    "label": "Index"
+                },
+                {
+                    "name": "safetyRatings",
+                    "type": "array",
+                    "spec": {
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "category",
+                                "type": "text",
+                                "label": "Category"
+                            },
+                            {
+                                "name": "probability",
+                                "type": "text",
+                                "label": "Probability"
+                            }
+                        ]
+                    },
+                    "label": "Safety Ratings"
+                }
+            ]
+        },
+        "label": "Candidates"
+    },
+    {
+        "name": "usageMetadata",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "promptTokenCount",
+                "type": "number",
+                "label": "Prompt Token Count"
+            },
+            {
+                "name": "candidatesTokenCount",
+                "type": "number",
+                "label": "Candidates Token Count"
+            },
+            {
+                "name": "totalTokenCount",
+                "type": "number",
+                "label": "Total Token Count"
+            }
+        ],
+        "label": "Usage Metadata"
+    }
+]

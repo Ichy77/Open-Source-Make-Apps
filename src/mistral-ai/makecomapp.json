@@ -1,0 +1,142 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Mistral",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "createACompletion": {
+                "label": "Create a Chat Completion",
+                "description": "Creates a chat completion.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-acompletion/create-acompletion.communication.iml.json",
+                    "staticParams": "modules/create-acompletion/create-acompletion.static-params.iml.json",
+                    "mappableParams": "modules/create-acompletion/create-acompletion.mappable-params.iml.json",
+                    "interface": "modules/create-acompletion/create-acompletion.interface.iml.json",
+                    "samples": "modules/create-acompletion/create-acompletion.samples.iml.json",
+                    "scope": "modules/create-acompletion/create-acompletion.scope.iml.json"
+                }
+            },
+            "createEmbeddings": {
+                "label": "Create Embeddings",
+                "description": "Create embeddings for given text.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-embeddings/create-embeddings.communication.iml.json",
+                    "staticParams": "modules/create-embeddings/create-embeddings.static-params.iml.json",
+                    "mappableParams": "modules/create-embeddings/create-embeddings.mappable-params.iml.json",
+                    "interface": "modules/create-embeddings/create-embeddings.interface.iml.json",
+                    "samples": "modules/create-embeddings/create-embeddings.samples.iml.json",
+                    "scope": "modules/create-embeddings/create-embeddings.scope.iml.json"
+                }
+            },
+            "getModels": {
+                "label": "List Models",
+                "description": "Retrieves a list of available models to use.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-models/get-models.communication.iml.json",
+                    "staticParams": "modules/get-models/get-models.static-params.iml.json",
+                    "mappableParams": "modules/get-models/get-models.mappable-params.iml.json",
+                    "interface": "modules/get-models/get-models.interface.iml.json",
+                    "samples": "modules/get-models/get-models.samples.iml.json",
+                    "scope": "modules/get-models/get-models.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {
+            "getModels": {
+                "label": "getModels",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-models/get-models.communication.iml.json",
+                    "params": "rpcs/get-models/get-models.params.iml.json"
+                }
+            }
+        },
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "mistral-ai",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "mistral-ai"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "createACompletion",
+                        "remote": "createACompletion"
+                    },
+                    {
+                        "local": "createEmbeddings",
+                        "remote": "createEmbeddings"
+                    },
+                    {
+                        "local": "getModels",
+                        "remote": "getModels"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    }
+                ],
+                "function": [],
+                "rpc": [
+                    {
+                        "local": "getModels",
+                        "remote": "getModels"
+                    }
+                ],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey12"
+        }
+    ]
+}

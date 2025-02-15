@@ -1,0 +1,13 @@
+{
+	// Request to API endpoint.
+	"url": "/calls/{{parameters.call_id}}/stop",  // Relative to base URL
+	"method": "POST",
+	"headers": {},    // Additional HTTP headers
+	"qs": {},         // Query string
+	"body": {},
+
+	// Response handling
+	"response": {
+		"output": "{{body}}"  // Returns API response body as an output bundle.
+	}
+}

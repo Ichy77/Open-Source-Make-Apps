@@ -1,0 +1,8 @@
+[
+    {
+        "name": "url",
+        "type": "url",
+        "label": "URL",
+        "required": true
+    }
+]

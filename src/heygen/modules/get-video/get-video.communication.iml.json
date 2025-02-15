@@ -1,0 +1,14 @@
+{
+	// Request to API endpoint with parameter "id" defined in Mappable parameters.
+	"url": "/v1/video_status.get",      // Relative to base URL
+	"method": "GET",
+	"headers": {},                          // Additional HTTP headers
+	"qs": {
+		"video_id":"{{parameters.video_id}}"
+	},                               // Query string
+
+	// Response handling
+	"response": {
+		"output": "{{body.data}}"                // Return JSON response body as an output bundle.
+	}
+}

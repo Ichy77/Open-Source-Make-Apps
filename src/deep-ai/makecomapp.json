@@ -1,0 +1,108 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "DeepAI",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "imageeditor": {
+                "label": "Edit an Image",
+                "description": "Edits an image.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/imageeditor/imageeditor.communication.iml.json",
+                    "staticParams": "modules/imageeditor/imageeditor.static-params.iml.json",
+                    "mappableParams": "modules/imageeditor/imageeditor.mappable-params.iml.json",
+                    "interface": "modules/imageeditor/imageeditor.interface.iml.json",
+                    "samples": "modules/imageeditor/imageeditor.samples.iml.json",
+                    "scope": "modules/imageeditor/imageeditor.scope.iml.json"
+                }
+            },
+            "MakeAPICall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-apicall/make-apicall.communication.iml.json",
+                    "staticParams": "modules/make-apicall/make-apicall.static-params.iml.json",
+                    "mappableParams": "modules/make-apicall/make-apicall.mappable-params.iml.json",
+                    "interface": "modules/make-apicall/make-apicall.interface.iml.json",
+                    "samples": "modules/make-apicall/make-apicall.samples.iml.json",
+                    "scope": "modules/make-apicall/make-apicall.scope.iml.json"
+                }
+            },
+            "text2img": {
+                "label": "Generate an Image from Text",
+                "description": "Generates an image from a text prompt.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/text2img/text2img.communication.iml.json",
+                    "staticParams": "modules/text2img/text2img.static-params.iml.json",
+                    "mappableParams": "modules/text2img/text2img.mappable-params.iml.json",
+                    "interface": "modules/text2img/text2img.interface.iml.json",
+                    "samples": "modules/text2img/text2img.samples.iml.json",
+                    "scope": "modules/text2img/text2img.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {},
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "deep-ai",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "deep-ai"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "imageeditor",
+                        "remote": "imageeditor"
+                    },
+                    {
+                        "local": "MakeAPICall",
+                        "remote": "MakeAPICall"
+                    },
+                    {
+                        "local": "text2img",
+                        "remote": "text2img"
+                    }
+                ],
+                "function": [],
+                "rpc": [],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey6"
+        }
+    ]
+}

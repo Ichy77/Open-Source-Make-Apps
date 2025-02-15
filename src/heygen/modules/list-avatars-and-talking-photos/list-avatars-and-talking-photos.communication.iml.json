@@ -1,0 +1,13 @@
+{
+    // Request to API endpoint with parameter "id" defined in Mappable parameters.
+    "url": "/v2/avatars", // Relative to base URL
+    "method": "GET",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": { },
+    // Response handling
+    "response": {
+		"iterate":"{{body.data.talking_photos}}",
+        "output": "{{item}}" // Returns no output bundle as no API output is expected.
+    }
+}

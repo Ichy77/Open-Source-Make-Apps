@@ -1,0 +1,32 @@
+[
+    {
+        "name": "voice_id",
+        "type": "text",
+        "label": "Voice ID"
+    },
+    {
+        "name": "language",
+        "type": "text",
+        "label": "Language"
+    },
+    {
+        "name": "gender",
+        "type": "text",
+        "label": "Gender"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "preview_audio",
+        "type": "text",
+        "label": "Preview Audio"
+    },
+    {
+        "name": "support_pause",
+        "type": "boolean",
+        "label": "Support Pause"
+    }
+]

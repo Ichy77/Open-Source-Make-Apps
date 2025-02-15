@@ -1,0 +1,11 @@
+{
+    "qs": {},
+    "url": "/text2img",
+    "body": {
+        "text": "{{parameters.text}}"
+    },
+    "method": "POST",
+    "response": {
+        "output": "{{body}}"
+    }
+}

@@ -1,0 +1,130 @@
+[
+    {
+        "name": "messages",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "uuid",
+                    "type": "text",
+                    "label": "Uuid"
+                },
+                {
+                    "name": "created_at",
+                    "type": "text",
+                    "label": "Created At"
+                },
+                {
+                    "name": "updated_at",
+                    "type": "text",
+                    "label": "Updated At"
+                },
+                {
+                    "name": "role",
+                    "type": "text",
+                    "label": "Role"
+                },
+                {
+                    "name": "role_type",
+                    "type": "text",
+                    "label": "Role Type"
+                },
+                {
+                    "name": "content",
+                    "type": "text",
+                    "label": "Content"
+                },
+                {
+                    "name": "token_count",
+                    "type": "number",
+                    "label": "Token Count"
+                }
+            ]
+        },
+        "label": "Messages"
+    },
+    {
+        "name": "facts",
+        "type": "array",
+        "spec": {
+            "type": "text"
+        },
+        "label": "Facts"
+    },
+    {
+        "name": "relevant_facts",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "uuid",
+                    "type": "text",
+                    "label": "Uuid"
+                },
+                {
+                    "name": "content",
+                    "type": "text",
+                    "label": "Content"
+                },
+                {
+                    "name": "fact",
+                    "type": "text",
+                    "label": "Fact"
+                },
+                {
+                    "name": "name",
+                    "type": "text",
+                    "label": "Name"
+                },
+                {
+                    "name": "source_node_name",
+                    "type": "text",
+                    "label": "Source Node Name"
+                },
+                {
+                    "name": "target_node_name",
+                    "type": "text",
+                    "label": "Target Node Name"
+                },
+                {
+                    "name": "created_at",
+                    "type": "text",
+                    "label": "Created At"
+                },
+                {
+                    "name": "expired_at",
+                    "type": "text",
+                    "label": "Expired At"
+                },
+                {
+                    "name": "valid_at",
+                    "type": "text",
+                    "label": "Valid At"
+                },
+                {
+                    "name": "invalid_at",
+                    "type": "text",
+                    "label": "Invalid At"
+                }
+            ]
+        },
+        "label": "Relevant Facts"
+    },
+    {
+        "name": "context",
+        "type": "text",
+        "label": "Context"
+    },
+    {
+        "name": "__IMTLENGTH__",
+        "type": "number",
+        "label": "  IMTLENGTH  "
+    },
+    {
+        "name": "__IMTINDEX__",
+        "type": "number",
+        "label": "  IMTINDEX  "
+    }
+]

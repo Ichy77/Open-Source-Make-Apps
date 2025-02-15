@@ -1,0 +1,19 @@
+{
+    // Uncomment and update the following lines to implement the "attach" method.
+
+    // Request
+    "url": "https://api.copy.ai/api/webhook",
+    "method": "POST",
+    "body": {
+        "url": "{{webhook.url}}",
+        "eventType": "{{parameters.eventType}}",
+        "workflowId": "{{parameters.workflowId}}"
+    },
+
+    // Response handling
+    "response": {
+        "data": {
+            "externalHookId": "{{body.data.id}}" // Stores the webhook's ID to be used in the detach remote procedure. It is accessible via "{{webhook.externalHookId}}".   
+		}
+    }
+}

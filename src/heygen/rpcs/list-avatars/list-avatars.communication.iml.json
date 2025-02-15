@@ -1,0 +1,14 @@
+{
+	"url": "/v2/avatars",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{body.data.avatars}}",
+		"output": {
+			"label": "{{item.avatar_name}}, {{item.avatar_id}}",
+			"value": "{{item.avatar_id}}"
+		}
+	}
+}

@@ -1,0 +1,33 @@
+[
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "message",
+        "type": "text",
+        "label": "Message"
+    },
+    {
+        "name": "answers",
+        "type": "array",
+        "label": "Answers"
+    },
+    {
+        "name": "questions",
+        "type": "array",
+        "spec": {
+            "type": "array",
+            "spec": {
+                "type": "text"
+            }
+        },
+        "label": "Questions"
+    },
+    {
+        "name": "credits_used",
+        "type": "number",
+        "label": "Credits Used"
+    }
+]

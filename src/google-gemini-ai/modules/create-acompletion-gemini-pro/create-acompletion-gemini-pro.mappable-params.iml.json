@@ -1,0 +1,194 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+	{
+		"name": "model", // Makes value accesible via "{{parameters.email}}".
+		"type": "select", // Validates that email is correctly entered.
+		"label": "AI Model", // Sets the user friendly label visible in the module.
+		"required": true,
+		"options": "rpc://getTextChatModels",
+		"dynamic": true
+	},
+	{
+		"name": "contents",
+		"type": "array",
+		"label": "Messages",
+		"required": true,
+		"spec": [
+			{
+				"name": "role",
+				"type": "select",
+				"label": "Role",
+				"options": [
+					{ "value": "user", "label": "User" },
+					{ "value": "model", "label": "Model" }
+				]
+			},
+			{
+				"name": "parts",
+				"type": "array",
+				"label": "Parts",
+				"spec": [
+					{
+						"name": "type",
+						"type": "select",
+						"label": "Message Type",
+						"options": [
+							{ "value": "text",
+								"label": "Text",
+								"nested": [
+									{
+										"name": "text",
+										"type": "text",
+										"label": "Text",
+										"required": false
+									}
+								]
+							},
+							{
+								"value": "file",
+								"label": "File",
+								"nested": [
+									{
+										"name": "file_data",
+										"type": "collection",
+										"label": "File Data",
+										"required": false,
+										"spec": [
+											{
+												"name": "mime_type",
+												"label": "Mime Type",
+												"type": "text",
+												"required": false
+											},
+											{
+												"name": "file_uri",
+												"type": "text",
+												"label": "File URI",
+												"help": "You get this from the 'Upload a File' module.",
+												"required": false
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+
+				]
+			}
+		]
+	},
+	{
+		"name": "safetySettings",
+		"type": "array",
+		"label": "Safety Settings",
+		"required": false,
+		"spec": [
+			{
+				"name": "category",
+				"type": "select",
+				"label": "Category",
+				"options": [
+					//    { "value": "HARM_CATEGORY_DEROGATORY", "label": "Negative or harmful comments targeted at identity and/or a protected attribute" },
+					//    { "value": "HARM_CATEGORY_TOXICITY", "label": "Content that is rude, disrespectful, or vulgar" },
+					//    { "value": "HARM_CATEGORY_VIOLENCE", "label": "Scenarios depicting violence against an individual or group, or general descriptions of violent acts" },
+					//    { "value": "HARM_CATEGORY_SEXUAL", "label": "References to sexual acts or other suggestive content" },
+					//    { "value": "HARM_CATEGORY_MEDICAL", "label": "Promotion of unverified medical advice" },
+					//    { "value": "HARM_CATEGORY_DANGEROUS", "label": "Dangerous content that promotes, facilitates, or encourages harmful actions" },
+					{ "value": "HARM_CATEGORY_HARASSMENT", "label": "Harassment content" },
+					{ "value": "HARM_CATEGORY_HATE_SPEECH", "label": "Hate speech and content" },
+					{ "value": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "label": "Sexually explicit content." },
+					{ "value": "HARM_CATEGORY_DANGEROUS_CONTENT", "label": "Dangerous content:" }
+				]
+			},
+			{
+				"name": "threshold",
+				"type": "select",
+				"label": "Threshold",
+				"options": [
+					//    { "value": "HARM_BLOCK_THRESHOLD_UNSPECIFIED", "label": "Treshold not defined." },
+					{ "value": "BLOCK_LOW_AND_ABOVE", "label": "Block low and above." },
+					{ "value": "BLOCK_MEDIUM_AND_ABOVE", "label": "Block medium and above." },
+					{ "value": "BLOCK_ONLY_HIGH", "label": "Block only high." },
+					{ "value": "BLOCK_NONE", "label": "Block none." }
+				]
+			}
+		],
+		"advanced": true
+	},
+	{
+		"name": "generationConfig",
+		"type": "collection",
+		"label": "Generation configurations",
+		"spec": [
+			{
+				"name": "stopSequences",
+				"type": "array",
+				"label": "Stop Sequences",
+				"required": false,
+				"spec": {
+					"type": "text",
+					"label": "Stop Sequence"
+				}
+			},
+			/* {
+                "name": "candidateCount",
+                "type": "number",
+                "label": "Candidate Count",
+                "required": false,
+                "advanced": true,
+                "validations": {
+                    "min": 1,
+                    "max": 8
+                }
+            },*/
+			{
+				"name": "maxOutputTokens",
+				"type": "number",
+				"label": "Max Output Tokens",
+				"required": false
+			},
+			{
+				"name": "temperature",
+				"type": "number",
+				"label": "Temperature",
+				"required": false,
+				"validate": {
+					"min": 0.0,
+					"max": 1.0
+				},
+				"help": "Min 0.0, Max. 1.0"
+			},
+			{
+				"name": "topP",
+				"type": "number",
+				"label": "Top P",
+				"required": false,
+				"validate": {
+					"min": 0.0,
+					"max": 1.0
+				},
+				"help": "Min 0.0, Max. 1.0"
+			},
+			{
+				"name": "topK",
+				"type": "number",
+				"label": "Top K",
+				"required": false
+			}
+		],
+		"advanced": true
+	},
+	{
+		"name": "tools",
+		"type": "any",
+		"label": "Tools",
+		"advanced": true
+	},
+	{
+		"name": "tool_config",
+		"type": "any",
+		"label": "Tool Config",
+		"advanced": true
+	}
+]

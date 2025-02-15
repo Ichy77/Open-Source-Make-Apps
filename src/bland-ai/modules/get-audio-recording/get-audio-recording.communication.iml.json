@@ -1,0 +1,12 @@
+{
+    // Request to API endpoint with parameter "id" defined in Mappable parameters.
+    "url": "/calls/{{parameters.call_id}}/recording", // Relative to base URL
+    "method": "GET",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+
+    // Response handling
+    "response": {
+        "output": "{{body}}"
+    }
+}

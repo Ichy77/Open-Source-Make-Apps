@@ -1,0 +1,388 @@
+[
+	{
+	"type": "html",
+	"label": "<div>This module is currently being tested. Feel free to use it yourself and if you encounter any issues, please let us know at contact@go-synergetic.com.</div>"
+    },
+
+    {
+        "name": "video_inputs",
+        "type": "array",
+        "label": "Video Inputs",
+        "required": false,
+        "spec": [
+            {
+                "name": "character",
+                "type": "collection",
+                "label": "Character Settings",
+                "spec": [
+                    {
+                        "name": "type",
+                        "type": "select",
+                        "label": "Type",
+                        "options": [
+                            {
+                                "value": "avatar",
+                                "label": "Avatar",
+                                "nested": [
+                                    {
+                                        "name": "avatar_id",
+                                        "type": "select",
+                                        "label": "Avatar",
+                                        "options": "rpc://listAvatars",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "scale",
+                                        "type": "number",
+                                        "label": "Avatar scale",
+                                        "validate": {
+                                            "min": 0,
+                                            "max": 2.0
+                                        },
+                                        "default": 1.0,
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "avatar_style",
+                                        "type": "select",
+                                        "label": "Avatar Style",
+                                        "options": [
+                                            { "value": "circle", "label": "Circle" },
+                                            { "value": "normal", "label": "Normal" },
+                                            { "value": "closeUp", "label": "Close Up" }
+                                        ]
+                                    },
+                                    {
+                                        "name": "offset",
+                                        "type": "collection",
+                                        "label": "Offset",
+                                        "spec": [
+                                            {
+                                                "name": "x",
+                                                "type": "number",
+                                                "label": "X",
+                                                "default": 0
+                                            },
+                                            {
+                                                "name": "y",
+                                                "type": "number",
+                                                "label": "Y",
+                                                "default": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "matting",
+                                        "type": "boolean",
+                                        "label": "Matting",
+                                        "help": "Whether to do matting",
+                                        "default": false,
+                                        "required": false
+                                    },
+                                    {
+                                        "name": "circle_background_color",
+                                        "type": "text",
+                                        "label": "Circle Background Color",
+                                        "required": false,
+                                        "help": "Color value in hex format."
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "talking_photo",
+                                "label": "Talking Photo",
+                                "nested": [
+                                    {
+                                        "name": "talking_photo_id",
+                                        "type": "select",
+                                        "label": "Talking Photo ID",
+                                        "options": "rpc://listTalkingVoicesV2",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "scale",
+                                        "type": "number",
+                                        "label": "Talking Photo scale",
+                                        "validate": {
+                                            "min": 0,
+                                            "max": 2.0
+                                        },
+                                        "default": 1.0,
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "talking_photo_style",
+                                        "type": "select",
+                                        "label": "Talking Photo crop style",
+                                        "options": [
+                                            { "value": "square", "label": "Square" },
+                                            { "value": "circle", "label": "Circle" }
+                                        ]
+                                    },
+                                    {
+                                        "name": "offset",
+                                        "type": "collection",
+                                        "label": "Offset",
+                                        "required": true,
+                                        "spec": [
+                                            {
+                                                "name": "x",
+                                                "type": "number",
+                                                "label": "X",
+                                                "default": 0
+                                            },
+                                            {
+                                                "name": "y",
+                                                "type": "number",
+                                                "label": "Y",
+                                                "default": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "talking_style",
+                                        "type": "select",
+                                        "label": "Talking Photo talking style",
+                                        "default": "stable",
+                                        "options": [
+                                            { "value": "stable", "label": "Stable" },
+                                            { "value": "expressive", "label": "Expressive" }
+                                        ]
+                                    },
+                                    {
+                                        "name": "expression",
+                                        "type": "select",
+                                        "label": "Talking Photo expression style",
+                                        "default": "default",
+                                        "options": [
+                                            { "value": "default", "label": "Default" },
+                                            { "value": "happy", "label": "Happy" }
+                                        ]
+                                    },
+                                    {
+                                        "name": "super_resolution",
+                                        "type": "boolean",
+                                        "label": "Super Resolution",
+                                        "help": "Whether to enhance this photar image",
+                                        "required": false
+                                    },
+                                    {
+                                        "name": "matting",
+                                        "type": "boolean",
+                                        "label": "Matting",
+                                        "help": "Whether to do matting",
+                                        "required": false
+                                    },
+                                    {
+                                        "name": "circle_background_color",
+                                        "type": "text",
+                                        "label": "Circle Background Color",
+                                        "help": "Background color in the circle/square when using circle/square style. Color value in hex format.",
+                                        "required": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "voice",
+                "type": "collection",
+                "label": "Voice Settings",
+                "spec": [
+                    {
+                        "name": "type",
+                        "type": "select",
+                        "label": "Voice Type",
+                        "options": [
+                            {
+                                "value": "text",
+                                "label": "Text",
+                                "nested": [
+                                    {
+                                        "name": "voice_id",
+                                        "type": "select",
+                                        "label": "Voice ID",
+                                        "options": "rpc://listVoices"
+                                    },
+                                    {
+                                        "name": "input_text",
+                                        "type": "text",
+                                        "label": "Input Text"
+                                    },
+                                    {
+                                        "name": "speed",
+                                        "type": "number",
+                                        "label": "Voice Speec",
+                                        "validate": {
+                                            "min": 0.5,
+                                            "max": 1.5
+                                        },
+                                        "default": 1
+                                    },
+                                    {
+                                        "name": "pitch",
+                                        "type": "integer",
+                                        "label": "Voice Pitch",
+                                        "validate": {
+                                            "min": -50,
+                                            "max": 50
+                                        },
+                                        "default": 0
+                                    },
+                                    {
+                                        "name": "emotion",
+                                        "type": "select",
+                                        "label": "Voice Emotion method",
+                                        "options": [
+                                            { "value": "Excited", "label": "Excited" },
+                                            { "value": "Friendly", "label": "Friendly" },
+                                            { "value": "Serious", "label": "Serious" },
+                                            { "value": "Soothing", "label": "Soothing" },
+                                            { "value": "Broadcaster", "label": "Broadcaster" }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "audio",
+                                "label": "Audio",
+                                "nested": [
+                                    {
+                                        "name": "audio_url",
+                                        "type": "text",
+                                        "label": "Audio URL"
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "silence",
+                                "label": "Silence",
+                                "nested": [
+                                    {
+                                        "name": "duration",
+                                        "type": "number",
+                                        "label": "Duration of Silence",
+                                        "validate": {
+                                            "min": 1.0,
+                                            "max": 100.0
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "background",
+                "type": "collection",
+                "label": "Background Settings",
+                "spec": [
+                    {
+                        "name": "type",
+                        "type": "select",
+                        "label": "Background Type",
+                        "options": [
+                            {
+                                "value": "color",
+                                "label": "Color Background",
+                                "nested": [
+                                    {
+                                        "name": "value",
+                                        "type": "text",
+                                        "label": "Background Color",
+                                        "help": "Color value in hex format.",
+                                        "default": "#f6f6fc"
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "image",
+                                "label": "Image Background"
+                                ,
+                                "nested": [
+                                    {
+                                        "name": "url",
+                                        "type": "text",
+                                        "label": "Image URL"
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "video",
+                                "label": "Video Background",
+                                "nested": [
+                                    {
+                                        "name": "url",
+                                        "type": "text",
+                                        "label": "Video URL"
+                                    },
+                                    {
+                                        "name": "play_style",
+                                        "type": "select",
+                                        "label": "Video Play Style",
+                                        "options": [
+                                            { "value": "fit_to_scene", "label": "Fit to Scene" },
+                                            { "value": "freeze", "label": "Freeze" },
+                                            { "value": "loop", "label": "Loop" },
+                                            { "value": "once", "label": "Once" }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "title",
+        "type": "text",
+        "label": "Title of the video",
+        "required": false
+    },
+    {
+        "name": "test",
+        "type": "boolean",
+        "label": "Test Mode",
+        "required": false,
+        "default": false
+    },
+    {
+        "name": "caption",
+        "type": "boolean",
+        "label": "Captions",
+        "help": "Whether to add a caption to the video.",
+        "required": false
+    },
+    {
+        "name": "callback_id",
+        "type": "text",
+        "label": "Callback ID",
+        "help": "A custom ID for callback purposes.",
+        "required": false
+    },
+    {
+        "name": "dimension",
+        "type": "collection",
+        "label": "Dimension",
+        "help": "If you are on the free plan, the export resolution limit is 720p.",
+        "spec": [
+            {
+                "name": "width",
+                "type": "integer",
+                "label": "Width",
+                "default": 1280
+            },
+            {
+                "name": "height",
+                "type": "integer",
+                "label": "Height",
+                "default": 720
+            }
+        ]
+    }
+]

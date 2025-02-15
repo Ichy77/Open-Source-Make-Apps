@@ -1,0 +1,9 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+	{
+		"name": "call_id",          // Makes value accesible via "{{parameters.email}}".
+		"type": "text",          // Validates that email is correctly entered.
+		"label": "Call ID", // Sets the user friendly label visible in the module.
+		"required": true          // Sets the parameter as mandatory.
+	}
+]

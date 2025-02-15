@@ -1,0 +1,68 @@
+[
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "input",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "Input 1",
+                "type": "text",
+                "label": "Input 1"
+            },
+            {
+                "name": "Input 2",
+                "type": "text",
+                "label": "Input 2"
+            }
+        ],
+        "label": "Input"
+    },
+    {
+        "name": "output",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "Output 1",
+                "type": "text",
+                "label": "Output 1"
+            },
+            {
+                "name": "Output 2",
+                "type": "text",
+                "label": "Output 2"
+            }
+        ],
+        "label": "Output"
+    },
+    {
+        "name": "metadata",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "api",
+                "type": "boolean",
+                "label": "Api"
+            }
+        ],
+        "label": "Metadata"
+    },
+    {
+        "name": "createdAt",
+        "type": "date",
+        "label": "Created At"
+    },
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "credits",
+        "type": "number",
+        "label": "Credits"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "message",
+        "type": "text",
+        "label": "Message"
+    },
+    {
+        "name": "call_id",
+        "type": "text",
+        "label": "Call ID"
+    },
+    {
+        "name": "batch_id",
+        "type": "text",
+        "label": "Batch ID"
+    }
+]

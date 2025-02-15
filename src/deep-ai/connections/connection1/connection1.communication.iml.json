@@ -1,0 +1,20 @@
+{
+    // "log": {
+    //     "sanitize": [
+    //         "request.headers.api-key"
+    //     ]
+    // },
+    // "url": "https://api.deepai.org/api/text2img",
+    // "headers": {
+    //     "api-key": "{{parameters.apiKey}}"
+    // },
+    // "response": {
+    //     "error": {
+    //         "message": "[{{statusCode}}] {{body.status.error}}"
+    //     }
+    // },
+    // "method": "POST",
+    // "body": {
+    //     "text": "A friendly dog."
+    // }
+}

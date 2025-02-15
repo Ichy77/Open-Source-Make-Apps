@@ -1,0 +1,84 @@
+[
+	{
+		"help": "Enter a path relative to `https://api.mistral.ai`, e.g. `/v1/models` ",  // Gives instructions to the user about the relative path.
+		"name": "url",                                                                        // Makes value accesible via "{{parameters.url}}"".
+		"type": "text",
+		"label": "URL",
+		"required": true
+	},
+	{
+		"name": "method",          // Allows the user to select the method by themselves.
+		"type": "select",
+		"label": "Method",
+		"default": "GET",
+		"options": [
+			{
+				"label": "GET",
+				"value": "GET"
+			},
+			{
+				"label": "POST",
+				"value": "POST"
+			},
+			{
+				"label": "PUT",
+				"value": "PUT"
+			},
+			{
+				"label": "PATCH",
+				"value": "PATCH"
+			},
+			{
+				"label": "DELETE",
+				"value": "DELETE"
+			}
+		],
+		"required": true
+	},
+	{
+		"help": "You don't have to add authorization headers; we already did that for you.",
+		"name": "headers",         // Allows the user to add headers by themselves.
+		"spec": [
+			{
+				"name": "key",
+				"type": "text",
+				"label": "Key"
+			},
+			{
+				"name": "value",
+				"type": "text",
+				"label": "Value"
+			}
+		],
+		"type": "array",
+		"label": "Headers",
+		"default": [
+			{
+				"key": "Content-Type",
+				"value": "application/json"
+			}
+		]
+	},
+	{
+		"name": "qs",              // Allows the user to set Query String by themselves.
+		"spec": [
+			{
+				"name": "key",
+				"type": "text",
+				"label": "Key"
+			},
+			{
+				"name": "value",
+				"type": "text",
+				"label": "Value"
+			}
+		],
+		"type": "array",
+		"label": "Query String"
+	},
+	{
+		"name": "body",            // Allows the user to set Body by themselves.
+		"type": "any",
+		"label": "Body"
+	}
+]

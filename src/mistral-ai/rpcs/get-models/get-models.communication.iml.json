@@ -1,0 +1,14 @@
+{
+	"url": "/models",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{body.data}}",
+		"output": {
+			"label": "{{item.id}}",
+			"value": "{{item.id}}"
+		}
+	}
+}

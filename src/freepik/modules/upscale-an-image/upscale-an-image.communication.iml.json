@@ -1,0 +1,41 @@
+[
+	{
+		// Initial request to start upscaling
+		"url": "/v1/ai/image-upscaler",
+		"method": "POST", 
+		"headers": {},
+		"qs": {},
+		"body": {
+			"{{...}}":"{{omit(parameters,'image')}}",
+			"image": "{{toString(parameters.file_data,'base64')}}"
+		},
+		"response": {
+			"temp": {
+				"data": "{{body.data}}"
+			}
+		}
+	},
+	{
+		// Poll for completion
+		"url": "/v1/ai/image-upscaler/{{temp.data.task_id}}",
+		"method": "GET",
+		"repeat": {
+			"condition": "{{temp.data.status != 'COMPLETED'}}",
+			"delay": 1000,
+			"limit": 300
+		},
+		"response": {
+			"temp": {
+				"data": "{{body.data}}"
+			}
+		}
+	},
+	{
+		// Return final result
+		"response": {
+			"output": {
+				"data": "{{temp.data}}"
+			}
+		}
+	}
+]

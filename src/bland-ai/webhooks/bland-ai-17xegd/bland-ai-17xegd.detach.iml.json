@@ -1,0 +1,6 @@
+{
+	// // Uncomment and update the following lines to implement the "detach" method.
+	//
+	// "url": "https://www.example.com/api/v2/webhook/{{webhook.externalHookId}}",
+	// "method": "DELETE"
+}

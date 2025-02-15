@@ -1,0 +1,23 @@
+{
+	// Request to API endpoint.
+	"url": "/v1/generation/{{parameters.engine_id}}/image-to-image",  // Relative to base URL
+	"method": "POST",
+	"headers": {
+		"Accept": "image/png"
+	},    // Additional HTTP headers
+	"qs": {},
+	"type":"multipart/form-data",         // Query string
+	"body": {
+		"{{...}}": "{{transformInput(omit(parameters,'accept','fileName','engine_id'))}}"                // Sends all parameters except the "birthday" that should get special attention.
+		
+	},
+
+	// Response handling
+    "response": {
+        "output": {
+            "data": "{{body}}",
+            "fileName":"file.png",
+            "fileSize": "{{headers.`content-length`}}"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+    {
+        "name": "file_name",
+        "type": "filename",
+        "label": "File name",
+        "semantic": "file:name"
+    },
+    {
+        "name": "file_data",
+        "type": "buffer",
+        "label": "Source Image Data",
+        "semantic": "file:data",
+        "help": "Supported Formats: JPG / PNG. Supported Dimensions: 1024x576, 576x1024, 768x768"
+    },
+    {
+        "name": "seed",
+        "type": "uinteger",
+        "label": "Random Seed",
+        "default": 0,
+        "required": false,
+        "help": "Random noise seed (omit this option or use 0 for a random seed).",
+        "advanced": true
+    },
+    {
+        "name": "cfg_scale",
+        "type": "number",
+        "label": "CFG Scale",
+        "default": 1.8,
+        "required": false,
+        "help": "How strongly the video sticks to the original image. Use lower values to allow the model more freedom to make changes and higher values to correct motion distortions.",
+        "validate": {
+            "min": 0,
+            "max": 10
+        },
+        "advanced": true
+    },
+    {
+        "name": "motion_bucket_id",
+        "type": "uinteger",
+        "label": "Level of Motion",
+        "help": "Lower values generally result in less motion in the output video, while higher values generally result in more motion.",
+        "default": 127,
+        "validate": {
+            "min": 1,
+            "max": 255
+        }
+    }
+]

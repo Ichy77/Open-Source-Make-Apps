@@ -1,0 +1,175 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Zep",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "addASession": {
+                "label": "Add a Session",
+                "description": "Creates a new Session with the specified User ID.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/add-asession/add-asession.communication.iml.json",
+                    "staticParams": "modules/add-asession/add-asession.static-params.iml.json",
+                    "mappableParams": "modules/add-asession/add-asession.mappable-params.iml.json",
+                    "interface": "modules/add-asession/add-asession.interface.iml.json",
+                    "samples": "modules/add-asession/add-asession.samples.iml.json",
+                    "scope": "modules/add-asession/add-asession.scope.iml.json"
+                }
+            },
+            "addAUser": {
+                "label": "Add a User",
+                "description": "Adds a User.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/add-auser/add-auser.communication.iml.json",
+                    "staticParams": "modules/add-auser/add-auser.static-params.iml.json",
+                    "mappableParams": "modules/add-auser/add-auser.mappable-params.iml.json",
+                    "interface": "modules/add-auser/add-auser.interface.iml.json",
+                    "samples": "modules/add-auser/add-auser.samples.iml.json",
+                    "scope": "modules/add-auser/add-auser.scope.iml.json"
+                }
+            },
+            "addMemorytoSession": {
+                "label": "Add a Memory to a Session",
+                "description": "Adds a new memory to a session.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/add-memoryto-session/add-memoryto-session.communication.iml.json",
+                    "staticParams": "modules/add-memoryto-session/add-memoryto-session.static-params.iml.json",
+                    "mappableParams": "modules/add-memoryto-session/add-memoryto-session.mappable-params.iml.json",
+                    "interface": "modules/add-memoryto-session/add-memoryto-session.interface.iml.json",
+                    "samples": "modules/add-memoryto-session/add-memoryto-session.samples.iml.json",
+                    "scope": "modules/add-memoryto-session/add-memoryto-session.scope.iml.json"
+                }
+            },
+            "getMemoryFromASession": {
+                "label": "Get Memory from a Session",
+                "description": "Retrieves the memory from a specified session ID.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-memory-from-asession/get-memory-from-asession.communication.iml.json",
+                    "staticParams": "modules/get-memory-from-asession/get-memory-from-asession.static-params.iml.json",
+                    "mappableParams": "modules/get-memory-from-asession/get-memory-from-asession.mappable-params.iml.json",
+                    "interface": "modules/get-memory-from-asession/get-memory-from-asession.interface.iml.json",
+                    "samples": "modules/get-memory-from-asession/get-memory-from-asession.samples.iml.json",
+                    "scope": "modules/get-memory-from-asession/get-memory-from-asession.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {
+            "listSessions": {
+                "label": "listSessions",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-sessions/list-sessions.communication.iml.json",
+                    "params": "rpcs/list-sessions/list-sessions.params.iml.json"
+                }
+            },
+            "listUsers": {
+                "label": "listUsers",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-users/list-users.communication.iml.json",
+                    "params": "rpcs/list-users/list-users.params.iml.json"
+                }
+            }
+        },
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "zep",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "zep"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "addASession",
+                        "remote": "addASession"
+                    },
+                    {
+                        "local": "addAUser",
+                        "remote": "addAUser"
+                    },
+                    {
+                        "local": "addMemorytoSession",
+                        "remote": "addMemorytoSession"
+                    },
+                    {
+                        "local": "getMemoryFromASession",
+                        "remote": "getMemoryFromASession"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    }
+                ],
+                "function": [],
+                "rpc": [
+                    {
+                        "local": "listSessions",
+                        "remote": "listSessions"
+                    },
+                    {
+                        "local": "listUsers",
+                        "remote": "listUsers"
+                    }
+                ],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey16"
+        }
+    ]
+}

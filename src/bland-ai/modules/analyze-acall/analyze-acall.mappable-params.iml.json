@@ -1,0 +1,38 @@
+// Defines "id", "email" and "name" as module input parameters.
+[
+    {
+        "name": "call_id", // Makes value accesible via "{{parameters.id}}".
+        "type": "text", // Sends the value as unsigned integer.
+        "label": "Call ID", // Sets the user friendly label visible in the module.
+        "required": true // Sets the parameter as mandatory.
+    },
+    {
+        "name": "goal",
+        "type": "text",
+        "label": "Goal",
+        "help": "This is the overall purpose of the call. Provides context for the analysis to guide how the questions/transcripts are interpreted.", // Sets the user friendly label visible in the module.
+        "required": true // Sets the parameter as mandatory.
+    },
+    {
+        "name": "questions",
+        "type": "array",
+        "label": "Questions",
+        "spec":[
+			{
+				"name":"question",
+				"type":"text",
+				"label":"Question",
+				"required":true
+			},
+			{
+				"name":"expected_answer",
+				"type":"text",
+				"label":"Expected Answer",
+				"required":true,
+				"help":"Values could be 'string' or 'boolean' or 'human or voicemail'. Fairly flexible in terms of the expected answer type, and unanswerable questions will default to null."
+			}
+		], // Sets the user friendly label visible in the module.
+        "required": true // Sets the parameter as mandatory.
+
+    }
+]

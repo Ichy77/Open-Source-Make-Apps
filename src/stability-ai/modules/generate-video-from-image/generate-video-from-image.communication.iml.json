@@ -1,0 +1,42 @@
+[ {
+        // Request to API endpoint.
+        "url": "/v2alpha/generation/image-to-video", // Relative to base URL
+        "method": "POST",
+        "headers": {
+            "Content-Type": "multipart/form-data"
+        }, // Additional HTTP headers
+        "qs": { },
+        "type": "multipart/form-data",
+        "body": {
+            // "{{...}}": "{{omit(parameters,'fileName')}}"
+            "image": [ {
+                    "value": "{{parameters.file_data}}",
+                    "options": {
+                        "filename": "{{parameters.file_name}}"
+                    }
+                } ]
+        },
+
+        // Response handling
+        "response": {
+            "output": "{{body}}"
+
+        }
+    }
+    // },
+    // {
+    //     "url": "/v2alpha/generation/image-to-video/result/{{temp.id}}",
+    //     "method": "GET",
+    //     "repeat": {
+    //         "condition": "{{body.finishReason != 'SUCCESS'}}",
+    //         "delay": 1000,
+    //         "limit": 300
+    //     },
+    //     "response": {
+    //         "output": {
+    //             "data": "{{body}}",
+    //             "video_id": "{{temp.id}}"
+    //         }
+    //     }
+    // }
+]

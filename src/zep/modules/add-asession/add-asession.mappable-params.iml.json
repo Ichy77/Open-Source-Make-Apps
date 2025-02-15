@@ -1,0 +1,75 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+	{
+		"name": "user_id",
+		"label": "User ID",
+		"type": "select",
+		"required": true,
+		"options":"rpc://listUsers"
+	},
+	{
+		"name": "fact_rating_instruction",
+		"label": "Fact Rating Instruction",
+		"type": "collection",
+		"advanced": true,
+		"spec": [
+			{
+				"name": "examples",
+				"label": "Examples",
+				"type": "array",
+				"help": "A list of examples that demonstrate how facts might be rated based on your instruction. For example, if you are rating based on relevance to a trip planning application, your examples might be: High: 'Joe’s dream vacation is Bali' Medium: 'Joe has a fear of flying', Low: “Joe’s favorite food is Japanese'",
+				"spec": [
+					{
+						"name": "key",
+						"label": "Rating",
+						"type": "select",
+						// "type": "text",
+						// "help": "Can be 'low', 'medium' or 'high'."
+						// ,
+						"options": [
+							{
+								"value": "low"
+							},
+							{
+								"value": "medium"
+							},
+							{
+								"value": "high"
+							}
+						]
+					}
+					,
+					{
+						"name": "value",
+						"label": "Example",
+						"type": "text"
+					}
+				]
+			},
+			{
+				"name": "instruction",
+				"label": "Instruction",
+				"type": "text",
+				"help": "A description of how to rate facts as they apply to your application. A trip planning application may use something like 'relevancy to planning a trip, the user’s preferences when traveling, or the user’s travel history.'"
+			}
+		]
+	},
+	{
+		"name": "metadata",
+		"label": "Meta Data",
+		"type": "array",
+		"advanced": true,
+		"spec": [
+			{
+				"name": "key",
+				"label": "Key",
+				"type": "text"
+			},
+			{
+				"name": "value",
+				"label": "Value",
+				"type": "text"
+			}
+		]
+	}
+]

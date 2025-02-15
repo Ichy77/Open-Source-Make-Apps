@@ -1,0 +1,15 @@
+{
+	// Request to API endpoint.
+	"url": "/chat/completions", // Relative to base URL
+	"method": "POST",
+	"headers": { }, // Additional HTTP headers
+	"qs": { }, // Query string
+	"body": {
+		"tools": "{{if(parameters.tools,parseJSON(parameters.tools))}}",
+		"{{...}}": "{{omit(parameters,'tools','tool_choice')}}"
+	},
+	// Response handling
+	"response": {
+		"output": "{{body}}" // Returns API response body as an output bundle.
+	}
+}

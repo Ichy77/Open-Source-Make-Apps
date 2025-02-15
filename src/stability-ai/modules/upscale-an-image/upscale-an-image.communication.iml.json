@@ -1,0 +1,32 @@
+{
+	// Request to API endpoint.
+	"url": "/v2beta/stable-image/upscale/conservative", // Relative to base URL
+	"method": "POST",
+	"headers": {
+		"Accept": "image/*"
+	}, // Additional HTTP headers
+	"qs": { },
+	"type": "multipart/form-data",
+	"body": {
+		"image": {
+			"value": "{{parameters.image}}",
+			"options": {
+				"filename": "{{parameters.fileName}}"
+			}
+		},
+		"prompt": "{{parameters.prompt}}",
+		"negative_prompt": "{{parameters.negative_prompt}}",
+		"seed": "{{parameters.seed}}",
+		"output_format": "{{parameters.output_format}}",
+		"creativity": "{{parameters.creativity}}"
+	},
+
+	// Response handling
+	"response": {
+		"output": {
+			"data": "{{body}}",
+			"fileName": "file.png",
+			"fileSize": "{{headers.`content-length`}}"
+		}
+	}
+}

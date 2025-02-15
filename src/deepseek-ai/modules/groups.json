@@ -1,0 +1,16 @@
+[
+	{
+		"label": "DeepSeek AI",
+		"modules": [
+			"createAChatCompletion",
+			"listModels",
+			"getBalance"
+		]
+	},
+	{
+		"label": "Other",
+		"modules": [
+			"makeAnApiCall"
+		]
+	}
+]

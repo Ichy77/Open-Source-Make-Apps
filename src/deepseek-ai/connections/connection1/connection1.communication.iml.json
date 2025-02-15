@@ -1,0 +1,20 @@
+{
+	// Request
+	"url": "https://api.deepseek.com/models",          // Absolute URL to the API endpoint which validates credentials
+	"headers": {                                          // Additional HTTP headers
+		"Authorization": "Bearer {{parameters.apiKey}}"   // Authorizes user by API key, provided by user during the connection creation.
+	},
+
+	// Response handling
+	"response": {
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{body.error}}"  // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.authorization"               // Omit HTTP header "Authorization".
+		]
+	}
+}

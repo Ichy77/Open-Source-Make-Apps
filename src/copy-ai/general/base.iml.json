@@ -1,0 +1,20 @@
+{
+	// Default request configuration
+	"baseUrl": "https://api.copy.ai/api",          // Default base URL for all modules and RPCs.
+	"headers": {                                          // Default HTTP headers for all modules and RPCs.
+		"x-copy-ai-api-key": "{{connection.apiKey}}"   // Authorization by API key, which user will provide in the connection as parameter.
+	},
+
+	// Default response handling
+	"response": {
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{body.error}}"  // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.x-copy-ai-api-key"               // Omit HTTP header "Authorization".
+		]
+	}
+}

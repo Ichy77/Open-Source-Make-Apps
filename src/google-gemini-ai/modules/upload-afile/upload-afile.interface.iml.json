@@ -1,0 +1,47 @@
+[
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "mimeType",
+        "type": "text",
+        "label": "Mime Type"
+    },
+    {
+        "name": "sizeBytes",
+        "type": "text",
+        "label": "Size Bytes"
+    },
+    {
+        "name": "createTime",
+        "type": "text",
+        "label": "Create Time"
+    },
+    {
+        "name": "updateTime",
+        "type": "text",
+        "label": "Update Time"
+    },
+    {
+        "name": "expirationTime",
+        "type": "text",
+        "label": "Expiration Time"
+    },
+    {
+        "name": "sha256Hash",
+        "type": "text",
+        "label": "Sha 256Hash"
+    },
+    {
+        "name": "uri",
+        "type": "text",
+        "label": "Uri"
+    },
+    {
+        "name": "state",
+        "type": "text",
+        "label": "State"
+    }
+]

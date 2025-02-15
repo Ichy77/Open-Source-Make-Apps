@@ -1,0 +1,16 @@
+[
+	{
+		"name": "apiKey",
+		"type": "password",
+		"label": "API Key",
+		"required": true,
+		"editable": true
+	},
+	{
+		"name": "Organization",
+		"type": "text",
+		"label": "Organization",
+		"help": "Allows for requests to be scoped to an organization other than the user's default. If not provided, the user's default organization will be used.",
+		"editable": true
+	}
+]

@@ -1,0 +1,28 @@
+[ {
+        // Request
+        "url": "https://api.stability.ai/v1/user/account", // Absolute URL to the API endpoint which validates credentials
+        "headers": { // Additional HTTP headers
+            "Authorization": "Bearer {{parameters.apiKey}}"
+        },
+
+        // Response handling
+        "response": {
+            "metadata": { // Adds authorized user details to the connection label.
+                "type": "email", // Type of the parameter. Can be "text" or "email".
+                "value": "{{body.email}}" // The value in "email" will be displayed in connection's label.
+            },
+            "error": { // Error handling
+                "message": "[{{statusCode}}] {{body.message}}" // On error, returns error message as "[statusCode] error text".
+            },
+            "data": {
+                "Organization": "{{if(parameters.Organization,parameters.Organization,first(map(body.organizations,'id','is_default','true')))}}"
+            }
+        },
+
+        "log": {
+            "sanitize": [ // Excludes sensitive parameters from logs.
+                "request.headers.authorization" // Omit HTTP header "Authorization".
+            ]
+        }
+    }
+]

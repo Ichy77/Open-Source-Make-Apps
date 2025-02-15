@@ -1,0 +1,343 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "hey-gen-9e1ue3": {
+                "label": "HeyGen",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/hey-gen-9e1ue3/hey-gen-9e1ue3.communication.iml.json",
+                    "params": "connections/hey-gen-9e1ue3/hey-gen-9e1ue3.params.iml.json",
+                    "common": "connections/hey-gen-9e1ue3/hey-gen-9e1ue3.common.json"
+                }
+            }
+        },
+        "module": {
+            "createAnAvatarVideoV2": {
+                "label": "Create an Avatar Video",
+                "description": "Creates a new avatar video.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-an-avatar-video-v2/create-an-avatar-video-v2.communication.iml.json",
+                    "staticParams": "modules/create-an-avatar-video-v2/create-an-avatar-video-v2.static-params.iml.json",
+                    "mappableParams": "modules/create-an-avatar-video-v2/create-an-avatar-video-v2.mappable-params.iml.json",
+                    "interface": "modules/create-an-avatar-video-v2/create-an-avatar-video-v2.interface.iml.json",
+                    "samples": "modules/create-an-avatar-video-v2/create-an-avatar-video-v2.samples.iml.json",
+                    "scope": "modules/create-an-avatar-video-v2/create-an-avatar-video-v2.scope.iml.json"
+                }
+            },
+            "createVideoTranslation": {
+                "label": "Create a Video Translation",
+                "description": "Translates a video.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-video-translation/create-video-translation.communication.iml.json",
+                    "staticParams": "modules/create-video-translation/create-video-translation.static-params.iml.json",
+                    "mappableParams": "modules/create-video-translation/create-video-translation.mappable-params.iml.json",
+                    "interface": "modules/create-video-translation/create-video-translation.interface.iml.json",
+                    "samples": "modules/create-video-translation/create-video-translation.samples.iml.json",
+                    "scope": "modules/create-video-translation/create-video-translation.scope.iml.json"
+                }
+            },
+            "deleteVideo": {
+                "label": "Delete a Video",
+                "description": "Deletes a video by Id.",
+                "moduleType": "action",
+                "actionCrud": "delete",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/delete-video/delete-video.communication.iml.json",
+                    "staticParams": "modules/delete-video/delete-video.static-params.iml.json",
+                    "mappableParams": "modules/delete-video/delete-video.mappable-params.iml.json",
+                    "interface": "modules/delete-video/delete-video.interface.iml.json",
+                    "samples": "modules/delete-video/delete-video.samples.iml.json",
+                    "scope": "modules/delete-video/delete-video.scope.iml.json"
+                }
+            },
+            "getAVideoTranslation": {
+                "label": "Get a Video Translation",
+                "description": "Retrieves information about a video translation.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-avideo-translation/get-avideo-translation.communication.iml.json",
+                    "staticParams": "modules/get-avideo-translation/get-avideo-translation.static-params.iml.json",
+                    "mappableParams": "modules/get-avideo-translation/get-avideo-translation.mappable-params.iml.json",
+                    "interface": "modules/get-avideo-translation/get-avideo-translation.interface.iml.json",
+                    "samples": "modules/get-avideo-translation/get-avideo-translation.samples.iml.json",
+                    "scope": "modules/get-avideo-translation/get-avideo-translation.scope.iml.json"
+                }
+            },
+            "getVideo": {
+                "label": "Get a Video",
+                "description": "Retrieves a video by Id.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-video/get-video.communication.iml.json",
+                    "staticParams": "modules/get-video/get-video.static-params.iml.json",
+                    "mappableParams": "modules/get-video/get-video.mappable-params.iml.json",
+                    "interface": "modules/get-video/get-video.interface.iml.json",
+                    "samples": "modules/get-video/get-video.samples.iml.json",
+                    "scope": "modules/get-video/get-video.scope.iml.json"
+                }
+            },
+            "listAvatars": {
+                "label": "List Avatars",
+                "description": "Lists available avatars.",
+                "moduleType": "search",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-avatars/list-avatars.communication.iml.json",
+                    "staticParams": "modules/list-avatars/list-avatars.static-params.iml.json",
+                    "mappableParams": "modules/list-avatars/list-avatars.mappable-params.iml.json",
+                    "interface": "modules/list-avatars/list-avatars.interface.iml.json",
+                    "samples": "modules/list-avatars/list-avatars.samples.iml.json",
+                    "scope": "modules/list-avatars/list-avatars.scope.iml.json"
+                }
+            },
+            "listAvatarsAndTalkingPhotos": {
+                "label": "List Talking Photos",
+                "description": "Lists available talking photos.",
+                "moduleType": "search",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-avatars-and-talking-photos/list-avatars-and-talking-photos.communication.iml.json",
+                    "staticParams": "modules/list-avatars-and-talking-photos/list-avatars-and-talking-photos.static-params.iml.json",
+                    "mappableParams": "modules/list-avatars-and-talking-photos/list-avatars-and-talking-photos.mappable-params.iml.json",
+                    "interface": "modules/list-avatars-and-talking-photos/list-avatars-and-talking-photos.interface.iml.json",
+                    "samples": "modules/list-avatars-and-talking-photos/list-avatars-and-talking-photos.samples.iml.json",
+                    "scope": "modules/list-avatars-and-talking-photos/list-avatars-and-talking-photos.scope.iml.json"
+                }
+            },
+            "listVoices": {
+                "label": "List Voices",
+                "description": "Lists available voices.",
+                "moduleType": "search",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-voices/list-voices.communication.iml.json",
+                    "staticParams": "modules/list-voices/list-voices.static-params.iml.json",
+                    "mappableParams": "modules/list-voices/list-voices.mappable-params.iml.json",
+                    "interface": "modules/list-voices/list-voices.interface.iml.json",
+                    "samples": "modules/list-voices/list-voices.samples.iml.json",
+                    "scope": "modules/list-voices/list-voices.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            },
+            "newAvatarVideo": {
+                "label": "Watch New Videos",
+                "description": "Triggers when a new avatar video is done either as a success or as a failure.",
+                "moduleType": "instant_trigger",
+                "connection": null,
+                "altConnection": null,
+                "webhook": "hey-gen-9e1ue3",
+                "codeFiles": {
+                    "communication": "modules/new-avatar-video/new-avatar-video.communication.iml.json",
+                    "staticParams": "modules/new-avatar-video/new-avatar-video.static-params.iml.json",
+                    "mappableParams": "modules/new-avatar-video/new-avatar-video.mappable-params.iml.json",
+                    "interface": "modules/new-avatar-video/new-avatar-video.interface.iml.json",
+                    "samples": "modules/new-avatar-video/new-avatar-video.samples.iml.json"
+                }
+            }
+        },
+        "function": {
+            "removeEmpty": {
+                "codeFiles": {
+                    "code": "functions/remove-empty/remove-empty.code.js",
+                    "test": "functions/remove-empty/remove-empty.test.js"
+                }
+            }
+        },
+        "rpc": {
+            "listAvatars": {
+                "label": "listAvatars",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-avatars/list-avatars.communication.iml.json",
+                    "params": "rpcs/list-avatars/list-avatars.params.iml.json"
+                }
+            },
+            "listLanguages": {
+                "label": "listLanguages",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-languages/list-languages.communication.iml.json",
+                    "params": "rpcs/list-languages/list-languages.params.iml.json"
+                }
+            },
+            "listTalkingVoicesV2": {
+                "label": "listTalkingVoicesV2",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-talking-voices-v2/list-talking-voices-v2.communication.iml.json",
+                    "params": "rpcs/list-talking-voices-v2/list-talking-voices-v2.params.iml.json"
+                }
+            },
+            "listVideos": {
+                "label": "listVideos",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-videos/list-videos.communication.iml.json",
+                    "params": "rpcs/list-videos/list-videos.params.iml.json"
+                }
+            },
+            "listVoices": {
+                "label": "listVoices",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-voices/list-voices.communication.iml.json",
+                    "params": "rpcs/list-voices/list-voices.params.iml.json"
+                }
+            }
+        },
+        "webhook": {
+            "hey-gen-9e1ue3": {
+                "label": "New Video",
+                "webhookType": "web",
+                "connection": "hey-gen-9e1ue3",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "webhooks/hey-gen-9e1ue3/hey-gen-9e1ue3.communication.iml.json",
+                    "params": "webhooks/hey-gen-9e1ue3/hey-gen-9e1ue3.params.iml.json",
+                    "attach": "webhooks/hey-gen-9e1ue3/hey-gen-9e1ue3.attach.iml.json",
+                    "detach": "webhooks/hey-gen-9e1ue3/hey-gen-9e1ue3.detach.iml.json",
+                    "update": "webhooks/hey-gen-9e1ue3/hey-gen-9e1ue3.update.iml.json",
+                    "requiredScope": "webhooks/hey-gen-9e1ue3/hey-gen-9e1ue3.required-scope.iml.json"
+                }
+            }
+        }
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "heygen",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "hey-gen-9e1ue3",
+                        "remote": "hey-gen-9e1ue3"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "createAnAvatarVideoV2",
+                        "remote": "createAnAvatarVideoV2"
+                    },
+                    {
+                        "local": "createVideoTranslation",
+                        "remote": "createVideoTranslation"
+                    },
+                    {
+                        "local": "deleteVideo",
+                        "remote": "deleteVideo"
+                    },
+                    {
+                        "local": "getAVideoTranslation",
+                        "remote": "getAVideoTranslation"
+                    },
+                    {
+                        "local": "getVideo",
+                        "remote": "getVideo"
+                    },
+                    {
+                        "local": "listAvatars",
+                        "remote": "listAvatars"
+                    },
+                    {
+                        "local": "listAvatarsAndTalkingPhotos",
+                        "remote": "listAvatarsAndTalkingPhotos"
+                    },
+                    {
+                        "local": "listVoices",
+                        "remote": "listVoices"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    },
+                    {
+                        "local": "newAvatarVideo",
+                        "remote": "newAvatarVideo"
+                    }
+                ],
+                "function": [
+                    {
+                        "local": "removeEmpty",
+                        "remote": "removeEmpty"
+                    }
+                ],
+                "rpc": [
+                    {
+                        "local": "listAvatars",
+                        "remote": "listAvatars"
+                    },
+                    {
+                        "local": "listLanguages",
+                        "remote": "listLanguages"
+                    },
+                    {
+                        "local": "listTalkingVoicesV2",
+                        "remote": "listTalkingVoicesV2"
+                    },
+                    {
+                        "local": "listVideos",
+                        "remote": "listVideos"
+                    },
+                    {
+                        "local": "listVoices",
+                        "remote": "listVoices"
+                    }
+                ],
+                "webhook": [
+                    {
+                        "local": "hey-gen-9e1ue3",
+                        "remote": "hey-gen-9e1ue3"
+                    }
+                ]
+            },
+            "apikeyFile": "../../.secrets/apikey10"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "url": "https://generativelanguage.googleapis.com/v1beta/models", // Absolute URL to the API endpoint which validates credentials
+        "headers": { // Additional HTTP headers
+
+        },
+        "qs": {
+            "key": "{{parameters.key}}"
+        },
+
+        // Response handling
+        "response": {
+            "error": { // Error handling
+                "message": "[{{statusCode}}] {{body.error.message}}" // On error, returns error message as "[statusCode] error text".
+            }
+        },
+
+        "log": {
+            "sanitize": [ // Excludes sensitive parameters from logs.
+                "request.qs.key" // Omit HTTP header "Authorization".
+            ]
+        }
+    }
+]

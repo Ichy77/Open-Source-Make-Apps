@@ -1,0 +1,30 @@
+{
+    // Request to API endpoint.
+    "url": "/v1/generation/{{parameters.engine_id}}/text-to-image", // Relative to base URL
+    "method": "POST",
+    "headers": {
+        "Accept": "image/png"
+    }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": {
+        "height": "{{parameters.height}}",
+        "width": "{{parameters.width}}",
+        "text_prompts": "{{parameters.text_prompts}}",
+        "cfg_scale": "{{parameters.cfg_scale}}",
+        "clip_guidance_preset": "{{parameters.clip_guidance_preset}}",
+        "sampler": "{{parameters.sampler}}",
+        "samples": "{{parameters.samples}}",
+        "seed": "{{parameters.seed}}",
+        "steps": "{{parameters.steps}}",
+        "style_preset": "{{parameters.style_preset}}"
+    },
+
+    // Response handling
+    "response": {
+        "output": {
+            "data": "{{body}}",
+            "fileName":"file.png",
+            "fileSize": "{{headers.`content-length`}}"
+        }
+    }
+}

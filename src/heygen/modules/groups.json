@@ -1,0 +1,17 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"newAvatarVideo",
+			"getVideo",
+			"deleteVideo",
+			"makeAnApiCall",
+			"listVoices",
+			"listAvatars",
+			"listAvatarsAndTalkingPhotos",
+			"createAnAvatarVideoV2",
+			"createVideoTranslation",
+			"getAVideoTranslation"
+		]
+	}
+]

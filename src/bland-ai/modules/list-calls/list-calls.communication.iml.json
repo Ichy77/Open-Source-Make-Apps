@@ -1,0 +1,28 @@
+{
+    // Request to API endpoint.
+    "url": "/calls", // Relative to base URL
+    "method": "GET",
+    "headers": { }, // Additional HTTP headers
+    "qs": { // Query string
+        "from_number": "{{parameters.from_number}}",
+        "to_number": "{{parameters.to_number}}",
+        "ascending": "{{parameters.ascending}}",
+        "limti": 1000 // Parameter "search" that is defined in Mappable parameters.
+    },
+
+    // Response handling
+    "response": {
+        // Splits array from API response into bundles.
+        // See documentation at: https://docs.integromat.com/apps/app-blocks/api/pagination
+        "iterate": "{{body.calls}}", // Iterates "users" array from API response to split it into individual items.
+
+        "output": "{{item}}", // Outputs whole each iterated "item" object as separate bundle.
+        "limit": "{{parameters.limit}}" // Limits number of output bundles as requested by user (even if API returns more items).
+    },
+    "pagination": {
+        "condition": "{{body.count=1000}}",
+        "qs": {
+            "from": "{{body.count}}"
+        }
+    }
+}

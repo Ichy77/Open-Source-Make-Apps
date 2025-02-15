@@ -1,0 +1,10 @@
+[
+    {
+        "name": "apiKey",
+        "type": "password",
+        "label": "API Key",
+        "required": true,
+        "help":"Find the API Key in your OpenRouter-account at: https://openrouter.ai/keys ",
+        "editable":true
+    }
+]

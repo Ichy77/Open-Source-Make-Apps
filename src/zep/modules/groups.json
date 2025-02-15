@@ -1,0 +1,12 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"addASession",
+			"addAUser",
+			"addMemorytoSession",
+			"getMemoryFromASession",
+			"makeAnApiCall"
+		]
+	}
+]

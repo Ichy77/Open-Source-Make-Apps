@@ -1,0 +1,69 @@
+[
+    {
+        "name": "code",
+        "type": "number",
+        "label": "Code"
+    },
+    {
+        "name": "data",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "callback_id",
+                "type": "text",
+                "label": "Callback ID"
+            },
+            {
+                "name": "caption_url",
+                "type": "text",
+                "label": "Caption Url"
+            },
+            {
+                "name": "duration",
+                "type": "number",
+                "label": "Duration"
+            },
+            {
+                "name": "error",
+                "type": "text",
+                "label": "Error"
+            },
+            {
+                "name": "gif_url",
+                "type": "text",
+                "label": "Gif Url"
+            },
+            {
+                "name": "id",
+                "type": "text",
+                "label": "ID"
+            },
+            {
+                "name": "status",
+                "type": "text",
+                "label": "Status"
+            },
+            {
+                "name": "thumbnail_url",
+                "type": "text",
+                "label": "Thumbnail Url"
+            },
+            {
+                "name": "video_url",
+                "type": "text",
+                "label": "Video Url"
+            },
+            {
+                "name": "video_url_caption",
+                "type": "text",
+                "label": "Video Url Caption"
+            }
+        ],
+        "label": "Data"
+    },
+    {
+        "name": "message",
+        "type": "text",
+        "label": "Message"
+    }
+]

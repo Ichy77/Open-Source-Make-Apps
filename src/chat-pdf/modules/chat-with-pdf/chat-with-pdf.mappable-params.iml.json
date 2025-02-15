@@ -1,0 +1,46 @@
+// Defines "id", "email" and "name" as module input parameters.
+[
+	{
+		"name": "sourceId",        // Makes value accesible via "{{parameters.id}}".
+		"type": "text",  // Sends the value as unsigned integer.
+		"label": "Source ID",  // Sets the user friendly label visible in the module.
+		"required": true     // Sets the parameter as mandatory.
+	},
+	{
+		"name": "messages",
+		"type": "array",
+		"label": "Messages",
+		"required": true,
+		"spec": {
+			"type": "collection",
+			"spec": [
+				{
+					"name": "role",
+					"type": "select",
+					"label": "Role",
+					"options": [
+						{
+							"label": "User",
+							"value": "user"
+						},
+						{
+							"label": "Assistant",
+							"value": "assistant"
+						}
+					]
+				},
+				{
+					"name": "content",
+					"type": "text",
+					"label": "Content"
+				}
+			]
+		}
+	},
+	{
+		"name": "referenceSources",
+		"label": "Reference Sources?",
+		"type": "boolean",
+		"default": false
+	}
+]

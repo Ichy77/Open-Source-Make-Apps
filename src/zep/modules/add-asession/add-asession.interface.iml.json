@@ -1,0 +1,103 @@
+[
+    {
+        "name": "uuid",
+        "type": "text",
+        "label": "Uuid"
+    },
+    {
+        "name": "id",
+        "type": "number",
+        "label": "ID"
+    },
+    {
+        "name": "created_at",
+        "type": "text",
+        "label": "Created At"
+    },
+    {
+        "name": "updated_at",
+        "type": "text",
+        "label": "Updated At"
+    },
+    {
+        "name": "deleted_at",
+        "type": "text",
+        "label": "Deleted At"
+    },
+    {
+        "name": "ended_at",
+        "type": "text",
+        "label": "Ended At"
+    },
+    {
+        "name": "session_id",
+        "type": "text",
+        "label": "Session ID"
+    },
+    {
+        "name": "user_id",
+        "type": "text",
+        "label": "User ID"
+    },
+    {
+        "name": "metadata",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "Temperature",
+                "type": "text",
+                "label": "Temperature"
+            }
+        ],
+        "label": "Metadata"
+    },
+    {
+        "name": "project_uuid",
+        "type": "text",
+        "label": "Project Uuid"
+    },
+    {
+        "name": "facts",
+        "type": "text",
+        "label": "Facts"
+    },
+    {
+        "name": "fact_rating_instruction",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "instruction",
+                "type": "text",
+                "label": "Instruction"
+            },
+            {
+                "name": "examples",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "high",
+                        "type": "text",
+                        "label": "High"
+                    },
+                    {
+                        "name": "medium",
+                        "type": "text",
+                        "label": "Medium"
+                    },
+                    {
+                        "name": "low",
+                        "type": "text",
+                        "label": "Low"
+                    }
+                ],
+                "label": "Examples"
+            }
+        ],
+        "label": "Fact Rating Instruction"
+    },
+    {
+        "name": "classifications",
+        "type": "text",
+        "label": "Classifications"
+    }
+]

@@ -1,0 +1,29 @@
+{
+    // Request to API endpoint.
+    "url": "/chat/completions", // Relative to base URL
+    "method": "POST",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": {
+        "messages": "{{parameters.messages}}",
+        "frequency_penalty": "{{parameters.frequency_penalty}}",
+        "max_tokens": "{{parameters.max_tokens}}",
+        "n": "{{parameters.n}}",
+        "presence_penalty": "{{parameters.presence_penalty}}",
+        "response_format": {
+            "type": "{{if(parameters.json_mode,'json_object','text')}}"
+        },
+        "seed": "{{parameters.seed}}",
+        "stop": "{{parameters.stop}}",
+        "temperature": "{{parameters.temperature}}",
+        "top_p": "{{parameters.top_p}}",
+        "top_k": "{{parameters.top_k}}",
+        "models": "{{parameters.models}}",
+        "route": "{{if(parameters.fallback,'fallback',)}}"
+    },
+
+    // Response handling
+    "response": {
+        "output": "{{body}}" // Returns API response body as an output bundle.
+    }
+}

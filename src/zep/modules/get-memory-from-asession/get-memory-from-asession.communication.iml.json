@@ -1,0 +1,15 @@
+{
+	// Request to API endpoint.
+	"url": "/v2/sessions/{{parameters.session_id}}/memory",                       
+	"method": "GET",
+	"headers": {},                         
+	"qs": {                                
+		"lastn": "{{parameters.lastn}}",
+		"mindRating": "{{parameters.minRating}}"  
+	},
+
+	// Response handling
+	"response": {
+		"output": "{{parseJSON(body)}}"
+	}
+}

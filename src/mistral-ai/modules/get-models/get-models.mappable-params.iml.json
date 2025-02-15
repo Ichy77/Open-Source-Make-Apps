@@ -1,0 +1,11 @@
+// Defines "search" and "limit" as module input parameters.
+[
+
+	{
+		"name": "limit",
+		"type": "number",
+		"label": "Limit",
+		"default": 10,
+		"help": "Maximum number of returned results (bundles)."
+	}
+]

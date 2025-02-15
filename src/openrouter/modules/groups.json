@@ -1,0 +1,11 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"createAChatCompletion",
+			"makeAnApiCall",
+			"listModels",
+			"createAChatCompletionWithFallback"
+		]
+	}
+]
