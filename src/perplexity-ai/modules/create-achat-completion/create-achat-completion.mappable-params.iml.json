@@ -1,0 +1,171 @@
+[
+	// Defines "model" as mandatory module input parameter.
+	{
+		"name": "model",
+		"type": "select",
+		"label": "Model",
+		"required": true,
+		"default": "sonar",
+		"dynamic": true,
+		"options": [
+			{
+				"value": "sonar",
+				"label": "sonar"
+			},
+			{
+				"value": "sonar-pro",
+				"label": "sonar-pro"
+			},
+			{
+				"value": "sonar-reasoning",
+				"label": "sonar-reasoning"
+			},
+			{
+				"label": "llama-3.1-sonar-small-128k-online",
+				"value": "llama-3.1-sonar-small-128k-online"
+			},
+			{
+				"label": "llama-3.1-sonar-large-128k-online",
+				"value": "llama-3.1-sonar-large-128k-online"
+			},
+			{
+				"value": "llama-3.1-sonar-huge-128k-online",
+				"label": "llama-3.1-sonar-huge-128k-online"
+			}
+		]
+	},
+	// Defines "messages" as mandatory module input parameter.
+	{
+		"name": "messages",
+		"type": "array",
+		"label": "Messages",
+		"required": true,
+		"spec": [
+			{
+				"name": "content",
+				"type": "text",
+				"label": "Content",
+				"required": true
+			},
+			{
+				"name": "role",
+				"type": "select",
+				"label": "Role",
+				"required": true,
+				"help": "The role of the speaker in this turn of conversation. After the (optional) system message, user and assistant roles should alternate with user then assistant, ending in user.",
+				"options": [
+					{
+						"label": "User",
+						"value": "user"
+					},
+					{
+						"label": "Assistant",
+						"value": "assistant"
+					},
+					{
+						"label": "System",
+						"value": "system"
+					}
+				]
+			}
+		]
+	},
+	// Defines "max_tokens" as optional module input parameter.
+	{
+		"name": "max_tokens",
+		"type": "number",
+		"label": "Max Tokens",
+		"required": false
+	},
+	// Defines "temperature" as optional module input parameter.
+	{
+		"name": "temperature",
+		"type": "number",
+		"label": "Temperature",
+		"required": false,
+		"validate": {
+			"max": 1.999,
+			"min": 0
+		}
+	},
+	// Defines "top_p" as optional module input parameter.
+	{
+		"name": "top_p",
+		"type": "number",
+		"label": "Top P",
+		"required": false,
+		"validate": {
+			"max": 1,
+			"min": 0
+		},
+		"advanced": true
+	},
+	// Defines "top_k" as optional module input parameter.
+	{
+		"name": "top_k",
+		"type": "number",
+		"label": "Top K",
+		"required": false,
+		"validate": {
+			"max": 2048,
+			"min": 0
+		},
+		"advanced": true
+	},
+	// Defines "presence_penalty" as optional module input parameter.
+	{
+		"name": "presence_penalty",
+		"type": "number",
+		"label": "Presence Penalty",
+		"required": false,
+		"validate": {
+			"max": 2,
+			"min": -2
+		},
+		"advanced": true
+	},
+	// Defines "frequency_penalty" as optional module input parameter.
+	{
+		"name": "frequency_penalty",
+		"type": "number",
+		"label": "Frequency Penalty",
+		"required": false,
+		"validate": {
+			"min": 0
+		},
+		"advanced": true
+	},
+	{
+		"name": "search_domain_filter",
+		"label": "Search Domain Filter",
+		"type": "array",
+		"help": "Given a list of domains, limit the citations used by the online model to URLs from the specified domains. Currently limited to only 3 domains for whitelisting and blacklisting. For blacklisting add a '-' to the beginning of the domain string.",
+        "advanced": true
+	},
+	{
+		"name": "search_recency_filter",
+		"label": "Search Recency Filter",
+		"type": "select",
+		"options": [
+			{ "value": "month", "label": "Month" },
+			{ "value": "week", "label": "Week" },
+			{ "value": "day", "label": "Day" },
+			{ "value": "hour", "label": "Hour" }
+		],
+        "advanced": true
+	},
+    {
+        "name":"return_images",
+        "label":"Return Images",
+        "type":"boolean",
+        "help":"Determines whether or not a request to an online model should return images. Images are in closed beta access.",
+        "advanced": true
+    },
+    {
+        "name":"return_related_questions",
+        "label":"Return Related Questions",
+        "type":"boolean",
+        "help":"Determines whether or not a request to an online model should return related questions. Related questions are in closed beta access.",
+        "advanced": true
+    }
+]

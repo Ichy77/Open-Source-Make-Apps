@@ -1,0 +1,12 @@
+{
+    // Request to API endpoint with parameter "id" defined in Mappable parameters.
+    "url": "/chat/completions", // Relative to base URL
+    "method": "POST",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": "{{parameters}}",
+    // Response handling
+    "response": {
+        "output": "{{body}}" // Return JSON response body as an output bundle.
+    }
+}

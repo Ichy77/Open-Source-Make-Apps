@@ -1,0 +1,107 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Perplexity",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "createAChatCompletion": {
+                "label": "Create a Chat Completion",
+                "description": "Creates a chat completions with the chosen model.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-achat-completion/create-achat-completion.communication.iml.json",
+                    "staticParams": "modules/create-achat-completion/create-achat-completion.static-params.iml.json",
+                    "mappableParams": "modules/create-achat-completion/create-achat-completion.mappable-params.iml.json",
+                    "interface": "modules/create-achat-completion/create-achat-completion.interface.iml.json",
+                    "samples": "modules/create-achat-completion/create-achat-completion.samples.iml.json",
+                    "scope": "modules/create-achat-completion/create-achat-completion.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            },
+            "makeApiCall2": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-api-call2/make-api-call2.communication.iml.json",
+                    "staticParams": "modules/make-api-call2/make-api-call2.static-params.iml.json",
+                    "mappableParams": "modules/make-api-call2/make-api-call2.mappable-params.iml.json",
+                    "interface": "modules/make-api-call2/make-api-call2.interface.iml.json",
+                    "samples": "modules/make-api-call2/make-api-call2.samples.iml.json",
+                    "scope": "modules/make-api-call2/make-api-call2.scope.iml.json"
+                }
+            }
+        },
+        "function": {},
+        "rpc": {},
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "perplexity-ai",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "perplexity-ai"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "createAChatCompletion",
+                        "remote": "createAChatCompletion"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    },
+                    {
+                        "local": "makeApiCall2",
+                        "remote": "makeApiCall2"
+                    }
+                ],
+                "function": [],
+                "rpc": [],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey"
+        }
+    ]
+}
