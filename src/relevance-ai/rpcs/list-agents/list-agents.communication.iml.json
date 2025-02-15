@@ -1,0 +1,29 @@
+{
+    "url": "/agents/list",
+    "method": "POST",
+    "qs": { },
+    "body": { "filters": [
+            {
+                "filter_type": "exact_match",
+                "field": "project",
+                "condition_value": "{{connection.projectID}}"
+            }
+        ],
+        "page": 1,
+        "page_size": 99
+    },
+    "headers": { },
+    "response": {
+        "iterate": "{{body.results}}",
+        "output": {
+			"label":"{{item.name}}",
+			"value":"{{item.agent_id}}"
+		}
+    },
+    "pagination": {
+        "body": {
+            "page": "{{pagination.page}}"
+        },
+        "condition": "{{length(body.results) >= 99}}"
+    }
+}

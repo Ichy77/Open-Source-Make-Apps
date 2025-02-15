@@ -1,0 +1,16 @@
+[
+    {
+        "name": "username",
+        "type": "text",
+        "label": "Username",
+        "required": true,
+        "editable": true
+    },
+    {
+        "name": "password",
+        "type": "password",
+        "label": "Password",
+        "required": true,
+        "editable": true
+    }
+]

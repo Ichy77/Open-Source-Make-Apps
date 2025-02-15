@@ -1,0 +1,12 @@
+{
+    "url": "/knowledge/list",
+    "method": "POST",
+    "body": {
+        "knowledge_set": "{{parameters.conversationID}}",
+        "filters": [ ]
+    },
+    "response": {
+        "iterate": "{{sort(body.results,'asc','insert_date_')}}",
+        "output": "{{item.data.message}}"
+    }
+}

@@ -1,0 +1,121 @@
+[
+    {
+        "name": "_id",
+        "type": "text",
+        "label": " ID"
+    },
+    {
+        "name": "action_behaviour",
+        "type": "text",
+        "label": "Action Behaviour"
+    },
+    {
+        "name": "actions",
+        "type": "array",
+        "label": "Actions"
+    },
+    {
+        "name": "agent_id",
+        "type": "text",
+        "label": "Agent ID"
+    },
+    {
+        "name": "emoji",
+        "type": "text",
+        "label": "Emoji"
+    },
+    {
+        "name": "knowledge",
+        "type": "array",
+        "label": "Knowledge"
+    },
+    {
+        "name": "machine_user_id",
+        "type": "text",
+        "label": "Machine User ID"
+    },
+    {
+        "name": "model",
+        "type": "text",
+        "label": "Model"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "project",
+        "type": "text",
+        "label": "Project"
+    },
+    {
+        "name": "public",
+        "type": "boolean",
+        "label": "Public"
+    },
+    {
+        "name": "starting_messages",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "message",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "role",
+                            "type": "text",
+                            "label": "Role"
+                        },
+                        {
+                            "name": "content",
+                            "type": "text",
+                            "label": "Content"
+                        }
+                    ],
+                    "label": "Message"
+                },
+                {
+                    "name": "metadata",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "welcome_message",
+                            "type": "boolean",
+                            "label": "Welcome Message"
+                        }
+                    ],
+                    "label": "Metadata"
+                }
+            ]
+        },
+        "label": "Starting Messages"
+    },
+    {
+        "name": "system_prompt",
+        "type": "text",
+        "label": "System Prompt"
+    },
+    {
+        "name": "update_date_",
+        "type": "date",
+        "label": "Update Date "
+    },
+    {
+        "name": "version",
+        "type": "text",
+        "label": "Version"
+    },
+    {
+        "name": "__IMTLENGTH__",
+        "type": "number",
+        "label": "  IMTLENGTH  "
+    },
+    {
+        "name": "__IMTINDEX__",
+        "type": "number",
+        "label": "  IMTINDEX  "
+    }
+]

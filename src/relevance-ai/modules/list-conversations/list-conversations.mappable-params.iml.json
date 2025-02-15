@@ -1,0 +1,10 @@
+[
+    // Defines "id" as mandatory module input parameter.
+    {
+        "name": "agentID", // Makes value accesible via "{{parameters.id}}".
+        "type": "select", // Sets the type to unsigned integer.
+        "label": "Agent ID", // Sets the user friendly label visible in the module.
+        "required": true,
+        "options": "rpc://listAgents" // Sets the parameter as mandatory.
+    }
+]

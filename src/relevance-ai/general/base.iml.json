@@ -1,0 +1,16 @@
+{
+    "baseUrl": "https://api-{{connection.region}}.stack.tryrelevance.com/latest",
+    "headers": {
+        "Authorization": "{{connection.projectID}}:{{connection.apiKey}}"
+    },
+    "response": {
+        "error": {
+            "message": "[{{statusCode}}] {{body.message}}"
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.authorization"
+        ]
+    }
+}

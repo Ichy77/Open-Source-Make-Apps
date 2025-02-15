@@ -1,0 +1,25 @@
+{
+    // Request to API endpoint.
+    "url": "/studios/list", // Relative to base URL
+    "method": "GET",
+    "qs": { 
+        "filters": "[{\"field\":\"project\",\"condition\":\"==\",\"condition_value\":\"{{connection.projectID}}\",\"filter_type\":\"exact_match\"},{\"field\":\"tags.agent_integration\",\"filter_type\":\"exact_match\",\"condition\":\"!=\",\"condition_value\":true}]",
+        "page": 1,
+        "page_size": 99
+    },
+    // Response handling
+    "response": {
+        // Splits array from API response into bundles.
+        // See documentation at: https://docs.integromat.com/apps/app-blocks/api/pagination
+        "iterate": "{{body.results}}", // Iterates "users" array from API response to split it into individual items.
+
+        "output": "{{item}}", // Outputs whole each iterated "item" object as separate bundle.
+        "limit": "{{parameters.limit}}" // Limits number of output bundles as requested by user (even if API returns more items).
+    },
+    "pagination": {
+        "qs": {
+            "page": "{{pagination.page}}"
+        },
+        "condition": "{{length(body.results) >= 99}}"
+    }
+}

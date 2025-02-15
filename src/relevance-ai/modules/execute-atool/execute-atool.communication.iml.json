@@ -1,0 +1,35 @@
+[{
+    // Request to API endpoint.
+    "url": "/studios/{{parameters.studioID}}/trigger_async", // Relative to base URL
+    "method": "POST",
+    "headers": { }, // Additional HTTP headers
+    "qs": { }, // Query string
+    "body": {
+       "params":"{{omit(parameters,'studioID')}}"
+    },
+
+    // Response handling
+    "response": {
+            "temp": {
+                "studio_id": "{{body.studio_id}}",
+                "job_id": "{{body.job_id}}"
+            }
+        }
+},
+    {
+        "url": "/studios/{{temp.studio_id}}/async_poll/{{temp.job_id}}?ending_update_only=true",
+        "method": "GET",
+        "repeat": {
+            "condition": "{{body.type != 'complete' && body.type != 'failed'}}",
+            "delay": 1000,
+            "limit": 300
+        },
+        "response": {
+            "output": {
+                "data": "{{if(body.type='complete',first(map(body.updates,'output.output','output.status','complete'),'ERROR: ' body.updates[1].errors[1].body)}}",
+                "studio_id": "{{temp.studio_id}}",
+                "job_id": "{{temp.job_id}}"
+            }
+        }
+    }
+    ]

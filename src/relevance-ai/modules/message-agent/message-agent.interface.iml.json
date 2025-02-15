@@ -1,0 +1,111 @@
+[
+    {
+        "name": "data",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "answer",
+                "type": "text",
+                "label": "Answer"
+            },
+            {
+                "name": "prompt",
+                "type": "text",
+                "label": "Prompt"
+            },
+            {
+                "name": "user_key_used",
+                "type": "boolean",
+                "label": "User Key Used"
+            },
+            {
+                "name": "validation_history",
+                "type": "array",
+                "label": "Validation History"
+            },
+            {
+                "name": "credits_cost",
+                "type": "number",
+                "label": "Credits Cost"
+            },
+            {
+                "name": "debug",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "memory",
+                        "type": "array",
+                        "label": "Memory"
+                    },
+                    {
+                        "name": "llm_requests",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "num_tries",
+                                    "type": "number",
+                                    "label": "Num Tries"
+                                },
+                                {
+                                    "name": "host_type",
+                                    "type": "text",
+                                    "label": "Host Type"
+                                },
+                                {
+                                    "name": "stream",
+                                    "type": "boolean",
+                                    "label": "Stream"
+                                },
+                                {
+                                    "name": "num_tokens",
+                                    "type": "number",
+                                    "label": "Num Tokens"
+                                }
+                            ]
+                        },
+                        "label": "Llm Requests"
+                    },
+                    {
+                        "name": "llm_responses",
+                        "type": "array",
+                        "label": "Llm Responses"
+                    }
+                ],
+                "label": "Debug"
+            },
+            {
+                "name": "history_items",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "role",
+                            "type": "text",
+                            "label": "Role"
+                        },
+                        {
+                            "name": "message",
+                            "type": "text",
+                            "label": "Message"
+                        },
+                        {
+                            "name": "function_call",
+                            "type": "text",
+                            "label": "Function Call"
+                        }
+                    ]
+                },
+                "label": "History Items"
+            }
+        ],
+        "label": "Data"
+    },
+    {
+        "name": "conversation_id",
+        "type": "text",
+        "label": "Conversation ID"
+    }
+]

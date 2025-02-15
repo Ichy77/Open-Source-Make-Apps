@@ -1,0 +1,27 @@
+{
+	"url": "/knowledge/sets/list",
+	"method": "POST",
+	"body":
+		{
+		"filters":
+				[
+            {
+              "filter_type": "exact_match",
+              "field": "type",
+              "condition_value": "conversation"
+            },
+            {
+                "filter_type": "exact_match",
+                "field": "conversation.agent_id",
+                "condition_value": "{{parameters.agentID}}" 
+            }],
+		"include_hidden": true
+		},
+	"response": {
+		"iterate": "{{body.results}}",
+		"output": {
+			"label": "{{item.metadata.conversation.title}}",
+			"value": "{{item.knowledge_set}}"
+		}
+	}
+}

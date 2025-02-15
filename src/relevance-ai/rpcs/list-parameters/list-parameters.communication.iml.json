@@ -1,0 +1,12 @@
+{
+    "url": "/studios/list",
+    "method": "GET",
+    "qs": {
+        "filters": "[{\"field\":\"studio_id\",\"condition\":\"==\",\"condition_value\":\"{{parameters.studioID}}\",\"filter_type\":\"exact_match\"},{\"field\":\"project\",\"condition\":\"==\",\"condition_value\":\"{{connection.projectID}}\",\"filter_type\":\"exact_match\"}]"
+    },
+    "body": { },
+    "headers": { },
+    "response": {
+        "output": "{{transformToMappableParameters(body.results[1].params_schema.properties)}}"
+    }
+}

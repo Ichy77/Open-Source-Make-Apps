@@ -1,0 +1,15 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+    {
+        "name": "studioID", // Makes value accesible via "{{parameters.email}}".
+        "type": "select", // Validates that email is correctly entered.
+        "label": "Tool to use", // Sets the user friendly label visible in the module.
+        "required": true,
+        "options": {
+            "store": "rpc://listTools",
+            "nested": [
+                "rpc://listParameters"
+            ]
+        }
+    }
+]

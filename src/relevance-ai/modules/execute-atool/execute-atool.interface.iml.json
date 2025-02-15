@@ -1,0 +1,8 @@
+// Defines JSON object with "id" parameter as expected API response body.
+[
+    {
+        "name": "id",
+        "type": "uinteger",
+        "label": "User ID"
+    }
+]

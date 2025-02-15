@@ -1,0 +1,24 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+    {
+        "name": "agentID", // Makes value accesible via "{{parameters.id}}".
+        "type": "select", // Sets the type to unsigned integer.
+        "label": "Agent ID", // Sets the user friendly label visible in the module.
+        "required": true,
+        "options": "rpc://listAgents" // Sets the parameter as mandatory.
+    },
+    {
+        "name": "userMessage",
+        "type": "text",
+        "label": "User Message",
+        "help": "The prompt to send to the agent.",
+        "required": true
+    },
+    {
+        "name": "conversationID",
+        "type": "select",
+        "label": "Conversation",
+        "required": false,
+        "help": "If you want to send a message to an agent in an ongoing conversation, select one. If you want to start a new conversation, leave this input field empty."
+    }
+]

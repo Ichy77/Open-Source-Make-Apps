@@ -1,0 +1,27 @@
+[
+    {
+        "url": "https://api-{{parameters.region}}.stack.tryrelevance.com/latest/knowledge/list",
+        "headers": {
+            "Authorization": "{{parameters.projectID}}:{{parameters.apiKey}}"
+        },
+        "method": "POST",
+        "body":
+        {
+            "knowledge_set": "",
+            "filters": [ ]
+        },
+
+        // Response handling
+        "response": {
+            "error": {
+                "message": "[{{statusCode}}] {{body.message}}"
+            }
+        },
+
+        "log": {
+            "sanitize": [ // Excludes sensitive parameters from logs.
+                "request.headers.authorization" // Omit HTTP header "Authorization".
+            ]
+        }
+    }
+]

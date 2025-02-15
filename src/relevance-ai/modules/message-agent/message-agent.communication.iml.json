@@ -1,0 +1,42 @@
+[ {
+        // Request to API endpoint.
+        "url": "/agents/trigger", // Relative to base URL
+        "method": "POST",
+        "headers": { }, // Additional HTTP headers
+        "qs": { }, // Query string
+        "body": {
+            "message": {
+                "role": "user",
+                "content": "{{parameters.userMessage}}"
+            },
+            "agent_id": "{{parameters.agentID}}",
+            "conversation_id": "{{parameters.conversationID}}"
+        },
+
+        // Response handling
+        "response": {
+            "temp": {
+                "studio_id": "{{body.job_info.studio_id}}",
+                "job_id": "{{body.job_info.job_id}}",
+                "conversation_id": "{{body.conversation_id}}"
+            }
+        }
+    },
+    {
+        "url": "/studios/{{temp.studio_id}}/async_poll/{{temp.job_id}}",
+        "method": "GET",
+        "repeat": {
+            "condition": "{{body.type != 'complete'}}",
+            "delay": 1000,
+            "limit": 300
+        },
+        "response": {
+            "output": {
+                "data": "{{first(map(body.updates,'output.output','output.status','complete'))}}",
+                // "studio_id": "{{temp.studio_id}}",
+                // "job_id": "{{temp.job_id}}",
+                "conversation_id": "{{temp.conversation_id}}"
+            }
+        }
+    }
+]

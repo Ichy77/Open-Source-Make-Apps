@@ -1,0 +1,21 @@
+[
+    // Defines "id" as mandatory module input parameter.
+    {
+        "name": "agentID",
+        "type": "select",
+        "label": "Agent",
+        "required": true,
+        "options": {
+            "store": "rpc://listAgents",
+            "nested": [
+                {
+                    "name": "conversationID",
+                    "type": "select",
+                    "label": "Conversation",
+                    "required": true,
+                    "options": "rpc://listConversations"
+                }
+            ]
+        }
+    }
+]

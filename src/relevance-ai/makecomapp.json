@@ -1,0 +1,263 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "relevance-dstv5i": {
+                "label": "Relevance AI",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/relevance-dstv5i/relevance-dstv5i.communication.iml.json",
+                    "params": "connections/relevance-dstv5i/relevance-dstv5i.params.iml.json",
+                    "common": "connections/relevance-dstv5i/relevance-dstv5i.common.json"
+                }
+            },
+            "connection1": {
+                "label": "Relevance",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "executeATool": {
+                "label": "Execute a Tool",
+                "description": "Triggers a tool.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/execute-atool/execute-atool.communication.iml.json",
+                    "staticParams": "modules/execute-atool/execute-atool.static-params.iml.json",
+                    "mappableParams": "modules/execute-atool/execute-atool.mappable-params.iml.json",
+                    "interface": "modules/execute-atool/execute-atool.interface.iml.json",
+                    "samples": "modules/execute-atool/execute-atool.samples.iml.json",
+                    "scope": "modules/execute-atool/execute-atool.scope.iml.json"
+                }
+            },
+            "listAgents": {
+                "label": "List Agents",
+                "description": "Returns a list of agents.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-agents/list-agents.communication.iml.json",
+                    "staticParams": "modules/list-agents/list-agents.static-params.iml.json",
+                    "mappableParams": "modules/list-agents/list-agents.mappable-params.iml.json",
+                    "interface": "modules/list-agents/list-agents.interface.iml.json",
+                    "samples": "modules/list-agents/list-agents.samples.iml.json",
+                    "scope": "modules/list-agents/list-agents.scope.iml.json"
+                }
+            },
+            "listConversation": {
+                "label": "List a Conversation's Messages",
+                "description": "Returns a list of messages for a conversation.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-conversation/list-conversation.communication.iml.json",
+                    "staticParams": "modules/list-conversation/list-conversation.static-params.iml.json",
+                    "mappableParams": "modules/list-conversation/list-conversation.mappable-params.iml.json",
+                    "interface": "modules/list-conversation/list-conversation.interface.iml.json",
+                    "samples": "modules/list-conversation/list-conversation.samples.iml.json",
+                    "scope": "modules/list-conversation/list-conversation.scope.iml.json"
+                }
+            },
+            "listConversations": {
+                "label": "List an Agent's Conversations",
+                "description": "Returns a list of conversations for an agent.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-conversations/list-conversations.communication.iml.json",
+                    "staticParams": "modules/list-conversations/list-conversations.static-params.iml.json",
+                    "mappableParams": "modules/list-conversations/list-conversations.mappable-params.iml.json",
+                    "interface": "modules/list-conversations/list-conversations.interface.iml.json",
+                    "samples": "modules/list-conversations/list-conversations.samples.iml.json",
+                    "scope": "modules/list-conversations/list-conversations.scope.iml.json"
+                }
+            },
+            "listTools": {
+                "label": "List Tools",
+                "description": "Gets a list of tools.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-tools/list-tools.communication.iml.json",
+                    "staticParams": "modules/list-tools/list-tools.static-params.iml.json",
+                    "mappableParams": "modules/list-tools/list-tools.mappable-params.iml.json",
+                    "interface": "modules/list-tools/list-tools.interface.iml.json",
+                    "samples": "modules/list-tools/list-tools.samples.iml.json",
+                    "scope": "modules/list-tools/list-tools.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            },
+            "messageAgent": {
+                "label": "Message an Agent",
+                "description": "Sends a message to an agent to either start a new conversation or send an additional message to an existing conversation.",
+                "moduleType": "action",
+                "actionCrud": null,
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/message-agent/message-agent.communication.iml.json",
+                    "staticParams": "modules/message-agent/message-agent.static-params.iml.json",
+                    "mappableParams": "modules/message-agent/message-agent.mappable-params.iml.json",
+                    "interface": "modules/message-agent/message-agent.interface.iml.json",
+                    "samples": "modules/message-agent/message-agent.samples.iml.json",
+                    "scope": "modules/message-agent/message-agent.scope.iml.json"
+                }
+            }
+        },
+        "function": {
+            "transformToMappableParameters": {
+                "codeFiles": {
+                    "code": "functions/transform-to-mappable-parameters/transform-to-mappable-parameters.code.js",
+                    "test": "functions/transform-to-mappable-parameters/transform-to-mappable-parameters.test.js"
+                }
+            }
+        },
+        "rpc": {
+            "listAgents": {
+                "label": "listAgents",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-agents/list-agents.communication.iml.json",
+                    "params": "rpcs/list-agents/list-agents.params.iml.json"
+                }
+            },
+            "listConversations": {
+                "label": "listConversations",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-conversations/list-conversations.communication.iml.json",
+                    "params": "rpcs/list-conversations/list-conversations.params.iml.json"
+                }
+            },
+            "listParameters": {
+                "label": "listParameters",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-parameters/list-parameters.communication.iml.json",
+                    "params": "rpcs/list-parameters/list-parameters.params.iml.json"
+                }
+            },
+            "listTools": {
+                "label": "listTools",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-tools/list-tools.communication.iml.json",
+                    "params": "rpcs/list-tools/list-tools.params.iml.json"
+                }
+            }
+        },
+        "webhook": {}
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "relevance",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "relevance-dstv5i",
+                        "remote": "relevance-dstv5i"
+                    },
+                    {
+                        "local": "connection1",
+                        "remote": "relevance"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "executeATool",
+                        "remote": "executeATool"
+                    },
+                    {
+                        "local": "listAgents",
+                        "remote": "listAgents"
+                    },
+                    {
+                        "local": "listConversation",
+                        "remote": "listConversation"
+                    },
+                    {
+                        "local": "listConversations",
+                        "remote": "listConversations"
+                    },
+                    {
+                        "local": "listTools",
+                        "remote": "listTools"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    },
+                    {
+                        "local": "messageAgent",
+                        "remote": "messageAgent"
+                    }
+                ],
+                "function": [
+                    {
+                        "local": "transformToMappableParameters",
+                        "remote": "transformToMappableParameters"
+                    }
+                ],
+                "rpc": [
+                    {
+                        "local": "listAgents",
+                        "remote": "listAgents"
+                    },
+                    {
+                        "local": "listConversations",
+                        "remote": "listConversations"
+                    },
+                    {
+                        "local": "listParameters",
+                        "remote": "listParameters"
+                    },
+                    {
+                        "local": "listTools",
+                        "remote": "listTools"
+                    }
+                ],
+                "webhook": []
+            },
+            "apikeyFile": "../../.secrets/apikey2"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"listConversation",
+			"listConversations",
+			"messageAgent",
+			"makeAnApiCall",
+			"listAgents",
+			"listTools",
+			"executeATool"
+		]
+	}
+]

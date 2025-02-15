@@ -1,0 +1,233 @@
+[
+    {
+        "name": "_id",
+        "type": "text",
+        "label": " ID"
+    },
+    {
+        "name": "creator_first_name",
+        "type": "text",
+        "label": "Creator First Name"
+    },
+    {
+        "name": "creator_last_name",
+        "type": "text",
+        "label": "Creator Last Name"
+    },
+    {
+        "name": "creator_user_id",
+        "type": "text",
+        "label": "Creator User ID"
+    },
+    {
+        "name": "description",
+        "type": "text",
+        "label": "Description"
+    },
+    {
+        "name": "params_schema",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "properties",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "checkbox",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "value",
+                                "type": "boolean",
+                                "label": "Value"
+                            },
+                            {
+                                "name": "default",
+                                "type": "boolean",
+                                "label": "Default"
+                            },
+                            {
+                                "name": "frontend_metadata",
+                                "type": "collection",
+                                "spec": [
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    }
+                                ],
+                                "label": "Frontend Metadata"
+                            },
+                            {
+                                "name": "order",
+                                "type": "number",
+                                "label": "Order"
+                            }
+                        ],
+                        "label": "Checkbox"
+                    },
+                    {
+                        "name": "number",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "min",
+                                "type": "number",
+                                "label": "Min"
+                            },
+                            {
+                                "name": "value",
+                                "type": "number",
+                                "label": "Value"
+                            },
+                            {
+                                "name": "frontend_metadata",
+                                "type": "collection",
+                                "spec": [
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    }
+                                ],
+                                "label": "Frontend Metadata"
+                            },
+                            {
+                                "name": "order",
+                                "type": "number",
+                                "label": "Order"
+                            }
+                        ],
+                        "label": "Number"
+                    }
+                ],
+                "label": "Properties"
+            },
+            {
+                "name": "required",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Required"
+            },
+            {
+                "name": "type",
+                "type": "text",
+                "label": "Type"
+            }
+        ],
+        "label": "Params Schema"
+    },
+    {
+        "name": "project",
+        "type": "text",
+        "label": "Project"
+    },
+    {
+        "name": "public",
+        "type": "boolean",
+        "label": "Public"
+    },
+    {
+        "name": "state_mapping",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "checkbox",
+                "type": "text",
+                "label": "Checkbox"
+            },
+            {
+                "name": "number",
+                "type": "text",
+                "label": "Number"
+            }
+        ],
+        "label": "State Mapping"
+    },
+    {
+        "name": "studio_id",
+        "type": "text",
+        "label": "Studio ID"
+    },
+    {
+        "name": "title",
+        "type": "text",
+        "label": "Title"
+    },
+    {
+        "name": "transformations",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "steps",
+                "type": "array",
+                "label": "Steps"
+            }
+        ],
+        "label": "Transformations"
+    },
+    {
+        "name": "update_date_",
+        "type": "date",
+        "label": "Update Date "
+    },
+    {
+        "name": "version",
+        "type": "text",
+        "label": "Version"
+    },
+    {
+        "name": "publicly_triggerable",
+        "type": "boolean",
+        "label": "Publicly Triggerable"
+    },
+    {
+        "name": "machine_user_id",
+        "type": "text",
+        "label": "Machine User ID"
+    },
+    {
+        "name": "metrics",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "views",
+                "type": "number",
+                "label": "Views"
+            },
+            {
+                "name": "executions",
+                "type": "number",
+                "label": "Executions"
+            }
+        ],
+        "label": "Metrics"
+    },
+    {
+        "name": "share_id",
+        "type": "text",
+        "label": "Share ID"
+    },
+    {
+        "name": "__IMTLENGTH__",
+        "type": "number",
+        "label": "  IMTLENGTH  "
+    },
+    {
+        "name": "__IMTINDEX__",
+        "type": "number",
+        "label": "  IMTINDEX  "
+    }
+]

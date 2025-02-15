@@ -1,0 +1,24 @@
+[
+    {
+        "name": "projectID",
+        "type": "text",
+        "label": "Relevance AI Project ID",
+        "required": true,
+        "editable":true
+    },
+    {
+        "name": "apiKey",
+        "type": "password",
+        "label": "Relevance AI API Key",
+        "required": true,
+        "help":"Please make sure the API Key has Admin Access.",
+        "editable":true
+    },
+    {
+        "name": "region",
+        "type": "text",
+        "label": "Region",
+        "required": true,
+        "editable":true
+    }
+]

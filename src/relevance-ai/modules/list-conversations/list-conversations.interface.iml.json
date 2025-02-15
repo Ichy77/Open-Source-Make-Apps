@@ -1,0 +1,136 @@
+[
+    {
+        "name": "knowledge_set",
+        "type": "text",
+        "label": "Knowledge Set"
+    },
+    {
+        "name": "knowledge_count",
+        "type": "number",
+        "label": "Knowledge Count"
+    },
+    {
+        "name": "metadata",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "_id",
+                "type": "text",
+                "label": " ID"
+            },
+            {
+                "name": "conversation",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "agent_id",
+                        "type": "text",
+                        "label": "Agent ID"
+                    },
+                    {
+                        "name": "ignore_state_at",
+                        "type": "date",
+                        "label": "Ignore State At"
+                    },
+                    {
+                        "name": "state",
+                        "type": "text",
+                        "label": "State"
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "text",
+                        "label": "User ID"
+                    },
+                    {
+                        "name": "title",
+                        "type": "text",
+                        "label": "Title"
+                    }
+                ],
+                "label": "Conversation"
+            },
+            {
+                "name": "field_metadata",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "debug",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "should_vectorize",
+                                "type": "boolean",
+                                "label": "Should Vectorize"
+                            }
+                        ],
+                        "label": "Debug"
+                    },
+                    {
+                        "name": "message",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "should_vectorize",
+                                "type": "boolean",
+                                "label": "Should Vectorize"
+                            }
+                        ],
+                        "label": "Message"
+                    },
+                    {
+                        "name": "metadata",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "should_vectorize",
+                                "type": "boolean",
+                                "label": "Should Vectorize"
+                            }
+                        ],
+                        "label": "Metadata"
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "should_vectorize",
+                                "type": "boolean",
+                                "label": "Should Vectorize"
+                            }
+                        ],
+                        "label": "User ID"
+                    }
+                ],
+                "label": "Field Metadata"
+            },
+            {
+                "name": "hidden",
+                "type": "boolean",
+                "label": "Hidden"
+            },
+            {
+                "name": "knowledge_set",
+                "type": "text",
+                "label": "Knowledge Set"
+            },
+            {
+                "name": "project",
+                "type": "text",
+                "label": "Project"
+            },
+            {
+                "name": "type",
+                "type": "text",
+                "label": "Type"
+            },
+            {
+                "name": "update_date",
+                "type": "date",
+                "label": "Update Date"
+            }
+        ],
+        "label": "Metadata"
+    }
+]
