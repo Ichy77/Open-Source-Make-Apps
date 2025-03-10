@@ -1,0 +1,6 @@
+[
+	{
+		"type": "html",
+		"label": "<div class=\"i-exception i-exception-warning\"><h5>Connect a Webhook</h5><p>Copy the URL, go into your Supabase project: \n -> Database \n -> Webhooks \n -> Webhooks Tab \n -> Create a new Hook.\n Choose a table and one or multiple events. Then insert the URL into the HTTP Request URL.</p></div>"
+	}
+]

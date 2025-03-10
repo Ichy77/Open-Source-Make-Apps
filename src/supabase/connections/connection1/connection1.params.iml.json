@@ -1,0 +1,18 @@
+[
+    {
+        "name": "projectId",
+        "type": "text",
+        "label": "Project ID",
+        "required": true,
+        "editable": false,
+        "help": "The ID of the project to connect to available in your Supabase project settings."
+    },
+    {
+        "name": "apiKey",
+        "type": "password",
+        "label": "API Key",
+        "required": true,
+        "editable": true,
+        "help": "The API key for the project to connect to available in your Supabase project settings -> Data API -> service_role 'secret'."
+    }
+]

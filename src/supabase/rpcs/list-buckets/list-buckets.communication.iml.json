@@ -1,0 +1,14 @@
+{
+	"url": "/storage/v1/bucket",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{body}}",
+		"output": {
+			"label": "{{item.name}}",
+			"value": "{{item.id}}"
+		}
+	}
+}

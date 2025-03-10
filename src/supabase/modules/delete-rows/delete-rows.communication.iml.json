@@ -1,0 +1,16 @@
+{
+	// Request to API endpoint.
+	"url": "/rest/v1/{{parameters.table}}?{{filter(parameters.search)}}", // Relative to base URL
+	"method": "DELETE",
+	"headers": { }, // Additional HTTP headers
+	"qs": { // Query string
+	//"search": "{{parameters.search}}"
+	},
+
+	// Response handling
+	"response": {
+		// Splits array from API response into bundles.
+		// See documentation at: https://docs.integromat.com/apps/app-blocks/api/pagination
+		"output": "{{body}}"
+	}
+}

@@ -1,0 +1,122 @@
+// Defines "search" and "limit" as module input parameters.
+[
+	{
+		"name": "table",
+		"type": "select",
+		"label": "Table",
+		"required": true,
+		"options": "rpc://listTables",
+		"nested": [
+			{
+				"name": "search",
+				"label": "Search criteria",
+				"type": "filter",
+				"options": {
+					"store": "rpc://getTableOptions",
+					"logic": "and",
+					"operators": [
+						{
+							"label": "Text",
+							"options": [
+								{
+									"label": "Equals",
+									"value": "text:eq."
+								},
+								{
+									"label": "Does not equal",
+									"value": "text:neq."
+								},
+								{
+									"label": "Contains (case sensitive)",
+									"value": "text:like."
+								},
+								{
+									"label": "Contains (case insensitive)",
+									"value": "text:ilike."
+								}
+							]
+						},
+						{
+							"label": "Numbers",
+							"options": [
+								{
+									"label": "Equals",
+									"value": "number:eq."
+								},
+								{
+									"label": "Does not equal",
+									"value": "number:neq."
+								},
+								{
+									"label": "Greater than",
+									"value": "number:gt."
+								},
+								{
+									"label": "Less than",
+									"value": "number:lt."
+								},
+								{
+									"label": "Greater than or equal to",
+									"value": "number:gte."
+								},
+								{
+									"label": "Less than or equal to",
+									"value": "number:lte."
+								}
+							]
+						},
+						{
+							"label": "Date",
+							"options": [
+								{
+									"label": "Equals",
+									"value": "date:eq."
+								},
+								{
+									"label": "Does not equal",
+									"value": "date:neq."
+								},
+								{
+									"label": "Later than",
+									"value": "date:gt."
+								},
+								{
+									"label": "Earlier than",
+									"value": "date:lt."
+								},
+								{
+									"label": "Later than or equal to",
+									"value": "date:gte."
+								},
+								{
+									"label": "Earlier than or equal to",
+									"value": "date:lte."
+								}
+							]
+						},
+						{
+							"label": "Boolean",
+							"options": [
+								{
+									"label": "Equals",
+									"value": "boolean:eq."
+								},
+								{
+									"label": "Does not equal",
+									"value": "boolean:neq."
+								}
+							]
+						}
+					]
+				}
+			}
+		]
+	},
+	{
+		"name": "limit",
+		"type": "uinteger",
+		"label": "Limit",
+		"default": 10,
+		"help": "Maximum number of returned results (bundles)."
+	}
+]

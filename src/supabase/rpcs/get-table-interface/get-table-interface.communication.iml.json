@@ -1,0 +1,15 @@
+{
+	"url": "https://{{connection.projectId}}.supabase.co/rest/v1/",
+	"method": "GET",
+	"qs": {},
+	"body": {},
+	"headers": {},
+	"response": {
+		"iterate": "{{generateTableInterface(parameters.table, body)}}",
+		"output": {
+			"name": "{{item.name}}",
+			"type": "{{item.type}}",
+			"label": "{{item.label}}"
+		}
+	}
+}

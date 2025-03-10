@@ -1,0 +1,10 @@
+[
+	{
+		"name": "table",   
+		"type": "select",  
+		"label": "Table",  
+		"required": true,
+		"options": "rpc://listTables",
+		"nested": "rpc://getTableParams"
+	}
+]

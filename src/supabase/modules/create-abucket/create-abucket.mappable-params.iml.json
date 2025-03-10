@@ -1,0 +1,29 @@
+// Defines "email", "name" and "birthday" as module input parameters.
+[
+	{
+		"name": "name",          // Makes value accesible via "{{parameters.email}}".
+		"type": "text",          // Validates that email is correctly entered.
+		"label": "Bucket Name", // Sets the user friendly label visible in the module.
+		"required": true          // Sets the parameter as mandatory.
+	},
+	{
+		"name": "public",
+		"type": "boolean",
+		"label": "Public?",
+		"required": true,
+		"default": false
+	},
+	{
+		"name": "file_size_limit",
+		"type": "number",
+		"label": "File Size Limit (Bytes)",
+		"required": false
+	},
+	{
+		"name":"allowed_mime_types",
+		"type":"array",
+		"label":"Allowed MIME Types",
+		"help":"Enter one or more MIME types, e.g. image/png, image/jpeg, application/pdf. Leave blank for all.",
+		"required":false
+	}
+]

@@ -1,0 +1,24 @@
+{
+	// Request to API endpoint.
+	"url": "/storage/v1/object/{{parameters.bucketID}}/{{parameters.file_name}}",  // Relative to base URL
+	"method": "POST",
+	"headers": {
+		"x-upsert":"{{parameters.upsert}}"
+	},    // Additional HTTP headers
+	"qs": {},
+    "type": "multipart/form-data",
+    "body": {
+        "file": [ {
+                "value": "{{parameters.file_data}}",
+                "options": {
+                    "filename": "{{parameters.file_name}}"
+                }
+            } ]
+
+    },
+
+	// Response handling
+	"response": {
+		"output": "{{body}}"  // Returns API response body as an output bundle.
+	}
+}

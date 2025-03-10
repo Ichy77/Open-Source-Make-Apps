@@ -1,0 +1,13 @@
+{
+	// Request to API endpoint.
+	"url": "/storage/v1/bucket",  // Relative to base URL
+	"method": "POST",
+	"headers": {},    // Additional HTTP headers
+	"qs": {},         // Query string
+	"body": "{{parameters}}",
+
+	// Response handling
+	"response": {
+		"output": "{{body}}"  // Returns API response body as an output bundle.
+	}
+}

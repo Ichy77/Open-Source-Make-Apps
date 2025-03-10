@@ -1,0 +1,24 @@
+{
+	// Request to API endpoint.
+	"url": "/rest/v1/{{parameters.table}}?{{filter(parameters.search)}}", // Relative to base URL
+	"method": "GET",
+	"headers": { },
+	"qs": {
+		"limit": "100"
+	},
+
+
+	"response": {
+
+		// See documentation at: https://docs.integromat.com/apps/app-blocks/api/pagination
+		"iterate": "{{body}}", // Iterates "users" array from API response to split it into individual items.
+
+		"output": "{{item}}", // Outputs whole each iterated "item" object as separate bundle.
+		"limit": "{{parameters.limit}}" // Limits number of output bundles as requested by user (even if API returns more items).
+	},
+	"pagination": {
+		"qs": {
+			"offset": "{{(pagination.page - 1) * 100}}"
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	// Request to API endpoint with parameter "id" defined in Mappable parameters.
+	"url": "/rest/v1/{{parameters.table}}", // Relative to base URL
+	"method": "GET",
+	"headers": {
+		"Prefer": "count=exact",
+		"Range": "0-0",
+		"Range-Unit": "items"
+	}, // Additional HTTP headers
+	"qs": { }, // Query string
+
+	// Response handling
+	"response": {
+		"output": {
+			"count": "{{last(split(headers['content-range'], '/'))}}"
+		}
+	}
+}

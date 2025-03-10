@@ -1,0 +1,20 @@
+{
+	// Request
+	"url": "https://{{parameters.projectId}}.supabase.co/rest/v1/",          // Absolute URL to the API endpoint which validates credentials
+	"headers": {                                          // Additional HTTP headers
+		"apikey": "{{parameters.apiKey}}"
+	},
+
+	// Response handling
+	"response": {
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{body.error}}"  // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.apikey"               // Omit HTTP header "Authorization".
+		]
+	}
+}

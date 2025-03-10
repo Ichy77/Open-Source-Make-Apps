@@ -1,0 +1,115 @@
+// Defines "search" and "limit" as module input parameters.
+[
+	{
+		"name": "table",
+		"type": "select",
+		"label": "Table",
+		"required": true,
+		"options": "rpc://listTables",
+		"nested": [
+			{
+				"name": "search",
+				"label": "Search criteria",
+				"type": "filter",
+				"options": {
+					"store": "rpc://getTableOptions",
+					"logic": "and",
+					"operators": [
+						{
+							"label": "Text",
+							"options": [
+								{
+									"label": "Equals",
+									"value": "eq."
+								},
+								{
+									"label": "Does not equal",
+									"value": "neq."
+								},
+								{
+									"label": "Contains (case sensitive)",
+									"value": "like."
+								},
+								{
+									"label": "Contains (case insensitive)",
+									"value": "ilike."
+								}
+							]
+						},
+						{
+							"label": "Numbers",
+							"options": [
+								{
+									"label": "Equals",
+									"value": "eq."
+								},
+								{
+									"label": "Does not equal",
+									"value": "neq."
+								},
+								{
+									"label": "Greater than",
+									"value": "gt."
+								},
+								{
+									"label": "Less than",
+									"value": "lt."
+								},
+								{
+									"label": "Greater than or equal to",
+									"value": "gte."
+								},
+								{
+									"label": "Less than or equal to",
+									"value": "lte."
+								}
+							]
+						},
+						{
+							"label": "Date",
+							"options": [
+								{
+									"label": "Equals",
+									"value": "eq."
+								},
+								{
+									"label": "Does not equal",
+									"value": "neq."
+								},
+								{
+									"label": "Later than",
+									"value": "gt."
+								},
+								{
+									"label": "Earlier than",
+									"value": "lt."
+								},
+								{
+									"label": "Later than or equal to",
+									"value": "gte."
+								},
+								{
+									"label": "Earlier than or equal to",
+									"value": "lte."
+								}
+							]
+						},
+						{
+							"label": "Boolean",
+							"options": [
+								{
+									"label": "Equals",
+									"value": "eq."
+								},
+								{
+									"label": "Does not equal",
+									"value": "neq."
+								}
+							]
+						}
+					]
+				}
+			}
+		]
+	}
+]

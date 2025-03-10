@@ -1,0 +1,31 @@
+[
+	{
+		"name": "bucketID",        // Makes value accesible via "{{parameters.id}}".
+		"type": "select",  // Sets the type to unsigned integer.
+		"label": "Bucket ID",  // Sets the user friendly label visible in the module.
+		"required": true,
+		"options":"rpc://listBuckets"
+	},
+    {
+        "name": "file_name",
+        "type": "text",
+        "label": "Name",
+        "required": true,
+        "semantic": "file:name"
+    },
+    {
+        "name": "file_data",
+        "type": "buffer",
+        "label": "Data",
+        "required": true,
+        "semantic": "file:data"
+    },
+	{
+		"name": "upsert",
+		"type": "boolean",
+		"label": "Upsert",
+		"required": false,
+		"default": false,
+		"advanced": true
+	}
+]

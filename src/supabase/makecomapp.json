@@ -1,0 +1,427 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "modules/groups.json"
+    },
+    "components": {
+        "connection": {
+            "connection1": {
+                "label": "Supabase",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/connection1/connection1.communication.iml.json",
+                    "params": "connections/connection1/connection1.params.iml.json",
+                    "common": "connections/connection1/connection1.common.json"
+                }
+            }
+        },
+        "module": {
+            "createABucket": {
+                "label": "Create a Bucket",
+                "description": "Creates a new storage bucket.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-abucket/create-abucket.communication.iml.json",
+                    "staticParams": "modules/create-abucket/create-abucket.static-params.iml.json",
+                    "mappableParams": "modules/create-abucket/create-abucket.mappable-params.iml.json",
+                    "interface": "modules/create-abucket/create-abucket.interface.iml.json",
+                    "samples": "modules/create-abucket/create-abucket.samples.iml.json",
+                    "scope": "modules/create-abucket/create-abucket.scope.iml.json"
+                }
+            },
+            "createARow": {
+                "label": "Create a Row",
+                "description": "Creates a new row in an existing table.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/create-arow/create-arow.communication.iml.json",
+                    "staticParams": "modules/create-arow/create-arow.static-params.iml.json",
+                    "mappableParams": "modules/create-arow/create-arow.mappable-params.iml.json",
+                    "interface": "modules/create-arow/create-arow.interface.iml.json",
+                    "samples": "modules/create-arow/create-arow.samples.iml.json",
+                    "scope": "modules/create-arow/create-arow.scope.iml.json"
+                }
+            },
+            "deleteABucket": {
+                "label": "Delete a Bucket",
+                "description": "Deletes a storage bucket.",
+                "moduleType": "action",
+                "actionCrud": "delete",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/delete-abucket/delete-abucket.communication.iml.json",
+                    "staticParams": "modules/delete-abucket/delete-abucket.static-params.iml.json",
+                    "mappableParams": "modules/delete-abucket/delete-abucket.mappable-params.iml.json",
+                    "interface": "modules/delete-abucket/delete-abucket.interface.iml.json",
+                    "samples": "modules/delete-abucket/delete-abucket.samples.iml.json",
+                    "scope": "modules/delete-abucket/delete-abucket.scope.iml.json"
+                }
+            },
+            "deleteRows": {
+                "label": "Delete Rows",
+                "description": "Deletes all rows matching the filter.",
+                "moduleType": "action",
+                "actionCrud": "delete",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/delete-rows/delete-rows.communication.iml.json",
+                    "staticParams": "modules/delete-rows/delete-rows.static-params.iml.json",
+                    "mappableParams": "modules/delete-rows/delete-rows.mappable-params.iml.json",
+                    "interface": "modules/delete-rows/delete-rows.interface.iml.json",
+                    "samples": "modules/delete-rows/delete-rows.samples.iml.json",
+                    "scope": "modules/delete-rows/delete-rows.scope.iml.json"
+                }
+            },
+            "getABucket": {
+                "label": "Get a Bucket",
+                "description": "Returns detailed information about a storage bucket.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-abucket/get-abucket.communication.iml.json",
+                    "staticParams": "modules/get-abucket/get-abucket.static-params.iml.json",
+                    "mappableParams": "modules/get-abucket/get-abucket.mappable-params.iml.json",
+                    "interface": "modules/get-abucket/get-abucket.interface.iml.json",
+                    "samples": "modules/get-abucket/get-abucket.samples.iml.json",
+                    "scope": "modules/get-abucket/get-abucket.scope.iml.json"
+                }
+            },
+            "getRowsCount": {
+                "label": "Get Rows Count",
+                "description": "Returns the number of rows in a table.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/get-rows-count/get-rows-count.communication.iml.json",
+                    "staticParams": "modules/get-rows-count/get-rows-count.static-params.iml.json",
+                    "mappableParams": "modules/get-rows-count/get-rows-count.mappable-params.iml.json",
+                    "interface": "modules/get-rows-count/get-rows-count.interface.iml.json",
+                    "samples": "modules/get-rows-count/get-rows-count.samples.iml.json",
+                    "scope": "modules/get-rows-count/get-rows-count.scope.iml.json"
+                }
+            },
+            "listBuckets": {
+                "label": "List Buckets",
+                "description": "Lists storage buckets.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/list-buckets/list-buckets.communication.iml.json",
+                    "staticParams": "modules/list-buckets/list-buckets.static-params.iml.json",
+                    "mappableParams": "modules/list-buckets/list-buckets.mappable-params.iml.json",
+                    "interface": "modules/list-buckets/list-buckets.interface.iml.json",
+                    "samples": "modules/list-buckets/list-buckets.samples.iml.json",
+                    "scope": "modules/list-buckets/list-buckets.scope.iml.json"
+                }
+            },
+            "makeAnApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/make-an-api-call/make-an-api-call.communication.iml.json",
+                    "staticParams": "modules/make-an-api-call/make-an-api-call.static-params.iml.json",
+                    "mappableParams": "modules/make-an-api-call/make-an-api-call.mappable-params.iml.json",
+                    "interface": "modules/make-an-api-call/make-an-api-call.interface.iml.json",
+                    "samples": "modules/make-an-api-call/make-an-api-call.samples.iml.json",
+                    "scope": "modules/make-an-api-call/make-an-api-call.scope.iml.json"
+                }
+            },
+            "searchRows": {
+                "label": "Search Rows",
+                "description": "Lists rows based on a filter.",
+                "moduleType": "search",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/search-rows/search-rows.communication.iml.json",
+                    "staticParams": "modules/search-rows/search-rows.static-params.iml.json",
+                    "mappableParams": "modules/search-rows/search-rows.mappable-params.iml.json",
+                    "interface": "modules/search-rows/search-rows.interface.iml.json",
+                    "samples": "modules/search-rows/search-rows.samples.iml.json",
+                    "scope": "modules/search-rows/search-rows.scope.iml.json"
+                }
+            },
+            "uploadAFile": {
+                "label": "Upload a File",
+                "description": "Uploads a file into a storage bucket.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/upload-afile/upload-afile.communication.iml.json",
+                    "staticParams": "modules/upload-afile/upload-afile.static-params.iml.json",
+                    "mappableParams": "modules/upload-afile/upload-afile.mappable-params.iml.json",
+                    "interface": "modules/upload-afile/upload-afile.interface.iml.json",
+                    "samples": "modules/upload-afile/upload-afile.samples.iml.json",
+                    "scope": "modules/upload-afile/upload-afile.scope.iml.json"
+                }
+            },
+            "upsertARecord": {
+                "label": "Upsert a Record",
+                "description": "Creates a new record or updates an existing record.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "modules/upsert-arecord/upsert-arecord.communication.iml.json",
+                    "staticParams": "modules/upsert-arecord/upsert-arecord.static-params.iml.json",
+                    "mappableParams": "modules/upsert-arecord/upsert-arecord.mappable-params.iml.json",
+                    "interface": "modules/upsert-arecord/upsert-arecord.interface.iml.json",
+                    "samples": "modules/upsert-arecord/upsert-arecord.samples.iml.json",
+                    "scope": "modules/upsert-arecord/upsert-arecord.scope.iml.json"
+                }
+            },
+            "watchEvents": {
+                "label": "Watch Events",
+                "description": "Triggern when a record has been created, updated or deleted.",
+                "moduleType": "instant_trigger",
+                "connection": null,
+                "altConnection": null,
+                "webhook": "webhook1",
+                "codeFiles": {
+                    "communication": "modules/watch-events/watch-events.communication.iml.json",
+                    "staticParams": "modules/watch-events/watch-events.static-params.iml.json",
+                    "mappableParams": "modules/watch-events/watch-events.mappable-params.iml.json",
+                    "interface": "modules/watch-events/watch-events.interface.iml.json",
+                    "samples": "modules/watch-events/watch-events.samples.iml.json"
+                }
+            }
+        },
+        "function": {
+            "filter": {
+                "codeFiles": {
+                    "code": "functions/filter/filter.code.js",
+                    "test": "functions/filter/filter.test.js"
+                }
+            },
+            "generateTableInterface": {
+                "codeFiles": {
+                    "code": "functions/generate-table-interface/generate-table-interface.code.js",
+                    "test": "functions/generate-table-interface/generate-table-interface.test.js"
+                }
+            },
+            "generateTableParams": {
+                "codeFiles": {
+                    "code": "functions/generate-table-params/generate-table-params.code.js",
+                    "test": "functions/generate-table-params/generate-table-params.test.js"
+                }
+            },
+            "getTableNames": {
+                "codeFiles": {
+                    "code": "functions/get-table-names/get-table-names.code.js",
+                    "test": "functions/get-table-names/get-table-names.test.js"
+                }
+            }
+        },
+        "rpc": {
+            "getSchema": {
+                "label": "getSchema",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-schema/get-schema.communication.iml.json",
+                    "params": "rpcs/get-schema/get-schema.params.iml.json"
+                }
+            },
+            "getTableInterface": {
+                "label": "getTableInterface",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-table-interface/get-table-interface.communication.iml.json",
+                    "params": "rpcs/get-table-interface/get-table-interface.params.iml.json"
+                }
+            },
+            "getTableOptions": {
+                "label": "getTableOptions",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-table-options/get-table-options.communication.iml.json",
+                    "params": "rpcs/get-table-options/get-table-options.params.iml.json"
+                }
+            },
+            "getTableParams": {
+                "label": "getTableParams",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-table-params/get-table-params.communication.iml.json",
+                    "params": "rpcs/get-table-params/get-table-params.params.iml.json"
+                }
+            },
+            "listBuckets": {
+                "label": "listBuckets",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-buckets/list-buckets.communication.iml.json",
+                    "params": "rpcs/list-buckets/list-buckets.params.iml.json"
+                }
+            },
+            "listTables": {
+                "label": "listTables",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/list-tables/list-tables.communication.iml.json",
+                    "params": "rpcs/list-tables/list-tables.params.iml.json"
+                }
+            }
+        },
+        "webhook": {
+            "webhook1": {
+                "label": "Watch Events",
+                "webhookType": "web",
+                "connection": "connection1",
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "webhooks/webhook1/webhook1.communication.iml.json",
+                    "params": "webhooks/webhook1/webhook1.params.iml.json",
+                    "attach": "webhooks/webhook1/webhook1.attach.iml.json",
+                    "detach": "webhooks/webhook1/webhook1.detach.iml.json",
+                    "update": "webhooks/webhook1/webhook1.update.iml.json",
+                    "requiredScope": "webhooks/webhook1/webhook1.required-scope.iml.json"
+                }
+            }
+        }
+    },
+    "origins": [
+        {
+            "label": "Origin",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "supabase",
+            "appVersion": 1,
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "connection1",
+                        "remote": "supabase"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "createABucket",
+                        "remote": "createABucket"
+                    },
+                    {
+                        "local": "createARow",
+                        "remote": "createARow"
+                    },
+                    {
+                        "local": "deleteABucket",
+                        "remote": "deleteABucket"
+                    },
+                    {
+                        "local": "deleteRows",
+                        "remote": "deleteRows"
+                    },
+                    {
+                        "local": "getABucket",
+                        "remote": "getABucket"
+                    },
+                    {
+                        "local": "getRowsCount",
+                        "remote": "getRowsCount"
+                    },
+                    {
+                        "local": "listBuckets",
+                        "remote": "listBuckets"
+                    },
+                    {
+                        "local": "makeAnApiCall",
+                        "remote": "makeAnApiCall"
+                    },
+                    {
+                        "local": "searchRows",
+                        "remote": "searchRows"
+                    },
+                    {
+                        "local": "uploadAFile",
+                        "remote": "uploadAFile"
+                    },
+                    {
+                        "local": "upsertARecord",
+                        "remote": "upsertARecord"
+                    },
+                    {
+                        "local": "watchEvents",
+                        "remote": "watchEvents"
+                    }
+                ],
+                "function": [
+                    {
+                        "local": "filter",
+                        "remote": "filter"
+                    },
+                    {
+                        "local": "generateTableInterface",
+                        "remote": "generateTableInterface"
+                    },
+                    {
+                        "local": "generateTableParams",
+                        "remote": "generateTableParams"
+                    },
+                    {
+                        "local": "getTableNames",
+                        "remote": "getTableNames"
+                    }
+                ],
+                "rpc": [
+                    {
+                        "local": "getSchema",
+                        "remote": "getSchema"
+                    },
+                    {
+                        "local": "getTableInterface",
+                        "remote": "getTableInterface"
+                    },
+                    {
+                        "local": "getTableOptions",
+                        "remote": "getTableOptions"
+                    },
+                    {
+                        "local": "getTableParams",
+                        "remote": "getTableParams"
+                    },
+                    {
+                        "local": "listBuckets",
+                        "remote": "listBuckets"
+                    },
+                    {
+                        "local": "listTables",
+                        "remote": "listTables"
+                    }
+                ],
+                "webhook": [
+                    {
+                        "local": "webhook1",
+                        "remote": "supabase"
+                    }
+                ]
+            },
+            "apikeyFile": "../../.secrets/apikey18"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+[
+    {
+        "name": "count",
+        "type": "text",
+        "label": "Count"
+    }
+]

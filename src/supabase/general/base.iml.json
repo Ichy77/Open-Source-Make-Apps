@@ -1,0 +1,22 @@
+{
+	// Default request configuration
+	"baseUrl": "https://{{connection.projectId}}.supabase.co",          // Default base URL for all modules and RPCs.
+	"headers": {                                          // Default HTTP headers for all modules and RPCs.
+		"apikey": "{{connection.apiKey}}",
+		"Authorization": "Bearer {{connection.apiKey}}"
+	},
+
+	// Default response handling
+	"response": {
+		"error": {                                        // Error handling
+			"message": "[{{statusCode}}] {{body.details}} \n {{body.message}}"  // On error, returns error message as "[statusCode] error text".
+		}
+	},
+
+	"log": {
+		"sanitize": [                                     // Excludes sensitive parameters from logs.
+			"request.headers.apikey",
+			"request.headers.Authorization"
+		]
+	}
+}

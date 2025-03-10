@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Key",
+        "type": "text",
+        "label": "Key"
+    },
+    {
+        "name": "Id",
+        "type": "text",
+        "label": "ID"
+    }
+]

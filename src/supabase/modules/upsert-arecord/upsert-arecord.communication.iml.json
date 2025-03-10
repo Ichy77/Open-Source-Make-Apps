@@ -1,0 +1,17 @@
+{
+	// Request to API endpoint.
+	"url": "/rest/v1/{{parameters.table}}",  // Relative to base URL
+	"method": "POST",
+	"headers": {
+		"Prefer": "resolution=merge-duplicates,return=representation"
+	},   
+	"qs": {},
+	"body": {
+		"{{...}}": "{{omit(parameters,'table')}}"
+	},
+
+	// Response handling
+	"response": {
+		"output": "{{first(body)}}"  // Returns API response body as an output bundle.
+	}
+}

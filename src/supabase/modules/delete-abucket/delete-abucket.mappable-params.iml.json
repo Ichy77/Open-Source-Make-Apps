@@ -1,0 +1,9 @@
+[
+	{
+		"name": "bucketID",        // Makes value accesible via "{{parameters.id}}".
+		"type": "select",  // Sets the type to unsigned integer.
+		"label": "Bucket ID",  // Sets the user friendly label visible in the module.
+		"required": true,
+		"options":"rpc://listBuckets"
+	}
+]

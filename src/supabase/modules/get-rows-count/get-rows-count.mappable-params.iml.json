@@ -1,0 +1,10 @@
+[
+	// Defines "id" as mandatory module input parameter.
+	{
+		"name": "table",        // Makes value accesible via "{{parameters.id}}".
+		"type": "select",  // Sets the type to unsigned integer.
+		"label": "Table",  // Sets the user friendly label visible in the module.
+		"required": true,
+		"options": "rpc://listTables"
+	}
+]

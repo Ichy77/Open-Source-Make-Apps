@@ -1,0 +1,45 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "owner",
+        "type": "text",
+        "label": "Owner"
+    },
+    {
+        "name": "public",
+        "type": "boolean",
+        "label": "Public"
+    },
+    {
+        "name": "file_size_limit",
+        "type": "number",
+        "label": "File Size Limit"
+    },
+    {
+        "name": "allowed_mime_types",
+        "type": "array",
+        "spec": {
+            "type": "text"
+        },
+        "label": "Allowed Mime Types"
+    },
+    {
+        "name": "created_at",
+        "type": "date",
+        "label": "Created At"
+    },
+    {
+        "name": "updated_at",
+        "type": "date",
+        "label": "Updated At"
+    }
+]

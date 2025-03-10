@@ -1,0 +1,19 @@
+[
+	{
+		"label": "Other",
+		"modules": [
+			"getRowsCount",
+			"createARow",
+			"searchRows",
+			"deleteRows",
+			"makeAnApiCall",
+			"listBuckets",
+			"createABucket",
+			"getABucket",
+			"deleteABucket",
+			"uploadAFile",
+			"watchEvents",
+			"upsertARecord"
+		]
+	}
+]

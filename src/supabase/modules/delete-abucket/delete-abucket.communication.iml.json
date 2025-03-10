@@ -1,0 +1,14 @@
+{
+	// Request to API endpoint with parameter "id" defined in Mappable parameters.
+	"url": "/storage/v1/bucket/{{parameters.bucketID}}",  // Relative to base URL
+	"method": "DELETE",
+	"headers": {
+		"Content-Type": "text/html; charset=UTF-8"
+	},                      // Additional HTTP headers
+	"qs": {},                           // Query string
+
+	// Response handling
+	"response": {
+		"output": "{{undefined}}"       // Returns no output bundle.
+	}
+}

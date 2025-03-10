@@ -1,0 +1,29 @@
+[
+    {
+        "name": "type",
+        "type": "text",
+        "label": "Type"
+    },
+    {
+        "name": "table",
+        "type": "text",
+        "label": "Table"
+    },
+    {
+        "name": "record",
+        "type": "collection",
+        "spec": [],
+        "label": "Record"
+    },
+    {
+        "name": "schema",
+        "type": "text",
+        "label": "Schema"
+    },
+    {
+        "name": "old_record",
+        "type": "collection",
+        "spec": [],
+        "label": "Old Record"
+    }
+]
