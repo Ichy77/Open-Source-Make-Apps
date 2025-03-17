@@ -13,6 +13,35 @@ function generateTableParams(tableName, apiDocumentation) {
         let supabaseType = property.type; // the type from the supabase schema
         let makeType;
         
+        // Check if property is an enum type
+        if (property.type === 'string' && property.enum && Array.isArray(property.enum)) {
+          makeType = 'select';
+          
+          // If property has a default value, it shouldn't be required
+          const required = property.default ? false : (schema.required && schema.required.includes(key));
+          
+          // Add default value to help text if it exists
+          let helpText = '';
+          if (property.default) {
+            helpText = `Defaults to ${property.default}. `;
+          }
+          helpText += property.description || '';
+          
+          const parameter = {
+            name: key,
+            label: key,
+            type: makeType,
+            required: required,
+            help: helpText,
+            options: property.enum.map(value => ({
+              value: value,
+              label: value
+            }))
+          };
+          
+          parameters.push(parameter);
+          continue; // Skip the rest of the loop for enum types
+        }
   
         // Map Supabase types to Make.com types
         switch (property.format) {
@@ -47,14 +76,22 @@ function generateTableParams(tableName, apiDocumentation) {
             makeType = 'text'; // Default to text if the type is unknown
         }
   
-        const required = schema.required && schema.required.includes(key);
+        // If property has a default value, it shouldn't be required
+        const required = property.default ? false : (schema.required && schema.required.includes(key));
+  
+        // Add default value to help text if it exists
+        let helpText = '';
+        if (property.default) {
+          helpText = `Defaults to ${property.default}. `;
+        }
+        helpText += property.description || '';
   
         const parameter = {
           name: key,
           label: key,
           type: makeType,
           required: required,
-          help: property.description || ''
+          help: helpText
         };
   
   

@@ -1,8 +1,6 @@
-
-
 function getTableNames(paths) {
     /**
-     * Extracts table names from Supabase paths, excluding "/".
+     * Extracts table names from Supabase paths, excluding "/" and RPC paths.
      *
      * @param {object} paths - The paths object from Supabase.
      * @returns {string[]} An array of table names.
@@ -15,11 +13,10 @@ function getTableNames(paths) {
     }
 
     const tableNames = Object.keys(paths)
-        .filter(path => path !== '/') // Exclude the root path "/"
+        .filter(path => path !== '/' && !path.startsWith('/rpc/')) // Exclude the root path "/" and RPC paths
         .map(path => path.slice(1)); // Remove the leading "/" to get the table name
 
     return tableNames;
 
 
 }
-

@@ -1,4 +1,12 @@
 [
+    {
+        "type": "html",
+        "label": "<div class=\"i-exception i-exception-warning\"><h5>Bland AI by Synergetic</h5><p>Are you looking for a strategic automation partner? Learn about our <a href=\"https://www.go-synergetic.com/services?ref=BlandAI\" target=\"_blank\">expert services</a>.</p></div>"
+    },
+    {
+        "type": "html", 
+        "label": "<div><p>If you have improvement ideas related to this app, <a href=\"https://github.com/Ichy77/Open-Source-Make-Apps\" target=\"_blank\">let us know</a>.</p></div>"
+    },
 	{
 		"help": "Enter a path relative to `https://api.bland.ai`, e.g. `/v1/calls` ",  // Gives instructions to the user about the relative path.
 		"name": "url",                                                                        // Makes value accesible via "{{parameters.url}}"".

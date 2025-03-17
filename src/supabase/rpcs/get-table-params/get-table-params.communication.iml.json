@@ -11,7 +11,8 @@
 			"type": "{{item.type}}",
 			"label": "{{item.label}}",
 			"required": "{{item.required}}",
-			"help": "{{item.help}}"
+			"help": "{{item.help}}",
+			"options": "{{item.options}}"
 		}
 	}
 }

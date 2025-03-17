@@ -194,7 +194,7 @@
             },
             "watchEvents": {
                 "label": "Watch Events",
-                "description": "Triggern when a record has been created, updated or deleted.",
+                "description": "Triggers when a record has been created, updated or deleted.",
                 "moduleType": "instant_trigger",
                 "connection": null,
                 "altConnection": null,
