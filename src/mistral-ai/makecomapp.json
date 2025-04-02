@@ -92,6 +92,15 @@
                     "communication": "rpcs/get-models/get-models.communication.iml.json",
                     "params": "rpcs/get-models/get-models.params.iml.json"
                 }
+            },
+            "getHtmlBanner": {
+                "label": "getHtmlBanner",
+                "connection": null,
+                "altConnection": null,
+                "codeFiles": {
+                    "communication": "rpcs/get-html-banner/get-html-banner.communication.iml.json",
+                    "params": "rpcs/get-html-banner/get-html-banner.params.iml.json"
+                }
             }
         },
         "webhook": {}
@@ -132,6 +141,10 @@
                     {
                         "local": "getModels",
                         "remote": "getModels"
+                    },
+                    {
+                        "local": "getHtmlBanner",
+                        "remote": "getHtmlBanner"
                     }
                 ],
                 "webhook": []

@@ -1,5 +1,6 @@
 // Defines "email", "name" and "birthday" as module input parameters.
 [
+	"rpc://getHtmlBanner",
 	{
 		"name": "model",
 		"type": "select",

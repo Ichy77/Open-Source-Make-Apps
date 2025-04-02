@@ -1,6 +1,6 @@
 // Defines "search" and "limit" as module input parameters.
 [
-
+	"rpc://getHtmlBanner",
 	{
 		"name": "limit",
 		"type": "number",

@@ -1,12 +1,13 @@
 {
 	//VERIFIED APP
 	// Default request configuration
-	"baseUrl": "https://api.mistral.ai/v1",          // Default base URL for all modules and RPCs.
+	"baseUrl": "https://api.mistral.ai/v1",
+	"timeout":299999, //Increase timeout to 5 minutes
 	"headers": {                                          // Default HTTP headers for all modules and RPCs.
 		"Authorization": "Bearer {{connection.apiKey}}"   // Authorization by API key, which user will provide in the connection as parameter.
 	},
-
-	// Default response handling
+	
+	
 	"response": {
 		"error": {                                        // Error handling
 			"message": "[{{statusCode}}] {{body.detail.msg}}"  // On error, returns error message as "[statusCode] error text".
